@@ -1,0 +1,6 @@
+use_frameworks!
+target 'MeetingKit_Tests' do
+  pod 'MeetingKit', :path => '../'
+  
+  
+end
