@@ -1,0 +1,6 @@
+framework module MeetingKit {
+  umbrella header "MeetingKit.h"
+  export *
+
+  module * { export * }
+}

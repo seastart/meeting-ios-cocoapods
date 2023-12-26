@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MeetingKit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of MeetingKit.'
+  s.summary          = '会议服务引擎.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,22 +21,18 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/SailorGa/MeetingKit'
+  s.homepage         = 'https://github.com/seastart/meeting-ios-cocoapods'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'SailorGa' => 'ljia789@gmail.com' }
-  s.source           = { :git => 'https://github.com/SailorGa/MeetingKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/seastart/meeting-ios-cocoapods.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
+  # 指定支持平台
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'MeetingKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'MeetingKit' => ['MeetingKit/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # 依赖本地库
+  s.vendored_frameworks = 'MeetingKit/Depend/*.framework'
+  # 依赖远程库
+  s.dependency 'RTCEngineKit'
 end
