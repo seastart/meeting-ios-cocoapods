@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   # 依赖本地库
-  s.vendored_frameworks = 'MeetingKit/Depend/*.framework'
+  s.vendored_frameworks = 'MeetingKit/*.framework'
   # 依赖远程库
   s.dependency 'RTCEngineKit'
 end
