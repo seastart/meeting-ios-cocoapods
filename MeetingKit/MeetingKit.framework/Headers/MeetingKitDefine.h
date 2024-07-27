@@ -279,6 +279,57 @@ typedef enum : NSInteger {
 } SEALeaveReason;
 
 
+#pragma mark - 下行码率自适应状态
+/// 下行码率自适应状态
+typedef enum : NSInteger {
+    
+    /// 正常
+    SEADownBitrateAdaptiveStateNormal = 0,
+    /// 较差
+    SEADownBitrateAdaptiveStatePoor = -1,
+    /// 很差
+    SEADownBitrateAdaptiveStateBad = -2,
+    /// 极差
+    SEADownBitrateAdaptiveStateVeryBad = -3,
+    /// 下行链路状态不存在
+    SEADownBitrateAdaptiveStateLose = -4
+} SEADownBitrateAdaptiveState;
+
+
+#pragma mark - 上行码率自适应状态
+/// 上行码率自适应状态
+typedef enum : NSInteger {
+    
+    /// 码率自适应开始工作
+    SEAUploadBitrateAdaptiveStateStart = 1000,
+    /// 码率恢复到最初设置
+    SEAUploadBitrateAdaptiveStateNormal = 0,
+    /// 码率变为原来的一半
+    SEAUploadBitrateAdaptiveStateHalf = -1,
+    /// 码率变为原来的四分之一
+    SEAUploadBitrateAdaptiveStateQuarter = -2,
+    /// 当前网络环境及其差劲情况
+    SEAUploadBitrateAdaptiveStateVeryBad = -3,
+} SEAUploadBitrateAdaptiveState;
+
+
+#pragma mark - 下行平均丢包档位
+/// 下行平均丢包档位
+typedef enum : NSInteger {
+    
+    /// 无效
+    SEADownLossLevelStateInvalid = -1,
+    /// 正常
+    SEADownLossLevelStateNormal = 0,
+    /// 较差
+    SEADownLossLevelStatePoor = 1,
+    /// 很差
+    SEADownLossLevelStateBad = 2,
+    /// 极差
+    SEADownLossLevelStateVeryBad = 3
+} SEADownLossLevelState;
+
+
 #pragma mark - 操作相关回调
 /// 成功回调
 typedef void (^SEASuccessBlock)(id _Nullable data);

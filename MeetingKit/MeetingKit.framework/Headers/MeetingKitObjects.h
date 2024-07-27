@@ -231,4 +231,22 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+/// 流媒体音频信息
+@interface SEAStreamAudioModel : RTCStreamAudioModel
+
+@end
+
+
+/// 流媒体发送状态数据
+@interface SEAStreamSendModel : RTCStreamSendModel
+
+@end
+
+
+/// 流媒体接收状态数据
+@interface SEAStreamReceiveModel : RTCStreamReceiveModel
+
+@end
+
+
 NS_ASSUME_NONNULL_END
