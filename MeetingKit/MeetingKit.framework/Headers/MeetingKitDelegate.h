@@ -186,7 +186,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - targetUserId: 目标成员标识
 ///   - cameraState: 视频状态
-- (void)onUserCameraStateChanged:(NSString *)targetUserId cameraState:(SEADeviceState)cameraState;
+///   - reason: 发生变化原因
+- (void)onUserCameraStateChanged:(NSString *)targetUserId cameraState:(SEADeviceState)cameraState reason:(SEAChangeReason)reason;
 
 #pragma mark 用户麦克风状态变化回调
 /// 用户麦克风状态变化回调
@@ -194,7 +195,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - targetUserId: 目标成员标识
 ///   - micState: 音频状态
-- (void)onUserMicStateChanged:(NSString *)targetUserId micState:(SEADeviceState)micState;
+///   - reason: 发生变化原因
+- (void)onUserMicStateChanged:(NSString *)targetUserId micState:(SEADeviceState)micState reason:(SEAChangeReason)reason;
 
 #pragma mark 用户聊天能力禁用状态变化回调
 /// 用户聊天能力禁用状态变化回调

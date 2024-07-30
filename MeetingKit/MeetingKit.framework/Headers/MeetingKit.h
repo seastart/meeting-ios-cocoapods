@@ -180,6 +180,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onFailed 失败回调
 - (void)cancelHandup:(SEAHandupType)handupType onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
+#pragma mark 回复同意打开摄像头请求
+/// 回复同意打开摄像头请求
+/// @param targetId 目标标识，请求或同意您开启摄像头请求的管理者标识
+/// @param frontCamera 摄像头方向，YES-前置摄像头 NO-后置摄像头
+/// @param view 承载视频画面的控件
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)confirmAdminOpenCamera:(NSString *)targetId frontCamera:(BOOL)frontCamera view:(VIEW_CLASS *)view onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 回复同意打开麦克风请求
+/// 回复同意打开麦克风请求
+/// @param targetId 目标标识，请求或同意您开启摄像头请求的管理者标识
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)confirmAdminOpenMic:(NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 #pragma mark 更新本地摄像头的预览画面
 /// 更新本地摄像头的预览画面
 /// @param view 承载视频画面的控件
@@ -206,13 +222,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param view 承载视频画面的渲染控件
 - (void)startRemoteView:(NSString *)userId streamType:(SEAVideoStreamType)streamType view:(VIEW_CLASS *)view;
 
-#pragma mark 更新远端用户的视频渲染控件
-/// 更新远端用户的视频渲染控件
-/// @param userId 指定远端用户标识
-/// @param streamType 视频流类型
-/// @param view 承载视频画面的渲染控件
-- (void)updateRemoteView:(NSString *)userId streamType:(SEAVideoStreamType)streamType view:(VIEW_CLASS *)view;
-
 #pragma mark 停止订阅远端用户的视频流，并释放渲染控件
 /// 停止订阅远端用户的视频流，并释放渲染控件
 /// @param userId 指定远端用户标识
@@ -223,10 +232,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 停止订阅指定远端用户的所有视频流，并释放全部渲染资源
 /// @param userId 指定远端用户标识
 - (void)stopAllRemoteViewWithUserId:(NSString *)userId;
-
-#pragma mark 停止订阅所有远端用户的视频流，并释放全部渲染资源
-/// 停止订阅所有远端用户的视频流，并释放全部渲染资源
-- (void)stopAllRemoteView;
 
 
 #pragma mark - ------------ 屏幕共享相关接口函数 ------------

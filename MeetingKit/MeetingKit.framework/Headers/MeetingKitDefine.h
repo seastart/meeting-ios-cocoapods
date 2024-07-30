@@ -279,6 +279,17 @@ typedef enum : NSInteger {
 } SEALeaveReason;
 
 
+#pragma mark - 音视频状态更改原因
+/// 音视频状态更改原因
+typedef enum : NSInteger {
+    
+    /// 自己操作
+    SEAChangeReasonBySelf = 0,
+    /// 主持人或联席主持人操作
+    SEAChangeReasonByAdmin = 1
+} SEAChangeReason;
+
+
 #pragma mark - 下行码率自适应状态
 /// 下行码率自适应状态
 typedef enum : NSInteger {
