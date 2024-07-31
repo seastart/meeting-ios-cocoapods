@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MeetingKit'
-  s.version          = '0.0.1-alpha.4+20240730'
+  s.version          = '0.0.1-alpha.5+20240731'
   s.summary          = '会议服务引擎.'
 
 # This description is used to generate tags and improve search results.

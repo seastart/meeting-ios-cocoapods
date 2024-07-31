@@ -84,7 +84,9 @@ typedef enum : NSInteger {
     /// 操作不被允许
     SEAErrorForbidden = 103003,
     /// 码流不存在
-    SEAErrorStreamNotFound = 103004
+    SEAErrorStreamNotFound = 103004,
+    /// 没有权限执行操作
+    SEAErrorNotAuthorized = 103005
 } SEAError;
 
 
