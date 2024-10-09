@@ -13,11 +13,13 @@
 #import <MeetingKit/MeetingKitDefine.h>
 #import <MeetingKit/MeetingKitObjects.h>
 #import <MeetingKit/MeetingKitDelegate.h>
+#import <MeetingKit/MeetingKitIMDelegate.h>
 #import <MeetingKit/MeetingKitScreenDelegate.h>
 #else
 #import "MeetingKitDefine.h"
 #import "MeetingKitObjects.h"
 #import "MeetingKitDelegate.h"
+#import "MeetingKitIMDelegate.h"
 #import "MeetingKitScreenDelegate.h"
 #endif
 
@@ -39,10 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 ///  会议引擎版本
 - (NSString *)version;
 
-#pragma mark 销毁 MeetingKit 实例
-/// 销毁 MeetingKit 实例
-- (void)destroyInstance;
-
 #pragma mark 设置事件回调
 /// 设置事件回调，您可以通过 MeetingKitDelegate 获得各类事件通知（例如：错误码，远端用户进房间，音视频状态参数等）
 /// @param delegate 委托实例
@@ -60,6 +58,65 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 退出登录接口
 /// 退出登录接口，会有主动离开房间操作、销毁资源
 - (void)logout;
+
+
+#pragma mark - ------------ 即时通讯接口 ------------
+#pragma mark 启用即时通讯
+/// 启用即时通讯
+/// - Parameter delegate: 委托代理
+/// - Parameter onSuccess: 成功回调
+/// - Parameter onFailed: 失败回调
+- (void)enableImWithDelegate:(nullable id<MeetingKitIMDelegate>)delegate onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 停用即时通讯
+/// 停用即时通讯
+- (void)disableIm;
+
+
+#pragma mark - ------------ 会议操作接口 ------------
+#pragma mark 获取会议列表
+/// 获取会议列表
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMeetingList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取更多会议列表
+/// 获取更多会议列表
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMoreMeetingList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取历史会议列表
+/// 获取历史会议列表
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getHistoryMeetingList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取更多历史会议列表
+/// 获取更多历史会议列表
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMoreHistoryMeetingList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取会议详情
+/// 获取会议详情
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMeetingDetailsWithMeetingId:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 请求取消会议
+/// 请求取消会议
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)requestCancelMeetingWithMeetingId:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
 #pragma mark - ------------ 用户操作接口 ------------
@@ -215,6 +272,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter route: 音频路由
 - (void)switchAudioRoute:(SEAAudioRoute)route;
 
+#pragma mark 获取当前音频路由
+/// 获取当前音频路由
+- (SEAAudioRoute)currentAudioRoute;
+
+#pragma mark 是否存在有线耳机设备
+/// 是否存在有线耳机设备
+- (BOOL)headphoneDeviceAvailable;
+
+#pragma mark 是否存在蓝牙耳机设备
+/// 是否存在蓝牙耳机设备
+- (BOOL)bluetoothDeviceAvailable;
+
 #pragma mark 订阅远端用户的视频流，并绑定视频渲染控件
 /// 订阅远端用户的视频流，并绑定视频渲染控件
 /// @param userId 指定远端用户标识
@@ -279,6 +348,20 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
 - (void)adminUpdateRoomMicState:(BOOL)micDisabled selfUnmuteMicDisabled:(BOOL)selfUnmuteMicDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人更新房间是否禁止自我解除视频状态
+/// 主持人更新房间是否禁止自我解除视频状态
+/// @param selfUnmuteCameraDisabled 是否禁止自我解除视频状态，YES-禁止 NO-不禁止
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)adminUpdateRoomSelfUnmuteCameraDisabled:(BOOL)selfUnmuteCameraDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人更新房间是否禁止自我解除音频状态
+/// 主持人更新房间是否禁止自我解除音频状态
+/// @param selfUnmuteMicDisabled 是否禁止自我解除音频状态，YES-禁止 NO-不禁止
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)adminUpdateRoomSelfUnmuteMicDisabled:(BOOL)selfUnmuteMicDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 主持人更新房间聊天禁用状态
 /// 主持人更新房间聊天禁用状态

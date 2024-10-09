@@ -160,19 +160,6 @@ typedef enum : NSInteger {
 } SEAScreenRecordStatus;
 
 
-#pragma mark - 用户类型
-/// 用户类型
-typedef enum : NSInteger {
-    
-    /// 普通用户
-    SEAUserTypeNormal = 1,
-    /// SIP
-    SEAUserTypeSIP = 2,
-    /// H323
-    SEAUserTypeH323 = 3
-} SEAUserType;
-
-
 #pragma mark - 用户角色
 /// 用户角色
 typedef enum : NSInteger {
@@ -195,6 +182,32 @@ typedef enum : NSInteger {
     /// 预约会议
     SEAMeetingTypeSchedule = 2
 } SEAMeetingType;
+
+
+#pragma mark - 会议状态
+/// 会议状态
+typedef enum : NSInteger {
+    
+    /// 未开始
+    SEAMeetingStatusNotStart = 1,
+    /// 进行中
+    SEAMeetingStatusIng = 2,
+    /// 已结束
+    SEAMeetingStatusEnded = 3
+} SEAMeetingStatus;
+
+
+#pragma mark - 参会类型
+/// 参会类型
+typedef enum : NSInteger {
+    
+    /// 无限制
+    SEAMeetingAttendTypeNormal = 1,
+    /// 密码参会
+    SEAMeetingAttendTypePassword = 2,
+    /// 仅邀请人员参会
+    SEAMeetingAttendTypeInitiate = 3
+} SEAMeetingAttendType;
 
 
 #pragma mark - 入会静音状态
@@ -341,6 +354,21 @@ typedef enum : NSInteger {
     /// 极差
     SEADownLossLevelStateVeryBad = 3
 } SEADownLossLevelState;
+
+
+#pragma mark - im断开原因
+/// im断开原因
+typedef enum : NSInteger {
+    
+    /// 发生错误
+    SEAImDisconnectReasonError = -1,
+    /// 主动离开
+    SEAImDisconnectReasonNormal = 1,
+    /// 被踢离开
+    SEAImDisconnectReasonKickout = 2,
+    /// 心跳超时离开
+    SEAImDisconnectReasonTimeout = 4
+} SEAImDisconnectReason;
 
 
 #pragma mark - 操作相关回调

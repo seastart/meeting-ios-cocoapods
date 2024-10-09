@@ -280,8 +280,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark 流媒体接收状态数据回调
 /// 流媒体接收状态数据回调
-/// @param receiveModel 流媒体接收状态数据
-- (void)onReceiveStreamModel:(SEAStreamReceiveModel *)receiveModel;
+/// @param receiveArray 流媒体接收状态数据列表
+- (void)onReceiveStreamModel:(NSArray <SEAStreamReceiveModel *> *)receiveArray;
+
+#pragma mark 流媒体接收视频流状态变更回调
+/// 流媒体接收视频流状态变更回调
+/// @param targetUserId 目标成员标识
+/// @param streamType 视频流类型
+/// @param status 接收状态，YES-超时 NO-恢复
+- (void)onReceiveStreamStatusChange:(NSString *)targetUserId streamType:(SEAVideoStreamType)streamType status:(BOOL)status;
 
 
 #pragma mark - ------------ 其它事件回调 ------------
