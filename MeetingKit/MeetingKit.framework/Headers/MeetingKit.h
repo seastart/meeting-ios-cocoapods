@@ -472,6 +472,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onFailed 失败回调
 - (void)adminConfirmHandup:(NSString *)userId handupType:(SEAHandupType)handupType approve:(BOOL)approve onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
+#pragma mark 主持人更新参会成员
+/// 主持人更新参会成员
+/// @param conferee 参会成员标识列表
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)adminUpdateConferee:(NSArray <NSString *> *)conferee onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 
 #pragma mark - ------------ 数据管理相关接口 ------------
 #pragma mark 获取当前账户信息
