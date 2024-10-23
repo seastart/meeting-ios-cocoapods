@@ -75,6 +75,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *content;
 /// 会议类型
 @property (nonatomic, assign) SEAMeetingType meetingType;
+/// 会议模式
+@property (nonatomic, assign) SEAMeetingMode meetingMode;
 /// 开始时间
 @property (nonatomic, assign) NSInteger beginTime;
 /// 结束时间
@@ -149,6 +151,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEAMeetingAttendType attendType;
 /// 会议类型，默认 SEAMeetingTypeInitiate
 @property (nonatomic, assign) SEAMeetingType meetingType;
+/// 会议模式，默认 SEAMeetingModeNormal
+@property (nonatomic, assign) SEAMeetingMode meetingMode;
 /// 计划开始时间，SEAMeetingTypeSchedule 会议必填
 @property (nonatomic, assign) NSInteger planTime;
 /// 计划会议时长(单位分钟)，SEAMeetingTypeSchedule 会议必填
@@ -255,6 +259,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEAMeetingAttendType attendType;
 /// 会议类型
 @property (nonatomic, assign) SEAMeetingType meetingType;
+/// 会议模式
+@property (nonatomic, assign) SEAMeetingMode meetingMode;
 /// 会议状态
 @property (nonatomic, assign) SEAMeetingStatus meetingStatus;
 /// 计划开始时间
@@ -320,6 +326,36 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 流媒体接收状态数据
 @interface SEAStreamReceiveModel : RTCStreamReceiveModel
+
+@end
+
+
+/// 代理设备对象
+@interface SEAAgentModel : NSObject
+
+/// 设备ID
+@property (nonatomic, copy) NSString *deviceId;
+/// 设备名称
+@property (nonatomic, copy) NSString *name;
+/// 设备类型
+@property (nonatomic, assign) SEAAgentType type;
+/// 设备状态
+@property (nonatomic, assign) SEAAgentStatus status;
+/// 设备标识
+@property (nonatomic, copy) NSString *contact;
+/// 设备备注
+@property (nonatomic, copy) NSString *remark;
+
+@end
+
+
+/// 代理设备列表对象
+@interface SEAAgentListModel : NSObject
+
+/// 数据分页对象
+@property (nonatomic, strong) SEASectionModel *meta;
+/// 代理设备对象列表
+@property (nonatomic, strong, nullable) NSMutableArray <SEAAgentModel *> *listData;
 
 @end
 

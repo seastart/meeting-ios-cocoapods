@@ -120,6 +120,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - ------------ 用户操作接口 ------------
+#pragma mark 获取设备列表
+/// 获取设备列表
+/// - Parameters:
+///   - agentType: 设备类型
+///   - keyword: 关键词
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getAgentList:(SEAAgentType)agentType keyword:(nullable NSString *)keyword onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取更多设备列表
+/// 获取更多设备列表
+/// - Parameters:
+///   - agentType: 设备类型
+///   - keyword: 关键词
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMoreAgentList:(SEAAgentType)agentType keyword:(nullable NSString *)keyword onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 #pragma mark 创建房间
 /// 创建房间
 /// @param params 创建参数
@@ -302,6 +320,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param userId 指定远端用户标识
 - (void)stopAllRemoteViewWithUserId:(NSString *)userId;
 
+#pragma mark 订阅远端合成画面视频流，并绑定视频渲染控件
+/// 订阅远端合成画面视频流，并绑定视频渲染控件
+/// @param view 承载视频画面的渲染控件
+- (void)startRemoteMixture:(VIEW_CLASS *)view;
+
+#pragma mark 停止订阅远端合成画面视频流，并释放渲染控件
+/// 停止订阅远端合成画面视频流，并释放渲染控件
+- (void)stopRemoteMixture;
+
 
 #pragma mark - ------------ 屏幕共享相关接口函数 ------------
 #pragma mark 关闭屏幕录制
@@ -453,9 +480,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 主持人踢出成员
 /// 主持人踢出成员
 /// @param userId 用户标识
+/// @param joinDisabled 是否禁止再次加入房间，YES-禁止 NO-不禁止
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
-- (void)adminKickUserOut:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+- (void)adminKickUserOut:(NSString *)userId joinDisabled:(BOOL)joinDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 主持人关闭共享
 /// 主持人关闭共享
@@ -478,6 +506,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
 - (void)adminUpdateConferee:(NSArray <NSString *> *)conferee onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人邀请设备入会
+/// 主持人邀请设备入会
+/// @param agentType 设备类型
+/// @param contact 设备标识
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)adminInviteAgent:(SEAAgentType)agentType contact:(NSString *)contact onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
 #pragma mark - ------------ 数据管理相关接口 ------------

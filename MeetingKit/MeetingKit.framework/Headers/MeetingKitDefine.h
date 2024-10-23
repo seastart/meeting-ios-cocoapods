@@ -137,11 +137,11 @@ typedef enum : NSInteger {
 typedef enum : NSInteger {
     
     /// 高清大画面，一般用来传输摄像头的视频数据
-    SEAVideoStreamTypeBig = 0,
+    SEAVideoStreamTypeBig = 1,
     /// 低清小画面，小画面和大画面的内容相同，但是分辨率和码率都比大画面低，因此清晰度也更低
-    SEAVideoStreamTypeSmall = 1,
+    SEAVideoStreamTypeSmall = 2,
     /// 屏幕共享流
-    SEAVideoStreamTypeScreen = 2
+    SEAVideoStreamTypeScreen = 3
 } SEAVideoStreamType;
 
 
@@ -182,6 +182,17 @@ typedef enum : NSInteger {
     /// 预约会议
     SEAMeetingTypeSchedule = 2
 } SEAMeetingType;
+
+
+#pragma mark - 会议模式
+/// 会议模式
+typedef enum : NSInteger {
+    
+    /// 非合成会议模式(常规模式)
+    SEAMeetingModeNormal = 1,
+    /// 合成会议模式
+    SEAMeetingModeMixture = 2
+} SEAMeetingMode;
 
 
 #pragma mark - 会议状态
@@ -369,6 +380,42 @@ typedef enum : NSInteger {
     /// 心跳超时离开
     SEAImDisconnectReasonTimeout = 4
 } SEAImDisconnectReason;
+
+
+#pragma mark - 代理设备类型
+/// 代理设备类型
+typedef enum : NSUInteger {
+    
+    /// SIP
+    SEAAgentTypeSIP = 2,
+    /// H323
+    SEAAgentTypeH323 = 3,
+    /// GB28181
+    SEAAgentTypeGB28181 = 4,
+    /// RTSP拉流
+    SEAAgentTypeRTSP = 5,
+    /// RTMP拉流
+    SEAAgentTypeRTMP = 6,
+    /// 文件播放
+    SEAAgentTypeFile = 7,
+    /// 腾讯会议
+    SEAAgentTypeTencent = 8,
+    /// AI
+    SEAAgentTypeAI = 9
+} SEAAgentType;
+
+
+#pragma mark - 代理设备状态
+/// 代理设备状态
+typedef enum : NSUInteger {
+    
+    /// 未知
+    SEAAgentStatusUnknown = 0,
+    /// 在线
+    SEAAgentStatusOnline = 1,
+    /// 离线
+    SEAAgentStatusOffline = 2
+} SEAAgentStatus;
 
 
 #pragma mark - 操作相关回调
