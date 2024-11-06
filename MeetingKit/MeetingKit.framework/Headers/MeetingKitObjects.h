@@ -17,12 +17,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class SEALayoutViewListCellModel;
+@class SEALayoutWatermarkModel;
+@class SEALayoutViewListModel;
+@class SEALayoutLabelModel;
+@class SEALayoutDataModel;
 @class SEAUserExtend;
 @class SEARoomExtend;
 
 /// 用户数据
 @interface SEAUserModel : RTCEngineUserModel
 
+/// 麦克风状态
+@property (nonatomic, assign) SEADeviceState micState;
+/// 摄像头状态
+@property (nonatomic, assign) SEADeviceState cameraState;
+/// 共享类型
+@property (nonatomic, assign) SEAShareType shareType;
 /// 扩展属性
 @property (nonatomic, strong) SEAUserExtend *extend;
 
@@ -45,19 +56,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEAUserRole role;
 /// 参会头像
 @property (nonatomic, copy) NSString *avatar;
-/// 麦克风状态
-@property (nonatomic, assign) SEADeviceState micState;
-/// 摄像头状态
-@property (nonatomic, assign) SEADeviceState cameraState;
-/// 共享状态
-@property (nonatomic, assign) SEAShareType shareType;
 /// 是否被踢出
 @property (nonatomic, assign) BOOL isKickout;
 /// 聊天能力禁用状态，YES-禁用 NO-不禁用
 @property (nonatomic, assign) BOOL chatDisabled;
 
 /// 扩展信息
-@property (nonatomic, assign) id extend;
+@property (nonatomic, copy, nullable) NSString *extendInfo;
 
 @end
 
@@ -77,10 +82,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEAMeetingType meetingType;
 /// 会议模式
 @property (nonatomic, assign) SEAMeetingMode meetingMode;
-/// 开始时间
-@property (nonatomic, assign) NSInteger beginTime;
-/// 结束时间
-@property (nonatomic, assign) NSInteger endTime;
+/// 预约时间(计划开始时间)，单位：秒
+@property (nonatomic, assign) NSInteger planTime;
+/// 预约时长(计划会议时长)，单位：分钟
+@property (nonatomic, assign) NSInteger planDuration;
 /// 入会静音状态
 @property (nonatomic, assign) SEAMeetingMuteState entryMutePolicy;
 /// 房间水印禁用状态，YES-禁用 NO-不禁用
@@ -103,7 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 共享类型
 @property (nonatomic, assign) SEAShareType shareType;
 /// 共享者标识
-@property (nonatomic, copy) NSString *shareUid;
+@property (nonatomic, copy, nullable) NSString *shareUid;
 /// 创建者标识
 @property (nonatomic, copy) NSString *creator;
 /// 主持人标识
@@ -112,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSMutableArray <NSString *> *unionHosts;
 
 /// 扩展信息
-@property (nonatomic, assign) id extend;
+@property (nonatomic, copy, nullable) NSString *extendInfo;
 
 @end
 
@@ -153,6 +158,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEAMeetingType meetingType;
 /// 会议模式，默认 SEAMeetingModeNormal
 @property (nonatomic, assign) SEAMeetingMode meetingMode;
+/// 会议布局
+@property (nonatomic, strong) SEALayoutDataModel *layoutData;
 /// 计划开始时间，SEAMeetingTypeSchedule 会议必填
 @property (nonatomic, assign) NSInteger planTime;
 /// 计划会议时长(单位分钟)，SEAMeetingTypeSchedule 会议必填
@@ -251,7 +258,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *title;
 /// 会议说明
 @property (nonatomic, copy, nullable) NSString *content;
-/// 参会成员标识列表
+/// 受邀成员标识列表
 @property (nonatomic, copy, nullable) NSArray <NSString *> *conferee;
 /// 创建者标识
 @property (nonatomic, copy) NSString *creator;
@@ -261,6 +268,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEAMeetingType meetingType;
 /// 会议模式
 @property (nonatomic, assign) SEAMeetingMode meetingMode;
+/// 会议布局
+@property (nonatomic, strong) SEALayoutDataModel *layoutData;
 /// 会议状态
 @property (nonatomic, assign) SEAMeetingStatus meetingStatus;
 /// 计划开始时间
@@ -312,6 +321,34 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+/// 参会成员对象
+@interface SEAMemberModel : NSObject
+
+/// 记录标识
+@property (nonatomic, copy) NSString *recordId;
+/// 用户标识
+@property (nonatomic, copy) NSString *userId;
+/// 用户昵称
+@property (nonatomic, copy) NSString *nickname;
+/// 加入时间
+@property (nonatomic, assign) NSInteger enterAt;
+/// 离开时间
+@property (nonatomic, assign) NSInteger exitAt;
+
+@end
+
+
+/// 参会成员列表对象
+@interface SEAMemberListModel : NSObject
+
+/// 数据分页对象
+@property (nonatomic, strong) SEASectionModel *meta;
+/// 参会成员对象列表
+@property (nonatomic, strong, nullable) NSMutableArray <SEAMemberModel *> *listData;
+
+@end
+
+
 /// 流媒体音频信息
 @interface SEAStreamAudioModel : RTCStreamAudioModel
 
@@ -330,7 +367,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-/// 代理设备对象
+/// 邀请设备对象
 @interface SEAAgentModel : NSObject
 
 /// 设备ID
@@ -349,13 +386,108 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-/// 代理设备列表对象
+/// 邀请设备列表对象
 @interface SEAAgentListModel : NSObject
 
 /// 数据分页对象
 @property (nonatomic, strong) SEASectionModel *meta;
 /// 代理设备对象列表
 @property (nonatomic, strong, nullable) NSMutableArray <SEAAgentModel *> *listData;
+
+@end
+
+
+/// 邀请对象
+@interface SEAInviteModel : NSObject
+
+/// 设备标识
+@property (nonatomic, copy) NSString *contact;
+/// 设备类型
+@property (nonatomic, assign) SEAAgentType type;
+
+/// 创建邀请数据对象
+/// - Parameters:
+///   - contact: 设备标识
+///   - type: 设备类型
+- (instancetype)initWithContact:(NSString *)contact type:(SEAAgentType)type;
+
+@end
+
+
+/// 布局数据对象
+@interface SEALayoutDataModel : NSObject
+
+/// 布局类型，默认 auto
+@property (nonatomic, copy) NSString *layout;
+/// 是否轮询，默认 NO
+@property (nonatomic, assign) BOOL isPolling;
+
+/// 布局水印
+@property (nonatomic, strong, nullable) SEALayoutWatermarkModel *watermark;
+/// 布局标签
+@property (nonatomic, strong, nullable) SEALayoutLabelModel *label;
+/// 布局视图列表，即：逻辑块, 包含宫格与用户
+@property (nonatomic, copy, nullable) NSArray <SEALayoutViewListModel *> *viewLists;
+
+@end
+
+
+/// 布局水印对象
+@interface SEALayoutWatermarkModel : NSObject
+
+/// 水印类型，默认 1；1-无，2-单排，3-多排
+@property (nonatomic, assign) NSInteger type;
+/// 水印内容，为空时，默认使用会议标题
+@property (nonatomic, copy, nullable) NSString *text;
+/// 字体大小，为0时，表示默认值
+@property (nonatomic, assign) CGFloat size;
+/// 字体颜色，为空时，表示默认值
+@property (nonatomic, copy, nullable) NSString *color;
+/// 轮廓颜色, 为空时，表示默认值
+@property (nonatomic, copy, nullable) NSString *olColor;
+/// 轮廓线宽, 为0时，表示默认值
+@property (nonatomic, assign) CGFloat olWidth;
+
+@end
+
+
+/// 布局标签对象
+@interface SEALayoutLabelModel : NSObject
+
+/// 标签类型，默认 LT；字母或组合：L-左，R-右，T-上，B-下
+@property (nonatomic, copy) NSString *type;
+/// 标签内容，为空时，默认使用参会昵称
+@property (nonatomic, copy, nullable) NSString *text;
+/// 字体大小，为0时，表示默认值
+@property (nonatomic, assign) CGFloat size;
+/// 字体颜色，为空时，表示默认值
+@property (nonatomic, copy, nullable) NSString *color;
+/// 背景颜色, 为空时，表示默认值
+@property (nonatomic, copy, nullable) NSString *bgColor;
+
+@end
+
+
+/// 布局视图列表对象，即：逻辑块, 包含宫格与用户
+@interface SEALayoutViewListModel : NSObject
+
+/// 视图列表单元格
+@property (nonatomic, copy, nullable) NSArray <SEALayoutViewListCellModel *> *itemLists;
+/// 成员标识列表
+@property (nonatomic, copy, nullable) NSArray <NSString *> *userIds;
+
+@end
+
+
+/// 布局视图列表单元格对象
+@interface SEALayoutViewListCellModel : NSObject
+
+/// 格子序号，排序规则按HTML中标签的顺序，默认 0
+@property (nonatomic, assign) NSInteger index;
+/// 是否优化绑定频道内的共享流，默认 NO
+@property (nonatomic, assign) BOOL bindShare;
+/// 单元格标签
+@property (nonatomic, strong, nullable) SEALayoutLabelModel *label;
 
 @end
 

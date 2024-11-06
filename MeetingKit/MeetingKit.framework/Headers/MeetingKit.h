@@ -110,6 +110,22 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - onFailed: 失败回调
 - (void)getMeetingDetailsWithMeetingId:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
+#pragma mark 获取参会人员列表
+/// 获取参会人员列表
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getParticipantListsWithMeetingId:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取更多参会人员列表
+/// 获取更多参会人员列表
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMoreParticipantListsWithMeetingId:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 #pragma mark 请求取消会议
 /// 请求取消会议
 /// - Parameters:
@@ -123,20 +139,22 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 获取设备列表
 /// 获取设备列表
 /// - Parameters:
-///   - agentType: 设备类型
+///   - typesList: 设备类型列表
 ///   - keyword: 关键词
 ///   - onSuccess: 成功回调
 ///   - onFailed: 失败回调
-- (void)getAgentList:(SEAAgentType)agentType keyword:(nullable NSString *)keyword onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+///   注：上述设备类型列表为需要获取的目标设备类型构成的数组参数，设备类型可参看 SEAAgentType 声明定义。
+- (void)getAgentList:(NSArray <NSNumber *> *)typesList keyword:(nullable NSString *)keyword onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 获取更多设备列表
 /// 获取更多设备列表
 /// - Parameters:
-///   - agentType: 设备类型
+///   - typesList: 设备类型列表
 ///   - keyword: 关键词
 ///   - onSuccess: 成功回调
 ///   - onFailed: 失败回调
-- (void)getMoreAgentList:(SEAAgentType)agentType keyword:(nullable NSString *)keyword onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+///   注：上述设备类型列表为需要获取的目标设备类型构成的数组参数，设备类型可参看 SEAAgentType 声明定义。
+- (void)getMoreAgentList:(NSArray <NSNumber *> *)typesList keyword:(nullable NSString *)keyword onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 创建房间
 /// 创建房间
@@ -500,20 +518,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onFailed 失败回调
 - (void)adminConfirmHandup:(NSString *)userId handupType:(SEAHandupType)handupType approve:(BOOL)approve onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
-#pragma mark 主持人更新参会成员
-/// 主持人更新参会成员
-/// @param conferee 参会成员标识列表
+#pragma mark 主持人更新受邀成员
+/// 主持人更新受邀成员
+/// @param conferee 成员标识列表
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
 - (void)adminUpdateConferee:(NSArray <NSString *> *)conferee onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 主持人邀请设备入会
 /// 主持人邀请设备入会
-/// @param agentType 设备类型
-/// @param contact 设备标识
+/// @param invitesList 邀请列表
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
-- (void)adminInviteAgent:(SEAAgentType)agentType contact:(NSString *)contact onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+- (void)adminInviteAgent:(NSArray <SEAInviteModel *> *)invitesList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
 #pragma mark - ------------ 数据管理相关接口 ------------

@@ -382,8 +382,8 @@ typedef enum : NSInteger {
 } SEAImDisconnectReason;
 
 
-#pragma mark - 代理设备类型
-/// 代理设备类型
+#pragma mark - 邀请设备类型
+/// 邀请设备类型
 typedef enum : NSUInteger {
     
     /// SIP
@@ -405,8 +405,8 @@ typedef enum : NSUInteger {
 } SEAAgentType;
 
 
-#pragma mark - 代理设备状态
-/// 代理设备状态
+#pragma mark - 邀请设备状态
+/// 邀请设备状态
 typedef enum : NSUInteger {
     
     /// 未知
