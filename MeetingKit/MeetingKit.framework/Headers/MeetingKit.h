@@ -533,6 +533,37 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)adminInviteAgent:(NSArray <SEAInviteModel *> *)invitesList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
+#pragma mark - ------------ 云录制相关接口 ------------
+#pragma mark 获取云录制详情
+/// 获取云录制详情
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getCloudRecordDetail:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取云录制配置
+/// 获取云录制配置
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getCloudRecordConfig:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 开启云录制
+/// 开启云录制
+/// - Parameters:
+///   - params: 云录制参数
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)startCloudRecord:(SEACloudRecordParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 停止云录制
+/// 停止云录制
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)stopCloudRecord:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+
 #pragma mark - ------------ 数据管理相关接口 ------------
 #pragma mark 获取当前账户信息
 /// 获取当前账户信息

@@ -418,6 +418,36 @@ typedef enum : NSUInteger {
 } SEAAgentStatus;
 
 
+#pragma mark - 录制类型
+/// 录制类型
+typedef enum : NSInteger {
+    
+    /// 录像模式
+    SEARecordTypeVideo = 1,
+    /// 合流模式
+    SEARecordTypeMixture = 2,
+    /// 混合模式
+    SEARecordTypeAll = 3
+} SEARecordType;
+
+
+#pragma mark - 录制状态
+/// 录制状态
+typedef enum : NSInteger {
+    
+    /// 未开始
+    SEARecordStatusNotStart = 0,
+    /// 进行中
+    SEARecordStatusIng = 1,
+    /// 未结束
+    SEARecordStatusNotEnded = 2,
+    /// 异常结束
+    SEARecordStatusError = 3,
+    /// 正常结束
+    SEARecordStatusEnded = 4
+} SEARecordStatus;
+
+
 #pragma mark - 操作相关回调
 /// 成功回调
 typedef void (^SEASuccessBlock)(id _Nullable data);

@@ -437,8 +437,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 水印类型，默认 1；1-无，2-单排，3-多排
 @property (nonatomic, assign) NSInteger type;
-/// 水印内容，为空时，默认使用会议标题
-@property (nonatomic, copy, nullable) NSString *text;
 /// 字体大小，为0时，表示默认值
 @property (nonatomic, assign) CGFloat size;
 /// 字体颜色，为空时，表示默认值
@@ -456,8 +454,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 标签类型，默认 LT；字母或组合：L-左，R-右，T-上，B-下
 @property (nonatomic, copy) NSString *type;
-/// 标签内容，为空时，默认使用参会昵称
-@property (nonatomic, copy, nullable) NSString *text;
 /// 字体大小，为0时，表示默认值
 @property (nonatomic, assign) CGFloat size;
 /// 字体颜色，为空时，表示默认值
@@ -488,6 +484,69 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL bindShare;
 /// 单元格标签
 @property (nonatomic, strong, nullable) SEALayoutLabelModel *label;
+
+@end
+
+
+/// 云录制参数
+@interface SEACloudRecordParam : NSObject
+
+/// 录制类型，默认 SEARecordTypeVideo
+@property (nonatomic, assign) SEARecordType recordType;
+/// 录制文件标题
+@property (nonatomic, copy) NSString *title;
+/// 录制布局
+@property (nonatomic, strong) SEALayoutDataModel *layoutData;
+
+@end
+
+
+/// 云录制详情对象
+@interface SEACloudRecordDetailsModel : NSObject
+
+/// 任务标识
+@property (nonatomic, copy) NSString *taskId;
+/// 会议标识
+@property (nonatomic, copy) NSString *meetingId;
+/// 会议号码
+@property (nonatomic, copy) NSString *roomNo;
+/// 录制文件标题
+@property (nonatomic, copy) NSString *title;
+/// 主持人标识
+@property (nonatomic, copy) NSString *opUid;
+/// 操作人名称
+@property (nonatomic, copy) NSString *opName;
+/// 云录制状态
+@property (nonatomic, assign) SEARecordStatus recordStatus;
+/// 视频地址
+@property (nonatomic, copy) NSString *videoKey;
+/// 视频大小
+@property (nonatomic, assign) NSInteger videoSize;
+/// 录制标签
+@property (nonatomic, copy) NSString *tags;
+/// 错误描述
+@property (nonatomic, copy) NSString *errorDesc;
+/// 创建时间
+@property (nonatomic, assign) NSInteger createdAt;
+/// 更新时间
+@property (nonatomic, assign) NSInteger updatedAt;
+
+@end
+
+
+/// 云录制配置对象
+@interface SEACloudRecordConfigModel : NSObject
+
+/// 布局类型
+@property (nonatomic, copy) NSString *layout;
+/// 水印类型
+@property (nonatomic, assign) NSInteger watermarkType;
+/// 标签类型
+@property (nonatomic, copy) NSString *labelType;
+/// 创建时间
+@property (nonatomic, assign) NSInteger createdAt;
+/// 更新时间
+@property (nonatomic, assign) NSInteger updatedAt;
 
 @end
 
