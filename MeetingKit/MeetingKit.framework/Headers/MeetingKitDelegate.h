@@ -231,6 +231,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onReceiveSystemMessage:(NSString *)message messageType:(SEAMessageType)messageType;
 
 
+#pragma mark - ------------ 云录制事件回调 ------------
+#pragma mark 云录制状态变更回调
+/// 云录制状态变更回调
+/// - Parameters:
+///   - recordType: 录制类型
+///   - status: 录制状态
+///   - errMsg: 错误描述
+- (void)onCloudRecordStatusChange:(SEARecordType)recordType status:(SEARecordStatus)status errMsg:(nullable NSString *)errMsg;
+
+
 #pragma mark - ------------ 屏幕采集事件回调 ------------
 #pragma mark 屏幕共享状态回调
 /// 屏幕共享状态回调

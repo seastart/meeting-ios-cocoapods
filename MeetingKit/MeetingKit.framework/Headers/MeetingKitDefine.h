@@ -433,14 +433,15 @@ typedef enum : NSInteger {
 
 #pragma mark - 录制状态
 /// 录制状态
+/// 注：除 SEARecordStatusIng 状态以外，都可视为录制未开始状态
 typedef enum : NSInteger {
     
     /// 未开始
-    SEARecordStatusNotStart = 0,
+    SEARecordStatusWaitStart = 0,
     /// 进行中
     SEARecordStatusIng = 1,
-    /// 未结束
-    SEARecordStatusNotEnded = 2,
+    /// 待结束
+    SEARecordStatusWaitEnded = 2,
     /// 异常结束
     SEARecordStatusError = 3,
     /// 正常结束

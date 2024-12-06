@@ -115,6 +115,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *hostUid;
 /// 联席主持标识列表
 @property (nonatomic, copy, nullable) NSMutableArray <NSString *> *unionHosts;
+/// 云录制状态
+@property (nonatomic, assign) SEARecordStatus recordStatus;
 
 /// 扩展信息
 @property (nonatomic, copy, nullable) NSString *extendInfo;
@@ -133,6 +135,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEADeviceType deviceType;
 /// 过期时间
 @property (nonatomic, assign) NSInteger expAt;
+
+@end
+
+
+/// 调试模式参数
+@interface SEADebugParam : NSObject
+
+/// 远程调试地址
+@property (nonatomic, copy, nullable) NSString *debugHost;
+/// 保存视频流，默认 NO
+@property (nonatomic, assign) BOOL enableSaveVideo;
+/// 保存采集音频流，默认 NO
+@property (nonatomic, assign) BOOL enableSaveAudioCapture;
+/// 保存远程音频流，默认 NO
+@property (nonatomic, assign) BOOL enableSaveAudioReceive;
 
 @end
 
@@ -172,6 +189,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL screenshotDisabled;
 /// 聊天是否禁止，默认 NO
 @property (nonatomic, assign) BOOL chatDisabled;
+/// 是否开启录制，默认 YES
+@property (nonatomic, assign) BOOL autoRecord;
 /// 扩展信息
 @property (nonatomic, copy, nullable) NSString *extendInfo;
 
@@ -302,6 +321,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL selfUnmuteCameraDisabled;
 /// 锁定状态，YES-开启 NO-关闭
 @property (nonatomic, assign) BOOL locked;
+/// 是否开启录制，YES-开启 NO-关闭
+@property (nonatomic, assign) BOOL autoRecord;
 /// 在线人数
 @property (nonatomic, assign) NSInteger onlineNum;
 /// 共享类型
@@ -480,7 +501,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 格子序号，排序规则按HTML中标签的顺序，默认 0
 @property (nonatomic, assign) NSInteger index;
-/// 是否优化绑定频道内的共享流，默认 NO
+/// 是否优先绑定频道内的共享流，默认 NO
 @property (nonatomic, assign) BOOL bindShare;
 /// 单元格标签
 @property (nonatomic, strong, nullable) SEALayoutLabelModel *label;
@@ -512,7 +533,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *roomNo;
 /// 录制文件标题
 @property (nonatomic, copy) NSString *title;
-/// 主持人标识
+/// 操作人标识
 @property (nonatomic, copy) NSString *opUid;
 /// 操作人名称
 @property (nonatomic, copy) NSString *opName;

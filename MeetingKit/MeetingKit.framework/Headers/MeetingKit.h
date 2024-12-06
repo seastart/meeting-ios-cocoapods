@@ -586,6 +586,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取画板地址
 - (NSString *)getDrawingHost;
 
+
+#pragma mark - ------------ 调试相关接口 ------------
+#pragma mark 设置调试参数
+/// 设置调试参数
+/// - Parameter param: 调试参数
+- (void)setDebugParam:(SEADebugParam *)param;
+
 @end
 
 NS_ASSUME_NONNULL_END
