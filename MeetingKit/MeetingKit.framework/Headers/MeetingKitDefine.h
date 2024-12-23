@@ -23,6 +23,121 @@ typedef enum : NSInteger {
     ///       API错误码
     ///
     /////////////////////////////////////////////////////////////////////////////////
+    /// 请求头中缺少APPID
+    SEAErrorRtcApiHeaderNotAppId = 1001,
+    /// 请求头中的APPID无效
+    SEAErrorRtcApiHeaderInvalidAppId = 1002,
+    /// 请求头中的签名无效
+    SEAErrorRtcApiHeaderInvalidSignature = 1003,
+    /// 请求头中的时间戳无效
+    SEAErrorRtcApiHeaderInvalidTimestamp = 1004,
+    /// 请求头中的会话标识无效
+    SEAErrorApiHeaderInvalidSession = 1005,
+    /// 请求头中缺少随机标识
+    SEAErrorRtcApiHeaderNotNonce = 1006,
+    
+    /// 应用无效
+    SEAErrorRtcApiInvalidApplication = 1011,
+    /// 服务组无效
+    SEAErrorRtcApiInvalidServiceGroup = 1012,
+    /// 服务无效
+    SEAErrorRtcApiInvalidService = 1013,
+    /// 应用场景无效
+    SEAErrorRtcApiInvalidScene = 1014,
+    /// 回调配置无效
+    SEAErrorRtcApiInvalidConfigure = 1015,
+    
+    /// 生成 Channel Token 失败
+    SEAErrorRtcApiChannelTokenFailed = 1020,
+    /// Channel Token 已被使用
+    SEAErrorRtcApiChannelTokenOccupied = 1021,
+    /// 该会话不在频道中
+    SEAErrorRtcApiSessionNotFound = 1022,
+    /// 成员不在频道中
+    SEAErrorRtcApiMemberNotFound = 1023,
+    /// 频道未开启
+    SEAErrorRtcApiChannelNotOpen = 1024,
+    /// 频道已开启
+    SEAErrorRtcApiChannelOpen = 1025,
+    /// 生成 Im Token 失败
+    SEAErrorRtcApiImTokenFailed = 1030,
+    /// Im Token 已被使用
+    SEAErrorRtcApiImTokenOccupied = 1031,
+    /// 该会话不在线
+    SEAErrorRtcApiSessionOffline = 1032,
+    /// 并发已达上限
+    SEAErrorRtcApiInsufficientConcurrency = 1033,
+    
+    /// 未找到MCU任务
+    SEAErrorRtcApiNotFoundMcuTask = 1040,
+    /// 录像任务还未结束
+    SEAErrorRtcApiRecordTaskUnfinished = 1041,
+    /// 录像任务还未生成录像文件
+    SEAErrorRtcApiRecordTaskNotFile = 1042,
+    /// MCU的布局数据出错
+    SEAErrorRtcApiMcuLayoutFailed = 1043,
+    /// MCU任务已经停止
+    SEAErrorRtcApiMcuTaskStoped = 1044,
+    
+    /// 当前用户已在其它地登录
+    SEAErrorMeetingApiRemoteLogin = 2040,
+    /// 请求头中缺少APPID
+    SEAErrorMeetingApiHeaderNotAppId = 2041,
+    /// 请求头中的APPID无效
+    SEAErrorMeetingApiHeaderInvalidAppId = 2042,
+    /// 请求头中的签名无效
+    SEAErrorMeetingApiHeaderInvalidSignature = 2043,
+    /// 请求头中的时间戳无效
+    SEAErrorMeetingApiHeaderInvalidTimestamp = 2044,
+    /// 请求头中的会议会话标识无效
+    SEAErrorMeetingApiHeaderInvalidSession = 2045,
+    /// 请求头中缺少随机标识
+    SEAErrorMeetingApiHeaderNotNonce = 2046,
+    /// 请求头中缺少用户标识
+    SEAErrorMeetingApiHeaderNotUserId = 2047,
+    
+    /// 生成 Token 失败
+    SEAErrorMeetingApiTokenFailed = 2050,
+    /// 未获取授权
+    SEAErrorMeetingApiNotAuthorized = 2051,
+    /// 授权过期
+    SEAErrorMeetingApiTokenExpired = 2052,
+    
+    /// 会议内部错误
+    SEAErrorMeetingApiFailed = 2100,
+    /// 会议不存在
+    SEAErrorMeetingApiNotFound = 2101,
+    /// 会议未开始
+    SEAErrorMeetingApiNotStarted = 2102,
+    /// 会议已结束
+    SEAErrorMeetingApiFinished = 2103,
+    /// 会中已经有人在共享
+    SEAErrorMeetingApiSomeoneSharing = 2104,
+    /// 会中不在共享状态
+    SEAErrorMeetingApiNotSharing = 2105,
+    /// 会议已被锁定
+    SEAErrorMeetingApiLocked = 2106,
+    /// 已被踢出，无法入会
+    SEAErrorMeetingApiKickedout = 2107,
+    /// 已经在其它会议中
+    SEAErrorMeetingApiAtOtherMeeting = 2108,
+    /// 已经在该会议中
+    SEAErrorMeetingApiAlreadyExisted = 2109,
+    /// 不在该会议中
+    SEAErrorMeetingApiNotMeeting = 2110,
+    /// 目标不在该会议中
+    SEAErrorMeetingApiMemberNotFound = 2111,
+    /// 不允许开麦克风
+    SEAErrorMeetingApiMicDisabled = 2112,
+    /// 不允许开摄像头
+    SEAErrorMeetingApiCameraDisabled = 2113,
+    /// 不允许聊天
+    SEAErrorMeetingApiChatDisabled = 2114,
+    /// 密码错误
+    SEAErrorMeetingApiPasswordFailed = 2115,
+    /// 会议仅限受邀人加入,请联系主持人
+    SEAErrorMeetingApiByInviteOnly = 2116,
+    
     /// 未归类的通用错误
     SEAErrorApiFailed = 10000,
     /// 数据库错误或异常
