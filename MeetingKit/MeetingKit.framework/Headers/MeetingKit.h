@@ -73,6 +73,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)disableIm;
 
 
+#pragma mark - ------------ 通话操作接口 ------------
+#pragma mark 发起通话
+/// 发起通话
+/// - Parameters:
+///   - userIdLists: 成员标识列表
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)callUser:(NSArray <NSString *> *)userIdLists onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+
 #pragma mark - ------------ 会议操作接口 ------------
 #pragma mark 获取会议列表
 /// 获取会议列表
@@ -284,10 +294,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark 回复同意打开麦克风请求
 /// 回复同意打开麦克风请求
-/// @param targetId 目标标识，请求或同意您开启摄像头请求的管理者标识
+/// @param targetId 目标标识，请求或同意您开启麦克风请求的管理者标识
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
 - (void)confirmAdminOpenMic:(NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 回复同意打开房间共享请求
+/// 回复同意打开房间共享请求
+/// @param targetId 目标标识，请求或同意您开启房间共享请求的管理者标识
+/// @param shareType 共享类型
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)confirmAdminRoomShare:(NSString *)targetId shareType:(SEAShareType)shareType onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 更新本地摄像头的预览画面
 /// 更新本地摄像头的预览画面
@@ -414,6 +432,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
 - (void)adminUpdateRoomChatDisabled:(BOOL)chatDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人更新房间共享禁用状态
+/// 主持人更新房间共享禁用状态
+/// @param shareDisabled 禁用状态，YES-禁用 NO-不禁用
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)adminUpdateRoomShareDisabled:(BOOL)shareDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 主持人更新房间截屏开关状态
 /// 主持人更新房间截屏开关状态
@@ -585,6 +610,18 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 获取画板地址
 /// 获取画板地址
 - (NSString *)getDrawingHost;
+
+
+#pragma mark - ------------ 媒体配置相关接口 ------------
+#pragma mark 设置媒体配置参数
+/// 设置媒体配置参数
+/// @param config 媒体配置参数
+- (void)setStreamMediaConfig:(SEAMediaConfig *)config;
+
+#pragma mark 设置网络质量控制参数
+/// 设置网络质量控制参数
+/// @param param 质量控制参数
+- (void)setNetworkQosParam:(SEANetworkQosParam *)param;
 
 
 #pragma mark - ------------ 调试相关接口 ------------

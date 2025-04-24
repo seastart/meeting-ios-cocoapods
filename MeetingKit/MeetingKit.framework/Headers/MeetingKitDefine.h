@@ -230,6 +230,38 @@ typedef enum : NSUInteger {
 } SEADeviceType;
 
 
+#pragma mark - 编码类型
+/// 编码类型
+typedef enum : NSUInteger {
+    
+    /// 未知类型
+    SEACodecTypeUnknown = 0,
+    /// H264
+    SEACodecTypeH264 = 0x1b,
+    /// H265
+    SEACodecTypeH265 = 0x24,
+    /// AAC
+    SEACodecTypeAAC = 0x0f,
+    /// OPUS
+    SEACodecTypeOPUS = 0x5355504f
+} SEACodecType;
+
+
+#pragma mark - 网络延时抗抖动等级
+/// 网络延时抗抖动等级
+typedef enum : NSInteger {
+    
+    /// 超短(0) 单向延迟120ms左右 这种模式下没有丢包补偿机制 并且编码关闭了B帧 一般不建议实际使用
+    SEANetworkQosShakeLevelUltraShort = 0,
+    /// 短(1) 单向延迟200ms左右 单次丢包补偿 B帧为1 双向对讲环境下可以使用
+    SEANetworkQosShakeLevelShort = 1,
+    /// 中(2) 单向延迟350ms左右 两次丢包补偿 B帧为1 双向对讲环境下推荐使用
+    SEANetworkQosShakeLevelMedium = 2,
+    /// 长(3) 单向延迟600ms左右 三次丢包补偿 B帧为3 这种模式仅用于单向收看 双向对讲环境下不建议使用 该参数无法动态设置
+    SEANetworkQosShakeLevelLong = 3
+} SEANetworkQosShakeLevel;
+
+
 #pragma mark - 音频路由类型
 /// 音频路由类型
 typedef enum : NSInteger {
@@ -399,7 +431,9 @@ typedef enum : NSInteger {
     /// 摄像头
     SEAHandupTypeCamera = 2,
     /// 聊天
-    SEAHandupTypeChat = 3
+    SEAHandupTypeChat = 3,
+    /// 共享
+    SEAHandupTypeShare = 4
 } SEAHandupType;
 
 
@@ -562,6 +596,34 @@ typedef enum : NSInteger {
     /// 正常结束
     SEARecordStatusEnded = 4
 } SEARecordStatus;
+
+
+#pragma mark - 通话角色
+/// 通话角色
+typedef enum : NSInteger {
+    
+    /// 未知类型
+    SEACallRoleNone = 0,
+    /// 主叫(邀请方)
+    SEACallRoleCall = 1,
+    /// 被叫(被邀请方)
+    SEACallRoleCalled = 2,
+} SEACallRole;
+
+
+#pragma mark - 通话状态
+/// 通话状态
+typedef enum : NSInteger {
+    
+    /// 未知
+    SEACallStatusNone = 0,
+    /// 接听
+    SEACallStatusAccept = 1,
+    /// 拒绝
+    SEACallStatusReject = 2,
+    /// 忙线
+    SEACallStatusBusy = 3,
+} SEACallStatus;
 
 
 #pragma mark - 操作相关回调

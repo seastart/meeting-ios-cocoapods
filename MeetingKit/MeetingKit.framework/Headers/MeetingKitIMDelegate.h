@@ -56,6 +56,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param nickname 用户昵称
 - (void)onImMessage:(NSString *)content action:(NSString *)action userId:(nullable NSString *)userId sessionId:(nullable NSString *)sessionId nickname:(nullable NSString *)nickname;
 
+#pragma mark 会议即将开始回调
+/// 会议即将开始回调
+/// @param remindModel 会议提醒
+- (void)onMeetingRemind:(SEAMeetingRemindModel *)remindModel;
+
+#pragma mark - ------------ 通话相关回调 ------------
+#pragma mark 通话请求的回调
+/// 通话请求的回调
+/// 收到一个新的通话请求回调，被叫会收到，您可以通过监听这个事件，来决定是否显示通话接听界面。
+/// @param callerId 主叫标识
+/// @param nickname 主叫昵称
+/// @param roomNo 房间号码
+/// @param title 会议标题
+- (void)onCallReceived:(NSString *)callerId nickname:(nullable NSString *)nickname roomNo:(NSString *)roomNo title:(NSString *)title;
+
 @end
 
 NS_ASSUME_NONNULL_END

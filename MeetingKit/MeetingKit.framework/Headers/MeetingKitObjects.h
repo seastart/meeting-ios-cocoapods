@@ -102,6 +102,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL selfUnmuteMicDisabled;
 /// 是否禁止自我解除视频状态，YES-禁止 NO-不禁止
 @property (nonatomic, assign) BOOL selfUnmuteCameraDisabled;
+/// 房间共享禁用状态，YES-禁用 NO-不禁用
+@property (nonatomic, assign) BOOL shareDisabled;
 /// 锁定状态，YES-开启 NO-关闭
 @property (nonatomic, assign) BOOL locked;
 
@@ -135,6 +137,67 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) SEADeviceType deviceType;
 /// 过期时间
 @property (nonatomic, assign) NSInteger expAt;
+
+@end
+
+
+/// 媒体配置参数
+@interface SEAMediaConfig : NSObject
+
+/// 回声消除AEC，默认 12
+@property (nonatomic, assign) int aec;
+/// 自动增益控制AGC，默认 16000
+@property (nonatomic, assign) int agc;
+/// 音频采样率，默认 48000
+@property (nonatomic, assign) int audioSampe;
+/// 音频编码格式，默认 OPUS
+@property (nonatomic, assign) SEACodecType audioEncode;
+/// 音频路由，默认 SEAAudioRouteReceiver
+@property (nonatomic, assign) SEAAudioRoute audioRoute;
+
+/// 视频分辨率宽必须是16的倍数 高必须是2的倍数 否则容易出现绿边等问题(已做了兼容)
+/// 1080P---1920x1080
+/// 720P---1280x720
+/// 480P---640x480
+/// 180P---320x180
+/// 视频分辨率宽，默认 640
+@property (nonatomic, assign) int videoWidth;
+/// 视频分辨率高，默认 480
+@property (nonatomic, assign) int videoHeight;
+/// 视频镜像，默认 YES
+@property (nonatomic, assign) BOOL videoMirror;
+
+/// 视频帧率，默认 25
+@property (nonatomic, assign) int fps;
+/// 视频码率，默认 0.9*1024，单位kbps
+@property (nonatomic, assign) int bitrate;
+
+/// 是否启用媒体流加密 YES开启 NO关闭，默认 NO
+@property (nonatomic, assign) BOOL enableEncrypt;
+
+@end
+
+
+/// 网络质量控制参数
+@interface SEANetworkQosParam : NSObject
+
+/// 接收自适应延迟二档位，默认 500
+@property (nonatomic, assign) int secondGear;
+/// 接收自适应延迟三档位，默认 1200
+@property (nonatomic, assign) int thirdGear;
+
+/// 获取云端音频数据信息周期，默认 500毫秒
+@property (nonatomic, assign) float onAudioCycle;
+
+/// 开启硬件解码 YES开启 NO关闭，默认 YES
+@property (nonatomic, assign) BOOL isHardwarede;
+/// 开启网络自适应延迟 YES开启 NO关闭，默认 YES
+@property (nonatomic, assign) BOOL isNetworkAdaptive;
+/// 开启码率自适应 YES开启 NO关闭，默认 YES
+@property (nonatomic, assign) BOOL isBitrateAdaptive;
+
+/// 网络延时抗抖动等级，默认 SEANetworkQosShakeLevelMedium
+@property (nonatomic, assign) SEANetworkQosShakeLevel shakeLevel;
 
 @end
 
@@ -210,9 +273,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *avatar;
 /// 扩展信息
 @property (nonatomic, copy, nullable) NSString *extendInfo;
-
-/// 默认音频路由，默认 RTCAudioRouteReceiver
-@property (nonatomic, assign) SEAAudioRoute route;
 
 @end
 
@@ -319,6 +379,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL selfUnmuteMicDisabled;
 /// 是否禁止自我解除视频状态，YES-禁止 NO-不禁止
 @property (nonatomic, assign) BOOL selfUnmuteCameraDisabled;
+/// 房间共享禁用状态，YES-禁用 NO-不禁用
+@property (nonatomic, assign) BOOL shareDisabled;
 /// 锁定状态，YES-开启 NO-关闭
 @property (nonatomic, assign) BOOL locked;
 /// 是否开启录制，YES-开启 NO-关闭
@@ -568,6 +630,25 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger createdAt;
 /// 更新时间
 @property (nonatomic, assign) NSInteger updatedAt;
+
+@end
+
+
+/// 会议提醒对象
+@interface SEAMeetingRemindModel : NSObject
+
+/// 会议标识
+@property (nonatomic, copy) NSString *meetingId;
+/// 房间号码
+@property (nonatomic, copy) NSString *roomNo;
+/// 会议标题
+@property (nonatomic, copy) NSString *title;
+/// 创建者昵称
+@property (nonatomic, copy) NSString *creatorName;
+/// 预约时间
+@property (nonatomic, assign) NSInteger planTime;
+/// 预约时长，单位：分钟
+@property (nonatomic, assign) NSInteger planDuration;
 
 @end
 

@@ -91,6 +91,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter userId: 操作者标识
 - (void)onRoomChatDisabledChanged:(BOOL)chatDisabled userId:(NSString *)userId;
 
+#pragma mark 房间共享禁用状态变更回调
+/// 房间共享禁用状态变更回调
+/// 主持人调用 adminUpdateRoomShareDisabled: 接口执行更新房间共享禁用状态后，当前房间所有成员都会收到该事件通知。
+/// - Parameter shareDisabled: 禁用状态，YES-禁用 NO-不禁用
+/// - Parameter userId: 操作者标识
+- (void)onRoomShareDisabledChanged:(BOOL)shareDisabled userId:(NSString *)userId;
+
 #pragma mark 房间截图禁用状态变更回调
 /// 房间截图禁用状态变更回调
 /// 主持人调用 adminUpdateRoomScreenshotDisabled: 接口执行更新房间截屏开关状态后，当前房间所有成员都会收到该事件通知。
