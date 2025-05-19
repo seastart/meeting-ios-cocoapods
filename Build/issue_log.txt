@@ -1,0 +1,1312 @@
+  CDN: trunk Relative path: CocoaPods-version.yml exists! Returning local because checking is only performed in repo update
+
+Updating spec repo `trunk`
+  CDN: trunk Relative path: deprecated_podspecs.txt, has ETag? W/"6827e975-ce970"
+  CDN: trunk Relative path downloaded: deprecated_podspecs.txt, save ETag: W/"682a95f3-ce970"
+  CDN: trunk Going to update 517 files
+  CDN: trunk Relative path: all_pods_versions_3_6_7.txt, has ETag? W/"6827e975-33a"
+  CDN: trunk Relative path: all_pods_versions_7_e_2.txt, has ETag? W/"6827e975-7de"
+  CDN: trunk Relative path: all_pods_versions_5_d_a.txt, has ETag? W/"6827e975-46e"
+  CDN: trunk Relative path: all_pods_versions_7_0_9.txt, has ETag? W/"6827e975-70a"
+  CDN: trunk Relative path: all_pods_versions_d_1_8.txt, has ETag? W/"6827e975-5c3"
+  CDN: trunk Relative path: all_pods_versions_1_7_d.txt, has ETag? W/"6827e975-88c"
+  CDN: trunk Relative path: all_pods_versions_3_2_e.txt, has ETag? W/"6827e975-88b"
+  CDN: trunk Relative path: all_pods_versions_7_8_f.txt, has ETag? W/"6827e975-416"
+  CDN: trunk Relative path: all_pods_versions_7_a_6.txt, has ETag? W/"6827e975-31d"
+  CDN: trunk Relative path: all_pods_versions_6_c_1.txt, has ETag? W/"6827e975-4e4"
+  CDN: trunk Relative path: all_pods_versions_0_f_8.txt, has ETag? W/"6827e975-42f"
+  CDN: trunk Relative path: all_pods_versions_5_9_c.txt, has ETag? W/"6827e975-3a0"
+  CDN: trunk Relative path: all_pods_versions_f_8_4.txt, has ETag? W/"6827e975-879"
+  CDN: trunk Relative path: all_pods_versions_7_c_b.txt, has ETag? W/"6827e975-437"
+  CDN: trunk Relative path: all_pods_versions_c_0_0.txt, has ETag? W/"6827e975-788"
+  CDN: trunk Relative path: all_pods_versions_6_a_3.txt, has ETag? W/"6827e975-494"
+  CDN: trunk Relative path: all_pods_versions_d_b_4.txt, has ETag? W/"6827e975-3cf"
+  CDN: trunk Relative path: all_pods_versions_9_7_c.txt, has ETag? W/"6827e975-db4"
+  CDN: trunk Relative path: all_pods_versions_1_1_5.txt, has ETag? W/"6827e975-576"
+  CDN: trunk Relative path: all_pods_versions_b_0_4.txt, has ETag? W/"6827e975-9db"
+  CDN: trunk Relative path: all_pods_versions_2_0_c.txt, has ETag? W/"6827e975-643"
+  CDN: trunk Relative path: all_pods_versions_f_c_1.txt, has ETag? W/"6827e975-476"
+  CDN: trunk Relative path: all_pods_versions_c_4_c.txt, has ETag? W/"6827e975-681"
+  CDN: trunk Relative path: all_pods_versions_e_d_a.txt, has ETag? W/"6827e975-666"
+  CDN: trunk Relative path: all_pods_versions_1_7_3.txt, has ETag? W/"6827e975-550"
+  CDN: trunk Relative path: all_pods_versions_3_4_4.txt, has ETag? W/"6827e975-9d2"
+  CDN: trunk Relative path: all_pods_versions_0_7_6.txt, has ETag? W/"6827e975-540"
+  CDN: trunk Relative path: all_pods_versions_c_6_7.txt, has ETag? W/"6827e975-45c"
+  CDN: trunk Relative path: all_pods_versions_2_4_3.txt, has ETag? W/"6827e975-309"
+  CDN: trunk Relative path: all_pods_versions_b_4_2.txt, has ETag? W/"6827e975-48a"
+  CDN: trunk Relative path: all_pods_versions_a_7_0.txt, has ETag? W/"6827e975-ed8"
+  CDN: trunk Relative path: all_pods_versions_f_e_c.txt, has ETag? W/"6827e975-849"
+  CDN: trunk Relative path: all_pods_versions_1_1_7.txt, has ETag? W/"6827e975-c4a"
+  CDN: trunk Relative path: all_pods_versions_6_c_d.txt, has ETag? W/"6827e975-5a9"
+  CDN: trunk Relative path: all_pods_versions_b_0_6.txt, has ETag? W/"6827e975-6e7"
+  CDN: trunk Relative path: all_pods_versions_8_5_0.txt, has ETag? W/"6827e975-574"
+  CDN: trunk Relative path: all_pods_versions_e_b_3.txt, has ETag? W/"6827e975-5e4"
+  CDN: trunk Relative path: all_pods_versions_f_8_7.txt, has ETag? W/"6827e975-614"
+  CDN: trunk Relative path: all_pods_versions_5_7_9.txt, has ETag? W/"6827e975-9fe"
+  CDN: trunk Relative path: all_pods_versions_c_0_d.txt, has ETag? W/"6827e975-398"
+  CDN: trunk Relative path: all_pods_versions_d_b_a.txt, has ETag? W/"6827e975-91f"
+  CDN: trunk Relative path: all_pods_versions_4_b_6.txt, has ETag? W/"6827e975-271"
+  CDN: trunk Relative path: all_pods_versions_2_2_b.txt, has ETag? W/"6827e975-844"
+  CDN: trunk Relative path: all_pods_versions_b_0_a.txt, has ETag? W/"6827e975-5c0"
+  CDN: trunk Relative path: all_pods_versions_5_b_e.txt, has ETag? W/"6827e975-7d3"
+  CDN: trunk Relative path: all_pods_versions_1_7_f.txt, has ETag? W/"6827e975-65b"
+  CDN: trunk Relative path: all_pods_versions_1_7_0.txt, has ETag? W/"6827e975-53f"
+  CDN: trunk Relative path: all_pods_versions_5_d_5.txt, has ETag? W/"6827e975-dbc"
+  CDN: trunk Relative path: all_pods_versions_4_f_2.txt, has ETag? W/"6827e975-518"
+  CDN: trunk Relative path: all_pods_versions_0_7_c.txt, has ETag? W/"6827e975-912"
+  CDN: trunk Relative path: all_pods_versions_0_7_5.txt, has ETag? W/"6827e975-6f3"
+  CDN: trunk Relative path: all_pods_versions_2_4_2.txt, has ETag? W/"6827e975-584"
+  CDN: trunk Relative path: all_pods_versions_5_f_3.txt, has ETag? W/"6827e975-63a"
+  CDN: trunk Relative path: all_pods_versions_5_f_e.txt, has ETag? W/"6827e975-4b0"
+  CDN: trunk Relative path: all_pods_versions_3_a_8.txt, has ETag? W/"6827e975-55e"
+  CDN: trunk Relative path: all_pods_versions_2_6_b.txt, has ETag? W/"6827e975-7e5"
+  CDN: trunk Relative path: all_pods_versions_a_7_5.txt, has ETag? W/"6827e975-688"
+  CDN: trunk Relative path: all_pods_versions_8_3_e.txt, has ETag? W/"6827e975-2ea"
+  CDN: trunk Relative path: all_pods_versions_4_b_2.txt, has ETag? W/"6827e975-c1f"
+  CDN: trunk Relative path: all_pods_versions_b_e_8.txt, has ETag? W/"6827e975-540"
+  CDN: trunk Relative path: all_pods_versions_6_a_c.txt, has ETag? W/"6827e975-7f8"
+  CDN: trunk Relative path: all_pods_versions_6_8_e.txt, has ETag? W/"6827e975-539"
+  CDN: trunk Relative path: all_pods_versions_c_0_6.txt, has ETag? W/"6827e975-3d3"
+  CDN: trunk Relative path: all_pods_versions_8_7_7.txt, has ETag? W/"6827e975-8ae"
+  CDN: trunk Relative path: all_pods_versions_e_9_d.txt, has ETag? W/"6827e975-5cf"
+  CDN: trunk Relative path: all_pods_versions_7_c_d.txt, has ETag? W/"6827e975-b4f"
+  CDN: trunk Relative path: all_pods_versions_c_0_a.txt, has ETag? W/"6827e975-5cd"
+  CDN: trunk Relative path: all_pods_versions_f_a_c.txt, has ETag? W/"6827e975-5b2"
+  CDN: trunk Relative path: all_pods_versions_4_b_e.txt, has ETag? W/"6827e975-754"
+  CDN: trunk Relative path: all_pods_versions_1_d_8.txt, has ETag? W/"6827e975-520"
+  CDN: trunk Relative path: all_pods_versions_2_2_1.txt, has ETag? W/"6827e975-747"
+  CDN: trunk Relative path: all_pods_versions_8_9_9.txt, has ETag? W/"6827e975-291"
+  CDN: trunk Relative path: all_pods_versions_9_7_e.txt, has ETag? W/"6827e975-80a"
+  CDN: trunk Relative path: all_pods_versions_c_2_c.txt, has ETag? W/"6827e975-64e"
+  CDN: trunk Relative path: all_pods_versions_4_9_7.txt, has ETag? W/"6827e975-448"
+  CDN: trunk Relative path: all_pods_versions_d_d_b.txt, has ETag? W/"6827e975-3a5"
+  CDN: trunk Relative path: all_pods_versions_e_f_e.txt, has ETag? W/"6827e975-36b"
+  CDN: trunk Relative path: all_pods_versions_9_3_a.txt, has ETag? W/"6827e975-4a2"
+  CDN: trunk Relative path: all_pods_versions_c_a_8.txt, has ETag? W/"6827e975-43d"
+  CDN: trunk Relative path: all_pods_versions_e_1_8.txt, has ETag? W/"6827e975-6c7"
+  CDN: trunk Relative path: all_pods_versions_2_4_5.txt, has ETag? W/"6827e975-734"
+  CDN: trunk Relative path: all_pods_versions_a_5_4.txt, has ETag? W/"6827e975-6cd"
+  CDN: trunk Relative path: all_pods_versions_f_0_8.txt, has ETag? W/"6827e975-286"
+  CDN: trunk Relative path: all_pods_versions_7_e_7.txt, has ETag? W/"6827e975-5e8"
+  CDN: trunk Relative path: all_pods_versions_b_4_b.txt, has ETag? W/"6827e975-684"
+  CDN: trunk Relative path: all_pods_versions_5_d_2.txt, has ETag? W/"6827e975-815"
+  CDN: trunk Relative path: all_pods_versions_2_6_a.txt, has ETag? W/"6827e975-55b"
+  CDN: trunk Relative path: all_pods_versions_f_e_3.txt, has ETag? W/"6827e975-76f"
+  CDN: trunk Relative path: all_pods_versions_0_b_9.txt, has ETag? W/"6827e975-9d0"
+  CDN: trunk Relative path: all_pods_versions_a_7_6.txt, has ETag? W/"6827e975-c72"
+  CDN: trunk Relative path: all_pods_versions_e_d_3.txt, has ETag? W/"6827e975-502"
+  CDN: trunk Relative path: all_pods_versions_1_7_7.txt, has ETag? W/"6827e975-b51"
+  CDN: trunk Relative path: all_pods_versions_d_f_b.txt, has ETag? W/"6827e975-318"
+  CDN: trunk Relative path: all_pods_versions_e_d_e.txt, has ETag? W/"6827e975-51a"
+  CDN: trunk Relative path: all_pods_versions_a_1_f.txt, has ETag? W/"6827e975-7c9"
+  CDN: trunk Relative path: all_pods_versions_f_c_5.txt, has ETag? W/"6827e975-3d2"
+  CDN: trunk Relative path: all_pods_versions_4_9_5.txt, has ETag? W/"6827e975-4bd"
+  CDN: trunk Relative path: all_pods_versions_6_c_4.txt, has ETag? W/"6827e975-599"
+  CDN: trunk Relative path: all_pods_versions_d_9_4.txt, has ETag? W/"6827e975-775"
+  CDN: trunk Relative path: all_pods_versions_b_0_0.txt, has ETag? W/"6827e975-6a4"
+  CDN: trunk Relative path: all_pods_versions_1_1_1.txt, has ETag? W/"6827e975-67a"
+  CDN: trunk Relative path: all_pods_versions_6_a_6.txt, has ETag? W/"6827e975-59c"
+  CDN: trunk Relative path: all_pods_versions_c_0_4.txt, has ETag? W/"6827e975-78b"
+  CDN: trunk Relative path: all_pods_versions_e_9_0.txt, has ETag? W/"6827e975-81a"
+  CDN: trunk Relative path: all_pods_versions_2_2_2.txt, has ETag? W/"6827e975-5ba"
+  CDN: trunk Relative path: all_pods_versions_4_b_f.txt, has ETag? W/"6827e975-b04"
+  CDN: trunk Relative path: all_pods_versions_7_8_b.txt, has ETag? W/"6827e975-36d"
+  CDN: trunk Relative path: all_pods_versions_e_b_4.txt, has ETag? W/"6827e975-acb"
+  CDN: trunk Relative path: all_pods_versions_4_9_b.txt, has ETag? W/"6827e975-4c9"
+  CDN: trunk Relative path: all_pods_versions_3_c_8.txt, has ETag? W/"6827e975-75b"
+  CDN: trunk Relative path: all_pods_versions_1_7_6.txt, has ETag? W/"6827e975-61b"
+  CDN: trunk Relative path: all_pods_versions_d_f_c.txt, has ETag? W/"6827e975-725"
+  CDN: trunk Relative path: all_pods_versions_b_6_a.txt, has ETag? W/"6827e975-74d"
+  CDN: trunk Relative path: all_pods_versions_5_d_e.txt, has ETag? W/"6827e975-5b8"
+  CDN: trunk Relative path: all_pods_versions_8_d_8.txt, has ETag? W/"6827e975-ca2"
+  CDN: trunk Relative path: all_pods_versions_d_d_a.txt, has ETag? W/"6827e975-6fc"
+  CDN: trunk Relative path: all_pods_versions_7_e_6.txt, has ETag? W/"6827e975-2a9"
+  CDN: trunk Relative path: all_pods_versions_d_d_7.txt, has ETag? W/"6827e975-3d5"
+  CDN: trunk Relative path: all_pods_versions_9_3_b.txt, has ETag? W/"6827e975-62e"
+  CDN: trunk Relative path: all_pods_versions_5_a_f.txt, has ETag? W/"6827e975-541"
+  CDN: trunk Relative path: all_pods_versions_2_3_5.txt, has ETag? W/"6827e975-50f"
+  CDN: trunk Relative path: all_pods_versions_a_2_4.txt, has ETag? W/"6827e975-71d"
+  CDN: trunk Relative path: all_pods_versions_5_8_6.txt, has ETag? W/"6827e975-575"
+  CDN: trunk Relative path: all_pods_versions_6_7_9.txt, has ETag? W/"6827e975-363"
+  CDN: trunk Relative path: all_pods_versions_e_8_a.txt, has ETag? W/"6827e975-4b5"
+  CDN: trunk Relative path: all_pods_versions_0_0_d.txt, has ETag? W/"6827e975-85c"
+  CDN: trunk Relative path: all_pods_versions_f_b_3.txt, has ETag? W/"6827e975-9cc"
+  CDN: trunk Relative path: all_pods_versions_d_a_4.txt, has ETag? W/"6827e975-951"
+  CDN: trunk Relative path: all_pods_versions_5_e_b.txt, has ETag? W/"6827e975-49c"
+  CDN: trunk Relative path: all_pods_versions_b_7_f.txt, has ETag? W/"6827e975-530"
+  CDN: trunk Relative path: all_pods_versions_8_2_a.txt, has ETag? W/"6827e975-4fe"
+  CDN: trunk Relative path: all_pods_versions_a_a_8.txt, has ETag? W/"6827e975-65c"
+  CDN: trunk Relative path: all_pods_versions_8_4_1.txt, has ETag? W/"6827e975-579"
+  CDN: trunk Relative path: all_pods_versions_e_c_d.txt, has ETag? W/"6827e975-efb"
+  CDN: trunk Relative path: all_pods_versions_6_b_e.txt, has ETag? W/"6827e975-3fa"
+  CDN: trunk Relative path: all_pods_versions_4_8_d.txt, has ETag? W/"6827e975-623"
+  CDN: trunk Relative path: all_pods_versions_a_0_7.txt, has ETag? W/"6827e975-8f8"
+  CDN: trunk Relative path: all_pods_versions_2_1_6.txt, has ETag? W/"6827e975-ca7"
+  CDN: trunk Relative path: all_pods_versions_0_0_e.txt, has ETag? W/"6827e975-754"
+  CDN: trunk Relative path: all_pods_versions_6_9_7.txt, has ETag? W/"6827e975-6be"
+  CDN: trunk Relative path: all_pods_versions_d_c_7.txt, has ETag? W/"6827e975-602"
+  CDN: trunk Relative path: all_pods_versions_d_c_a.txt, has ETag? W/"6827e975-881"
+  CDN: trunk Relative path: all_pods_versions_3_1_e.txt, has ETag? W/"6827e975-506"
+  CDN: trunk Relative path: all_pods_versions_4_c_6.txt, has ETag? W/"6827e975-4a7"
+  CDN: trunk Relative path: all_pods_versions_6_7_8.txt, has ETag? W/"6827e975-a06"
+  CDN: trunk Relative path: all_pods_versions_c_f_9.txt, has ETag? W/"6827e975-3fb"
+  CDN: trunk Relative path: all_pods_versions_0_0_1.txt, has ETag? W/"6827e975-56b"
+  CDN: trunk Relative path: all_pods_versions_3_3_e.txt, has ETag? W/"6827e975-369"
+  CDN: trunk Relative path: all_pods_versions_6_5_8.txt, has ETag? W/"6827e975-56c"
+  CDN: trunk Relative path: all_pods_versions_8_4_3.txt, has ETag? W/"6827e975-8a7"
+  CDN: trunk Relative path: all_pods_versions_7_9_f.txt, has ETag? W/"6827e975-50b"
+  CDN: trunk Relative path: all_pods_versions_b_1_c.txt, has ETag? W/"6827e975-5ad"
+  CDN: trunk Relative path: all_pods_versions_c_3_d.txt, has ETag? W/"6827e975-683"
+  CDN: trunk Relative path: all_pods_versions_1_6_2.txt, has ETag? W/"6827e975-508"
+  CDN: trunk Relative path: all_pods_versions_9_0_2.txt, has ETag? W/"6827e975-673"
+  CDN: trunk Relative path: all_pods_versions_4_0_9.txt, has ETag? W/"6827e975-4de"
+  CDN: trunk Relative path: all_pods_versions_b_b_8.txt, has ETag? W/"6827e975-4fc"
+  CDN: trunk Relative path: all_pods_versions_0_8_8.txt, has ETag? W/"6827e975-399"
+  CDN: trunk Relative path: all_pods_versions_f_f_4.txt, has ETag? W/"6827e975-468"
+  CDN: trunk Relative path: all_pods_versions_9_2_0.txt, has ETag? W/"6827e975-895"
+  CDN: trunk Relative path: all_pods_versions_b_5_0.txt, has ETag? W/"6827e975-2349"
+  CDN: trunk Relative path: all_pods_versions_b_b_9.txt, has ETag? W/"6827e975-49a"
+  CDN: trunk Relative path: all_pods_versions_4_0_8.txt, has ETag? W/"6827e975-619"
+  CDN: trunk Relative path: all_pods_versions_c_5_5.txt, has ETag? W/"6827e975-936"
+  CDN: trunk Relative path: all_pods_versions_7_9_1.txt, has ETag? W/"6827e975-43c"
+  CDN: trunk Relative path: all_pods_versions_6_b_f.txt, has ETag? W/"6827e975-547"
+  CDN: trunk Relative path: all_pods_versions_5_c_0.txt, has ETag? W/"6827e975-960"
+  CDN: trunk Relative path: all_pods_versions_d_c_4.txt, has ETag? W/"6827e975-4b5"
+  CDN: trunk Relative path: all_pods_versions_6_9_4.txt, has ETag? W/"6827e975-2c7"
+  CDN: trunk Relative path: all_pods_versions_e_a_3.txt, has ETag? W/"6827e975-475"
+  CDN: trunk Relative path: all_pods_versions_c_1_1.txt, has ETag? W/"6827e975-427"
+  CDN: trunk Relative path: all_pods_versions_e_a_e.txt, has ETag? W/"6827e975-636"
+  CDN: trunk Relative path: all_pods_versions_2_3_a.txt, has ETag? W/"6827e975-4a5"
+  CDN: trunk Relative path: all_pods_versions_f_9_1.txt, has ETag? W/"6827e975-80f"
+  CDN: trunk Relative path: all_pods_versions_3_1_b.txt, has ETag? W/"6827e975-4c5"
+  CDN: trunk Relative path: all_pods_versions_e_8_1.txt, has ETag? W/"6827e975-3c6"
+  CDN: trunk Relative path: all_pods_versions_b_3_2.txt, has ETag? W/"6827e975-6ec"
+  CDN: trunk Relative path: all_pods_versions_6_9_f.txt, has ETag? W/"6827e975-41e"
+  CDN: trunk Relative path: all_pods_versions_3_3_6.txt, has ETag? W/"6827e975-37c"
+  CDN: trunk Relative path: all_pods_versions_d_a_2.txt, has ETag? W/"6827e975-7e1"
+  CDN: trunk Relative path: all_pods_versions_a_6_6.txt, has ETag? W/"6827e975-4b4"
+  CDN: trunk Relative path: all_pods_versions_7_f_c.txt, has ETag? W/"6827e975-397"
+  CDN: trunk Relative path: all_pods_versions_6_1_9.txt, has ETag? W/"6827e975-5d7"
+  CDN: trunk Relative path: all_pods_versions_b_5_b.txt, has ETag? W/"6827e975-5ce"
+  CDN: trunk Relative path: all_pods_versions_b_5_4.txt, has ETag? W/"6827e975-5f6"
+  CDN: trunk Relative path: all_pods_versions_c_7_d.txt, has ETag? W/"6827e975-2d9"
+  CDN: trunk Relative path: all_pods_versions_3_7_3.txt, has ETag? W/"6827e975-9da"
+  CDN: trunk Relative path: all_pods_versions_2_5_b.txt, has ETag? W/"6827e975-5cb"
+  CDN: trunk Relative path: all_pods_versions_a_8_8.txt, has ETag? W/"6827e975-5e9"
+  CDN: trunk Relative path: all_pods_versions_9_6_0.txt, has ETag? W/"6827e975-4df"
+  CDN: trunk Relative path: all_pods_versions_1_0_0.txt, has ETag? W/"6827e975-401"
+  CDN: trunk Relative path: all_pods_versions_8_4_7.txt, has ETag? W/"6827e975-1df"
+  CDN: trunk Relative path: all_pods_versions_9_6_f.txt, has ETag? W/"6827e975-3ef"
+  CDN: trunk Relative path: all_pods_versions_6_b_5.txt, has ETag? W/"6827e975-341"
+  CDN: trunk Relative path: all_pods_versions_f_b_b.txt, has ETag? W/"6827e975-525"
+  CDN: trunk Relative path: all_pods_versions_7_b_f.txt, has ETag? W/"6827e975-62a"
+  CDN: trunk Relative path: all_pods_versions_d_c_1.txt, has ETag? W/"6827e975-84e"
+  CDN: trunk Relative path: all_pods_versions_5_a_a.txt, has ETag? W/"6827e975-4ec"
+  CDN: trunk Relative path: all_pods_versions_5_a_7.txt, has ETag? W/"6827e975-5c6"
+  CDN: trunk Relative path: all_pods_versions_d_c_3.txt, has ETag? W/"6827e975-186d"
+  CDN: trunk Relative path: all_pods_versions_e_8_2.txt, has ETag? W/"6827e975-799"
+  CDN: trunk Relative path: all_pods_versions_c_1_6.txt, has ETag? W/"6827e975-765"
+  CDN: trunk Relative path: all_pods_versions_a_0_e.txt, has ETag? W/"6827e975-33f"
+  CDN: trunk Relative path: all_pods_versions_2_1_2.txt, has ETag? W/"6827e975-3d9"
+  CDN: trunk Relative path: all_pods_versions_2_7_4.txt, has ETag? W/"6827e975-4db"
+  CDN: trunk Relative path: all_pods_versions_8_2_3.txt, has ETag? W/"6827e975-5e6"
+  CDN: trunk Relative path: all_pods_versions_1_6_4.txt, has ETag? W/"6827e975-5f7"
+  CDN: trunk Relative path: all_pods_versions_b_5_a.txt, has ETag? W/"6827e975-2b9"
+  CDN: trunk Relative path: all_pods_versions_6_f_d.txt, has ETag? W/"6827e975-4b8"
+  CDN: trunk Relative path: CocoaPods-version.yml, has ETag? "6827e975-38"
+  CDN: trunk Relative path: all_pods_versions_0_4_2.txt, has ETag? W/"6827e975-a3c"
+  CDN: trunk Relative path: all_pods_versions_5_e_f.txt, has ETag? W/"6827e975-253"
+  CDN: trunk Relative path: all_pods_versions_3_5_d.txt, has ETag? W/"6827e975-3cf"
+  CDN: trunk Relative path: all_pods_versions_0_2_4.txt, has ETag? W/"6827e975-449"
+  CDN: trunk Relative path: all_pods_versions_d_a_f.txt, has ETag? W/"6827e975-5fb"
+  CDN: trunk Relative path: all_pods_versions_b_1_d.txt, has ETag? W/"6827e975-63a"
+  CDN: trunk Relative path: all_pods_versions_4_8_7.txt, has ETag? W/"6827e975-4ef"
+  CDN: trunk Relative path: all_pods_versions_8_6_6.txt, has ETag? W/"6827e975-5f4"
+  CDN: trunk Relative path: all_pods_versions_d_c_2.txt, has ETag? W/"6827e975-8fb"
+  CDN: trunk Relative path: all_pods_versions_3_1_6.txt, has ETag? W/"6827e975-705"
+  CDN: trunk Relative path: all_pods_versions_a_2_0.txt, has ETag? W/"6827e975-2dc"
+  CDN: trunk Relative path: all_pods_versions_b_d_b.txt, has ETag? W/"6827e975-772"
+  CDN: trunk Relative path: all_pods_versions_f_7_1.txt, has ETag? W/"6827e975-8b6"
+  CDN: trunk Relative path: all_pods_versions_9_a_a.txt, has ETag? W/"6827e975-3f4"
+  CDN: trunk Relative path: all_pods_versions_e_4_3.txt, has ETag? W/"6827e975-4b8"
+  CDN: trunk Relative path: all_pods_versions_2_f_a.txt, has ETag? W/"6827e975-f1a"
+  CDN: trunk Relative path: all_pods_versions_4_6_5.txt, has ETag? W/"6827e975-32f"
+  CDN: trunk Relative path: all_pods_versions_d_0_d.txt, has ETag? W/"6827e975-273"
+  CDN: trunk Relative path: all_pods_versions_c_b_7.txt, has ETag? W/"6827e975-2cd"
+  CDN: trunk Relative path: all_pods_versions_f_3_5.txt, has ETag? W/"6827e975-669"
+  CDN: trunk Relative path: all_pods_versions_5_2_4.txt, has ETag? W/"6827e975-e0d"
+  CDN: trunk Relative path: all_pods_versions_3_b_6.txt, has ETag? W/"6827e975-5fe"
+  CDN: trunk Relative path: all_pods_versions_a_a_0.txt, has ETag? W/"6827e975-3df"
+  CDN: trunk Relative path: all_pods_versions_d_e_9.txt, has ETag? W/"6827e975-392"
+  CDN: trunk Relative path: all_pods_versions_a_c_3.txt, has ETag? W/"6827e975-47e"
+  CDN: trunk Relative path: all_pods_versions_3_9_3.txt, has ETag? W/"6827e975-a75"
+  CDN: trunk Relative path: all_pods.txt, has ETag? W/"6827e975-15f979"
+  CDN: trunk Relative path: all_pods_versions_5_0_7.txt, has ETag? W/"6827e975-e5f"
+  CDN: trunk Relative path: all_pods_versions_7_d_9.txt, has ETag? W/"6827e975-622"
+  CDN: trunk Relative path: all_pods_versions_1_c_2.txt, has ETag? W/"6827e975-cec"
+  CDN: trunk Relative path: all_pods_versions_6_1_a.txt, has ETag? W/"6827e975-2d0"
+  CDN: trunk Relative path: all_pods_versions_9_e_2.txt, has ETag? W/"6827e975-9ec"
+  CDN: trunk Relative path: all_pods_versions_4_e_9.txt, has ETag? W/"6827e975-690"
+  CDN: trunk Relative path: all_pods_versions_6_1_7.txt, has ETag? W/"6827e975-4c2"
+  CDN: trunk Relative path: all_pods_versions_f_3_b.txt, has ETag? W/"6827e975-2b1"
+  CDN: trunk Relative path: all_pods_versions_a_8_a.txt, has ETag? W/"6827e975-2bf"
+  CDN: trunk Relative path: all_pods_versions_7_1_d.txt, has ETag? W/"6827e975-765"
+  CDN: trunk Relative path: all_pods_versions_6_3_5.txt, has ETag? W/"6827e975-c6c"
+  CDN: trunk Relative path: all_pods_versions_f_5_d.txt, has ETag? W/"6827e975-3a9"
+  CDN: trunk Relative path: all_pods_versions_f_5_2.txt, has ETag? W/"6827e975-973"
+  CDN: trunk Relative path: all_pods_versions_b_f_a.txt, has ETag? W/"6827e975-597"
+  CDN: trunk Relative path: all_pods_versions_9_8_f.txt, has ETag? W/"6827e975-8f5"
+  CDN: trunk Relative path: all_pods_versions_8_8_5.txt, has ETag? W/"6827e975-3b6"
+  CDN: trunk Relative path: all_pods_versions_b_d_5.txt, has ETag? W/"6827e975-408"
+  CDN: trunk Relative path: all_pods_versions_c_f_0.txt, has ETag? W/"6827e975-66c"
+  CDN: trunk Relative path: all_pods_versions_3_1_8.txt, has ETag? W/"6827e975-429"
+  CDN: trunk Relative path: all_pods_versions_d_8_8.txt, has ETag? W/"6827e975-54b"
+  CDN: trunk Relative path: all_pods_versions_4_0_0.txt, has ETag? W/"6827e975-422"
+  CDN: trunk Relative path: all_pods_versions_3_b_5.txt, has ETag? W/"6827e975-47f"
+  CDN: trunk Relative path: all_pods_versions_c_9_f.txt, has ETag? W/"6827e975-8ee"
+  CDN: trunk Relative path: all_pods_versions_9_e_f.txt, has ETag? W/"6827e975-352"
+  CDN: trunk Relative path: all_pods_versions_7_3_2.txt, has ETag? W/"6827e975-4ed"
+  CDN: trunk Relative path: all_pods_versions_c_9_0.txt, has ETag? W/"6827e975-97b"
+  CDN: trunk Relative path: all_pods_versions_1_c_0.txt, has ETag? W/"6827e975-35c"
+  CDN: trunk Relative path: all_pods_versions_6_1_b.txt, has ETag? W/"6827e975-9f4"
+  CDN: trunk Relative path: all_pods_versions_a_8_b.txt, has ETag? W/"6827e975-f50"
+  CDN: trunk Relative path: all_pods_versions_a_a_d.txt, has ETag? W/"6827e975-55c"
+  CDN: trunk Relative path: all_pods_versions_e_2_a.txt, has ETag? W/"6827e975-ecf"
+  CDN: trunk Relative path: all_pods_versions_6_3_6.txt, has ETag? W/"6827e975-a69"
+  CDN: trunk Relative path: all_pods_versions_1_a_e.txt, has ETag? W/"6827e975-6cc"
+  CDN: trunk Relative path: all_pods_versions_4_6_a.txt, has ETag? W/"6827e975-81e"
+  CDN: trunk Relative path: all_pods_versions_e_c_8.txt, has ETag? W/"6827e975-11e3"
+  CDN: trunk Relative path: all_pods_versions_3_d_d.txt, has ETag? W/"6827e975-744"
+  CDN: trunk Relative path: all_pods_versions_9_8_3.txt, has ETag? W/"6827e975-850"
+  CDN: trunk Relative path: all_pods_versions_6_5_0.txt, has ETag? W/"6827e975-9d0"
+  CDN: trunk Relative path: all_pods_versions_d_6_6.txt, has ETag? W/"6827e975-653"
+  CDN: trunk Relative path: all_pods_versions_7_7_7.txt, has ETag? W/"6827e975-3d7"
+  CDN: trunk Relative path: all_pods_versions_5_6_2.txt, has ETag? W/"6827e975-612"
+  CDN: trunk Relative path: all_pods_versions_3_f_f.txt, has ETag? W/"6827e975-5b6"
+  CDN: trunk Relative path: all_pods_versions_8_a_0.txt, has ETag? W/"6827e975-a28"
+  CDN: trunk Relative path: all_pods_versions_8_a_b.txt, has ETag? W/"6827e975-6c8"
+  CDN: trunk Relative path: all_pods_versions_4_c_8.txt, has ETag? W/"6827e975-96c"
+  CDN: trunk Relative path: all_pods_versions_9_c_e.txt, has ETag? W/"6827e975-48a"
+  CDN: trunk Relative path: all_pods_versions_d_c_9.txt, has ETag? W/"6827e975-70a"
+  CDN: trunk Relative path: all_pods_versions_f_7_7.txt, has ETag? W/"6827e975-50b"
+  CDN: trunk Relative path: all_pods_versions_6_9_9.txt, has ETag? W/"6827e975-4eb"
+  CDN: trunk Relative path: all_pods_versions_5_2_d.txt, has ETag? W/"6827e975-9d3"
+  CDN: trunk Relative path: all_pods_versions_a_a_6.txt, has ETag? W/"6827e975-103a"
+  CDN: trunk Relative path: all_pods_versions_4_0_5.txt, has ETag? W/"6827e975-5fa"
+  CDN: trunk Relative path: all_pods_versions_0_8_4.txt, has ETag? W/"6827e975-44d"
+  CDN: trunk Relative path: all_pods_versions_1_c_c.txt, has ETag? W/"6827e975-635"
+  CDN: trunk Relative path: all_pods_versions_2_b_5.txt, has ETag? W/"6827e975-454"
+  CDN: trunk Relative path: all_pods_versions_f_1_f.txt, has ETag? W/"6827e975-4bc"
+  CDN: trunk Relative path: all_pods_versions_1_c_b.txt, has ETag? W/"6827e975-4e1"
+  CDN: trunk Relative path: all_pods_versions_8_2_8.txt, has ETag? W/"6827e975-102d"
+  CDN: trunk Relative path: all_pods_versions_d_0_c.txt, has ETag? W/"6827e975-2d6"
+  CDN: trunk Relative path: all_pods_versions_1_a_6.txt, has ETag? W/"6827e975-80c"
+  CDN: trunk Relative path: all_pods_versions_f_5_4.txt, has ETag? W/"6827e975-80c"
+  CDN: trunk Relative path: all_pods_versions_b_f_1.txt, has ETag? W/"6827e975-5a2"
+  CDN: trunk Relative path: all_pods_versions_d_4_1.txt, has ETag? W/"6827e975-5b4"
+  CDN: trunk Relative path: all_pods_versions_c_f_4.txt, has ETag? W/"6827e975-339"
+  CDN: trunk Relative path: all_pods_versions_8_8_3.txt, has ETag? W/"6827e975-834"
+  CDN: trunk Relative path: all_pods_versions_d_4_e.txt, has ETag? W/"6827e975-585"
+  CDN: trunk Relative path: all_pods_versions_e_6_4.txt, has ETag? W/"6827e975-512"
+  CDN: trunk Relative path: all_pods_versions_f_7_b.txt, has ETag? W/"6827e975-50e"
+  CDN: trunk Relative path: all_pods_versions_5_4_7.txt, has ETag? W/"6827e975-324"
+  CDN: trunk Relative path: all_pods_versions_f_3_f.txt, has ETag? W/"6827e975-131f"
+  CDN: trunk Relative path: all_pods_versions_5_2_1.txt, has ETag? W/"6827e975-368"
+  CDN: trunk Relative path: all_pods_versions_1_c_6.txt, has ETag? W/"6827e975-83b"
+  CDN: trunk Relative path: all_pods_versions_4_2_4.txt, has ETag? W/"6827e975-792"
+  CDN: trunk Relative path: all_pods_versions_5_0_3.txt, has ETag? W/"6827e975-463"
+  CDN: trunk Relative path: all_pods_versions_5_0_2.txt, has ETag? W/"6827e975-4eb"
+  CDN: trunk Relative path: all_pods_versions_f_1_e.txt, has ETag? W/"6827e975-a51"
+  CDN: trunk Relative path: all_pods_versions_0_a_f.txt, has ETag? W/"6827e975-64e"
+  CDN: trunk Relative path: all_pods_versions_6_1_d.txt, has ETag? W/"6827e975-8df"
+  CDN: trunk Relative path: all_pods_versions_a_a_4.txt, has ETag? W/"6827e975-6de"
+  CDN: trunk Relative path: all_pods_versions_b_9_d.txt, has ETag? W/"6827e975-3fa"
+  CDN: trunk Relative path: all_pods_versions_5_6_4.txt, has ETag? W/"6827e975-519"
+  CDN: trunk Relative path: all_pods_versions_f_7_c.txt, has ETag? W/"6827e975-a47"
+  CDN: trunk Relative path: all_pods_versions_b_3_9.txt, has ETag? W/"6827e975-3c5"
+  CDN: trunk Relative path: all_pods_versions_c_f_7.txt, has ETag? W/"6827e975-44a"
+  CDN: trunk Relative path: all_pods_versions_e_1_4.txt, has ETag? W/"6827e975-473"
+  CDN: trunk Relative path: all_pods_versions_9_d_0.txt, has ETag? W/"6827e975-364"
+  CDN: trunk Relative path: all_pods_versions_c_8_0.txt, has ETag? W/"6827e975-4cf"
+  CDN: trunk Relative path: all_pods_versions_7_2_d.txt, has ETag? W/"6827e975-a5a"
+  CDN: trunk Relative path: all_pods_versions_1_5_9.txt, has ETag? W/"6827e975-4ab"
+  CDN: trunk Relative path: all_pods_versions_3_a_7.txt, has ETag? W/"6827e975-543"
+  CDN: trunk Relative path: all_pods_versions_c_c_b.txt, has ETag? W/"6827e975-58b"
+  CDN: trunk Relative path: all_pods_versions_7_0_0.txt, has ETag? W/"6827e975-a58"
+  CDN: trunk Relative path: all_pods_versions_e_3_6.txt, has ETag? W/"6827e975-8ac"
+  CDN: trunk Relative path: all_pods_versions_0_b_5.txt, has ETag? W/"6827e975-6e6"
+  CDN: trunk Relative path: all_pods_versions_f_2_6.txt, has ETag? W/"6827e975-23d"
+  CDN: trunk Relative path: all_pods_versions_e_5_f.txt, has ETag? W/"6827e975-870"
+  CDN: trunk Relative path: all_pods_versions_3_e_3.txt, has ETag? W/"6827e975-394"
+  CDN: trunk Relative path: all_pods_versions_2_e_6.txt, has ETag? W/"6827e975-1fc"
+  CDN: trunk Relative path: all_pods_versions_a_d_6.txt, has ETag? W/"6827e975-650"
+  CDN: trunk Relative path: all_pods_versions_c_0_8.txt, has ETag? W/"6827e975-9b9"
+  CDN: trunk Relative path: all_pods_versions_4_5_5.txt, has ETag? W/"6827e975-424"
+  CDN: trunk Relative path: all_pods_versions_3_0_9.txt, has ETag? W/"6827e975-766"
+  CDN: trunk Relative path: all_pods_versions_9_b_a.txt, has ETag? W/"6827e975-354"
+  CDN: trunk Relative path: all_pods_versions_4_7_7.txt, has ETag? W/"6827e975-96c"
+  CDN: trunk Relative path: all_pods_versions_3_e_d.txt, has ETag? W/"6827e975-4ea"
+  CDN: trunk Relative path: all_pods_versions_c_e_3.txt, has ETag? W/"6827e975-676"
+  CDN: trunk Relative path: all_pods_versions_6_4_f.txt, has ETag? W/"6827e975-9e2"
+  CDN: trunk Relative path: all_pods_versions_5_b_9.txt, has ETag? W/"6827e975-cbf"
+  CDN: trunk Relative path: all_pods_versions_e_5_1.txt, has ETag? W/"6827e975-858"
+  CDN: trunk Relative path: all_pods_versions_5_3_6.txt, has ETag? W/"6827e975-381"
+  CDN: trunk Relative path: all_pods_versions_2_a_e.txt, has ETag? W/"6827e975-618"
+  CDN: trunk Relative path: all_pods_versions_c_c_5.txt, has ETag? W/"6827e975-4eb"
+  CDN: trunk Relative path: all_pods_versions_c_c_c.txt, has ETag? W/"6827e975-709"
+  CDN: trunk Relative path: all_pods_versions_a_b_0.txt, has ETag? W/"6827e975-4c8"
+  CDN: trunk Relative path: all_pods_versions_4_3_e.txt, has ETag? W/"6827e975-6c0"
+  CDN: trunk Relative path: all_pods_versions_f_0_5.txt, has ETag? W/"6827e975-328"
+  CDN: trunk Relative path: all_pods_versions_8_f_6.txt, has ETag? W/"6827e975-3a0"
+  CDN: trunk Relative path: all_pods_versions_e_1_c.txt, has ETag? W/"6827e975-40b"
+  CDN: trunk Relative path: all_pods_versions_1_b_1.txt, has ETag? W/"6827e975-52b"
+  CDN: trunk Relative path: all_pods_versions_c_a_7.txt, has ETag? W/"6827e975-a30"
+  CDN: trunk Relative path: all_pods_versions_b_c_d.txt, has ETag? W/"6827e975-883"
+  CDN: trunk Relative path: all_pods_versions_0_9_2.txt, has ETag? W/"6827e975-386"
+  CDN: trunk Relative path: all_pods_versions_e_1_a.txt, has ETag? W/"6827e975-5aa"
+  CDN: trunk Relative path: all_pods_versions_b_c_2.txt, has ETag? W/"6827e975-cdb"
+  CDN: trunk Relative path: all_pods_versions_4_3_1.txt, has ETag? W/"6827e975-663"
+  CDN: trunk Relative path: all_pods_versions_d_1_2.txt, has ETag? W/"6827e975-4f5"
+  CDN: trunk Relative path: all_pods_versions_5_3_b.txt, has ETag? W/"6827e975-a97"
+  CDN: trunk Relative path: all_pods_versions_f_4_3.txt, has ETag? W/"6827e975-35f"
+  CDN: trunk Relative path: all_pods_versions_f_a_8.txt, has ETag? W/"6827e975-512"
+  CDN: trunk Relative path: all_pods_versions_4_5_7.txt, has ETag? W/"6827e975-564"
+  CDN: trunk Relative path: all_pods_versions_a_d_5.txt, has ETag? W/"6827e975-57b"
+  CDN: trunk Relative path: all_pods_versions_0_f_3.txt, has ETag? W/"6827e975-4fb"
+  CDN: trunk Relative path: all_pods_versions_1_d_4.txt, has ETag? W/"6827e975-67d"
+  CDN: trunk Relative path: all_pods_versions_9_b_b.txt, has ETag? W/"6827e975-a98"
+  CDN: trunk Relative path: all_pods_versions_1_d_b.txt, has ETag? W/"6827e975-26b"
+  CDN: trunk Relative path: all_pods_versions_5_5_e.txt, has ETag? W/"6827e975-607"
+  CDN: trunk Relative path: all_pods_versions_0_d_1.txt, has ETag? W/"6827e975-3fd"
+  CDN: trunk Relative path: all_pods_versions_1_f_6.txt, has ETag? W/"6827e975-5f3"
+  CDN: trunk Relative path: all_pods_versions_d_7_c.txt, has ETag? W/"6827e975-488"
+  CDN: trunk Relative path: all_pods_versions_f_2_b.txt, has ETag? W/"6827e975-1016"
+  CDN: trunk Relative path: all_pods_versions_a_9_a.txt, has ETag? W/"6827e975-722"
+  CDN: trunk Relative path: all_pods_versions_4_1_2.txt, has ETag? W/"6827e975-52b"
+  CDN: trunk Relative path: all_pods_versions_0_b_7.txt, has ETag? W/"6827e975-48c"
+  CDN: trunk Relative path: all_pods_versions_2_c_d.txt, has ETag? W/"6827e975-ad7"
+  CDN: trunk Relative path: all_pods_versions_5_1_7.txt, has ETag? W/"6827e975-6af"
+  CDN: trunk Relative path: all_pods_versions_0_9_e.txt, has ETag? W/"6827e975-47f"
+  CDN: trunk Relative path: all_pods_versions_c_8_6.txt, has ETag? W/"6827e975-3ac"
+  CDN: trunk Relative path: all_pods_versions_5_1_e.txt, has ETag? W/"6827e975-3bf"
+  CDN: trunk Relative path: all_pods_versions_2_c_6.txt, has ETag? W/"6827e975-4a3"
+  CDN: trunk Relative path: all_pods_versions_a_b_a.txt, has ETag? W/"6827e975-383"
+  CDN: trunk Relative path: all_pods_versions_4_3_4.txt, has ETag? W/"6827e975-4ae"
+  CDN: trunk Relative path: all_pods_versions_e_3_f.txt, has ETag? W/"6827e975-4e9"
+  CDN: trunk Relative path: all_pods_versions_d_1_a.txt, has ETag? W/"6827e975-33f"
+  CDN: trunk Relative path: all_pods_versions_7_0_6.txt, has ETag? W/"6827e975-906"
+  CDN: trunk Relative path: all_pods_versions_0_b_e.txt, has ETag? W/"6827e975-919"
+  CDN: trunk Relative path: all_pods_versions_1_9_d.txt, has ETag? W/"6827e975-b24"
+  CDN: trunk Relative path: all_pods_versions_a_9_3.txt, has ETag? W/"6827e975-7e4"
+  CDN: trunk Relative path: all_pods_versions_3_c_e.txt, has ETag? W/"6827e975-23e"
+  CDN: trunk Relative path: all_pods_versions_5_3_1.txt, has ETag? W/"6827e975-8e2"
+  CDN: trunk Relative path: all_pods_versions_1_f_d.txt, has ETag? W/"6827e975-281"
+  CDN: trunk Relative path: all_pods_versions_e_5_6.txt, has ETag? W/"6827e975-79e"
+  CDN: trunk Relative path: all_pods_versions_8_b_c.txt, has ETag? W/"6827e975-570"
+  CDN: trunk Relative path: all_pods_versions_f_4_6.txt, has ETag? W/"6827e975-790"
+  CDN: trunk Relative path: all_pods_versions_6_6_c.txt, has ETag? W/"6827e975-745"
+  CDN: trunk Relative path: all_pods_versions_7_4_d.txt, has ETag? W/"6827e975-3ec"
+  CDN: trunk Relative path: all_pods_versions_7_4_2.txt, has ETag? W/"6827e975-658"
+  CDN: trunk Relative path: all_pods_versions_a_f_2.txt, has ETag? W/"6827e975-2b1"
+  CDN: trunk Relative path: all_pods_versions_9_9_c.txt, has ETag? W/"6827e975-8c1"
+  CDN: trunk Relative path: all_pods_versions_1_f_e.txt, has ETag? W/"6827e975-bde"
+  CDN: trunk Relative path: all_pods_versions_6_4_6.txt, has ETag? W/"6827e975-3e9"
+  CDN: trunk Relative path: all_pods_versions_0_d_4.txt, has ETag? W/"6827e975-491"
+  CDN: trunk Relative path: all_pods_versions_f_2_1.txt, has ETag? W/"6827e975-5f1"
+  CDN: trunk Relative path: all_pods_versions_3_c_2.txt, has ETag? W/"6827e975-682"
+  CDN: trunk Relative path: all_pods_versions_d_1_6.txt, has ETag? W/"6827e975-6b4"
+  CDN: trunk Relative path: all_pods_versions_b_8_d.txt, has ETag? W/"6827e975-65b"
+  CDN: trunk Relative path: all_pods_versions_b_a_4.txt, has ETag? W/"6827e975-70a"
+  CDN: trunk Relative path: all_pods_versions_3_a_f.txt, has ETag? W/"6827e975-3c9"
+  CDN: trunk Relative path: all_pods_versions_2_c_7.txt, has ETag? W/"6827e975-442"
+  CDN: trunk Relative path: all_pods_versions_8_1_9.txt, has ETag? W/"6827e975-7e8"
+  CDN: trunk Relative path: all_pods_versions_1_b_a.txt, has ETag? W/"6827e975-66b"
+  CDN: trunk Relative path: all_pods_versions_9_d_a.txt, has ETag? W/"6827e975-7d5"
+  CDN: trunk Relative path: all_pods_versions_e_1_3.txt, has ETag? W/"6827e975-314"
+  CDN: trunk Relative path: all_pods_versions_8_f_f.txt, has ETag? W/"6827e975-706"
+  CDN: trunk Relative path: all_pods_versions_c_8_7.txt, has ETag? W/"6827e975-bcb"
+  CDN: trunk Relative path: all_pods_versions_2_c_5.txt, has ETag? W/"6827e975-55b"
+  CDN: trunk Relative path: all_pods_versions_2_c_c.txt, has ETag? W/"6827e975-609"
+  CDN: trunk Relative path: all_pods_versions_f_0_1.txt, has ETag? W/"6827e975-400"
+  CDN: trunk Relative path: all_pods_versions_9_f_7.txt, has ETag? W/"6827e975-472"
+  CDN: trunk Relative path: all_pods_versions_5_3_d.txt, has ETag? W/"6827e975-735"
+  CDN: trunk Relative path: all_pods_versions_e_5_c.txt, has ETag? W/"6827e975-8ef"
+  CDN: trunk Relative path: all_pods_versions_2_0_8.txt, has ETag? W/"6827e975-ab7"
+  CDN: trunk Relative path: all_pods_versions_3_e_6.txt, has ETag? W/"6827e975-943"
+  CDN: trunk Relative path: all_pods_versions_e_7_a.txt, has ETag? W/"6827e975-a65"
+  CDN: trunk Relative path: all_pods_versions_0_f_b.txt, has ETag? W/"6827e975-505"
+  CDN: trunk Relative path: all_pods_versions_8_9_d.txt, has ETag? W/"6827e975-5bd"
+  CDN: trunk Relative path: all_pods_versions_6_6_6.txt, has ETag? W/"6827e975-69c"
+  CDN: trunk Relative path: all_pods_versions_2_e_3.txt, has ETag? W/"6827e975-4c7"
+  CDN: trunk Relative path: all_pods_versions_2_e_e.txt, has ETag? W/"6827e975-74a"
+  CDN: trunk Relative path: all_pods_versions_e_9_9.txt, has ETag? W/"6827e975-838"
+  CDN: trunk Relative path: all_pods_versions_6_8_8.txt, has ETag? W/"6827e975-4b9"
+  CDN: trunk Relative path: all_pods_versions_9_b_d.txt, has ETag? W/"6827e975-475"
+  CDN: trunk Relative path: all_pods_versions_7_4_0.txt, has ETag? W/"6827e975-64f"
+  CDN: trunk Relative path: all_pods_versions_a_f_1.txt, has ETag? W/"6827e975-fcb"
+  CDN: trunk Relative path: all_pods_versions_4_7_d.txt, has ETag? W/"6827e975-86d"
+  CDN: trunk Relative path: all_pods_versions_6_4_5.txt, has ETag? W/"6827e975-6e3"
+  CDN: trunk Relative path: all_pods_versions_d_7_3.txt, has ETag? W/"6827e975-66e"
+  CDN: trunk Relative path: all_pods_versions_8_b_a.txt, has ETag? W/"6827e975-787"
+  CDN: trunk Relative path: all_pods_versions_d_7_e.txt, has ETag? W/"6827e975-4ad"
+  CDN: trunk Relative path: all_pods_versions_0_d_7.txt, has ETag? W/"6827e975-399"
+  CDN: trunk Relative path: all_pods_versions_c_c_f.txt, has ETag? W/"6827e975-ba0"
+  CDN: trunk Relative path: all_pods_versions_a_b_c.txt, has ETag? W/"6827e975-6bb"
+  CDN: trunk Relative path: all_pods_versions_0_9_c.txt, has ETag? W/"6827e975-3cb"
+  CDN: trunk Relative path: all_pods_versions_1_b_b.txt, has ETag? W/"6827e975-35f"
+  CDN: trunk Relative path: all_pods_versions_e_1_f.txt, has ETag? W/"6827e975-774"
+  CDN: trunk Relative path: all_pods_versions_c_8_4.txt, has ETag? W/"6827e975-5db"
+  CDN: trunk Relative path: Specs/2/c/6/GoogleWebRTC/1.1.32000/GoogleWebRTC.podspec.json, has ETag? W/"38b-TSYRh7MFEu/bcR0h+pYaat8Thxc"
+  CDN: trunk Relative path: Specs/5/2/4/ABCropRotateView/0.1.0/ABCropRotateView.podspec.json, has ETag? W/"3c8-0t//T3Iv5naGCmZ95UFfpNDgcUU"
+  CDN: trunk Relative path: Specs/5/2/4/ABCropRotateView/0.1.1/ABCropRotateView.podspec.json, has ETag? W/"3c8-XrESeuKewqzl2eo3szaKQgjT4UI"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/0.10.0/AFNetworking.podspec.json, has ETag? W/"2cc-u8zS/YXug+4Fg4zfNXo1Q4aZmAc"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/0.10.1/AFNetworking.podspec.json, has ETag? W/"2cc-cjIHYyUniygsq3HjnMqGQvzbRqU"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/0.5.1/AFNetworking.podspec.json, has ETag? W/"3ab-HogEfKEYFAbT4vdt2fw3yVRdVNY"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/0.7.0/AFNetworking.podspec.json, has ETag? W/"2b1-98k1f34KWWdpeP7h+EXgdGibx6w"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/0.9.0/AFNetworking.podspec.json, has ETag? W/"272-RHHOPjIxc6HHgtKqxMu+M2nCUAU"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/0.9.1/AFNetworking.podspec.json, has ETag? W/"272-z6BO0cfNcRXBumCkMH+m02A7BmU"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/0.9.2/AFNetworking.podspec.json, has ETag? W/"272-g1EJ5/BusUv99CUBRap7qrF6xSo"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.0.1/AFNetworking.podspec.json, has ETag? W/"447-SOob6Shr67ox6Lf9R//MT5M6ldU"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.0/AFNetworking.podspec.json, has ETag? W/"443-vaZ04EJCpJBF/qDKOrRebfgF+Js"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.0RC1/AFNetworking.podspec.json, has ETag? W/"274-o80yikmHDKyQCT7AuNTTz+UWx5w"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.0RC2/AFNetworking.podspec.json, has ETag? W/"273-8cLWhGGEn57JP9GEFXHodStwIGI"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.0RC3/AFNetworking.podspec.json, has ETag? W/"2c6-oBUU8p1VtlxODv1zdJei+uiuzf4"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.1.0/AFNetworking.podspec.json, has ETag? W/"446-YNHx1sb5Pal1fYtMtrjDj8f19E8"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.1.1/AFNetworking.podspec.json, has ETag? W/"8a-8gkCqH4c1cmHumwD2qd9W+Oj6gI"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.2.0/AFNetworking.podspec.json, has ETag? W/"446-R8ZJyptRxqeowX96Ff18fwCMBXc"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.2.1/AFNetworking.podspec.json, has ETag? W/"4b6-boNqnbIrYkr1XWfOq6wT9w4pROQ"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.3.0/AFNetworking.podspec.json, has ETag? W/"4b6-Apt5RuIsnMNc7OrOYKeRa932O7g"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.3.1/AFNetworking.podspec.json, has ETag? W/"4cc-YIPCWzXlpGvRW9M4DV6OUAOzj6w"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.3.2/AFNetworking.podspec.json, has ETag? W/"4cc-Iltv668pjyOsAuFduv545HMTjt4"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.3.3/AFNetworking.podspec.json, has ETag? W/"49d-1HwtQDgORXTaXctIp9MfoqK0ENU"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/1.3.4/AFNetworking.podspec.json, has ETag? W/"49d-YdjB1YoqY4WrsGUNAWQvOiMKnNs"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.0.0-RC1/AFNetworking.podspec.json, has ETag? W/"3bc-jALh3bSd9N4eB0PEb+TvJZde9yw"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.0.0-RC2/AFNetworking.podspec.json, has ETag? W/"3bc-5hysq9gGQljrhpDIZ++jeHtY2+0"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.0.0-RC3/AFNetworking.podspec.json, has ETag? W/"830-JnrpjWQIbcvz7VArX6DcsaVlwnI"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.0.0/AFNetworking.podspec.json, has ETag? W/"939-Mrtn6egTengc6P03/FWIalZQS9A"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.0.1/AFNetworking.podspec.json, has ETag? W/"8f3-KMfJOjgdFXT0OPgfMEElitNi2To"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.0.2/AFNetworking.podspec.json, has ETag? W/"8c0-TpeaXgWrmwPEtLI/v1CxIK/2vnM"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.0.3/AFNetworking.podspec.json, has ETag? W/"8c0-A9aS4Si7bsBUXZ14BiwqBrDD9jI"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.1.0/AFNetworking.podspec.json, has ETag? W/"8c0-lw5uXzjAJEhgZ8n7g2AH3p3H/+o"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.2.0/AFNetworking.podspec.json, has ETag? W/"92d-VvFMYdipUPr9QtttgTwQHbKwrKA"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.2.1/AFNetworking.podspec.json, has ETag? W/"92d-uoOeX7ig9XJm0jBIry0IGaJwlGA"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.2.2/AFNetworking.podspec.json, has ETag? W/"92d-BgRPOeEX4z/TXYtRV2uPZ3iA6p4"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.2.3/AFNetworking.podspec.json, has ETag? W/"92d-8iqiOYoG6w/v6CLIawD5B5p3rwk"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.2.4/AFNetworking.podspec.json, has ETag? W/"92d-lom4wFjnyRSM3hmjqaFfie0/ZQs"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.3.0/AFNetworking.podspec.json, has ETag? W/"98d-0o/+GhPHQZ3SmCLlY3zYbYpBI/A"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.3.1/AFNetworking.podspec.json, has ETag? W/"98d-7sUUTlsmtbMuSQoDJr+J8kvlsDI"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.4.0/AFNetworking.podspec.json, has ETag? W/"98d-v4o8u/yvOlDiEHKg843Cby6hobw"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.4.1/AFNetworking.podspec.json, has ETag? W/"98d-z8QBbp0aevqZIhhuKFQAG0RPlIo"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.5.0/AFNetworking.podspec.json, has ETag? W/"98d-eCfegr7wFFT/zUASiQxf3XqYGvY"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.5.1/AFNetworking.podspec.json, has ETag? W/"98d-qKDFrh2mqkVbw+ACHMnPsFy4NqQ"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.5.2/AFNetworking.podspec.json, has ETag? W/"98d-2Y2VasdnWcu64A/CPQRUTJnWP94"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.5.3/AFNetworking.podspec.json, has ETag? W/"98d-Mt/EFroEFAJadWUDklpA1jXH1ME"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.5.4/AFNetworking.podspec.json, has ETag? W/"98d-QHsKNZZndmE5JKhp7zWLWfkn14g"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.6.0/AFNetworking.podspec.json, has ETag? W/"dbc-hdEK8JhldkIifFtlCiueSdbfniU"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.6.1/AFNetworking.podspec.json, has ETag? W/"dd6-zRFmg/1d0aNHFaPJQQtte4dF2Lk"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.6.2/AFNetworking.podspec.json, has ETag? W/"dd6-DkLW4A4Iq9Y+LZLfw8YN6SbRids"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.6.3/AFNetworking.podspec.json, has ETag? W/"dd6-qSb5NX47w50sScVH6OjckLNiWbY"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/2.7.0/AFNetworking.podspec.json, has ETag? W/"dd6-nVfedQaVmVXYL7UnTuS+yGuTDlI"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.0-beta.1/AFNetworking.podspec.json, has ETag? W/"b80-KG2A/RUiTH1ehR9Zne/GR4pJ/2Y"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.0-beta.2/AFNetworking.podspec.json, has ETag? W/"b80-Z31HhBltj30dy3cfPQwKbRYeBL0"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.0-beta.3/AFNetworking.podspec.json, has ETag? W/"b80-5J/o7cLAUP7RtZaNBtIiM9+2HOY"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.0/AFNetworking.podspec.json, has ETag? W/"b72-rsKZDh2Kcg1cWEnMYrVodY4qUqM"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.1/AFNetworking.podspec.json, has ETag? W/"b72-F37ZnzOqOzNcSfC1eef1Teq56qY"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.2/AFNetworking.podspec.json, has ETag? W/"b72-TolAfnll1A3V47fr0Hiu92wgcsA"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.3/AFNetworking.podspec.json, has ETag? W/"b72-daPXR7+/jGGGXctUHuScKdhDHS4"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.0.4/AFNetworking.podspec.json, has ETag? W/"b72-ys0E4h549OEda3+xS8i2x7iyRlg"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.1.0/AFNetworking.podspec.json, has ETag? W/"b72-GYJ7zoyNJbFr6hhYN8tml2wj+P4"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.2.0/AFNetworking.podspec.json, has ETag? W/"b72-IofSoGGpaVvf5uqC9ITlbXbuJjE"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/3.2.1/AFNetworking.podspec.json, has ETag? W/"bf6-y2BLHCve0IcfX2H11TZTc56EHWs"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.0/AFNetworking.podspec.json, has ETag? W/"bff-QokggGBpNfep7D/aSSf9036c02k"
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json, has ETag? W/"97a-O9I9gU6XbNFI19RMOreAF7dEzVg"
+  CDN: trunk Relative path: Specs/f/9/1/ACECoreDataNetworkTableViewController/0.2.1/ACECoreDataNetworkTableViewController.podspec.json, has ETag? W/"33a-E7hFRv8LBDKUBZyZlSOqI18l2mo"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_6_7.txt, save ETag: W/"682a95f3-33a"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_2_e.txt, save ETag: W/"682a95f3-88b"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_b_4.txt, save ETag: W/"682a95f3-3cf"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_7_c.txt, save ETag: W/"682a95f3-db4"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_0_4.txt, save ETag: W/"682a95f3-9db"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_4_4.txt, save ETag: W/"682a95f3-9d2"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_1_7.txt, save ETag: W/"682a95f3-c4a"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_b_3.txt, save ETag: W/"682a95f3-5e4"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_2_b.txt, save ETag: W/"682a95f3-844"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_7_0.txt, save ETag: W/"682a95f3-53f"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_7_3.txt, save ETag: W/"682a95f3-550"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_0_6.txt, save ETag: W/"682a95f3-6e7"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_7_c.txt, save ETag: W/"682a95f3-912"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_7_5.txt, save ETag: W/"682a95f3-6f3"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_a_8.txt, save ETag: W/"682a95f3-55e"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_6_b.txt, save ETag: W/"682a95f3-7e5"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_e_8.txt, save ETag: W/"682a95f3-540"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_7_5.txt, save ETag: W/"682a95f3-688"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_9_d.txt, save ETag: W/"682a95f3-5cf"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_c_d.txt, save ETag: W/"682a95f3-b4f"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_b_e.txt, save ETag: W/"682a95f3-754"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_7_7.txt, save ETag: W/"682a95f3-8ae"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_2_1.txt, save ETag: W/"682a95f3-747"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_d_b.txt, save ETag: W/"682a95f3-3a5"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_5_4.txt, save ETag: W/"682a95f3-6cd"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_7_6.txt, save ETag: W/"682a95f3-c72"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_b_2.txt, save ETag: W/"682a95f3-c1f"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_7_e.txt, save ETag: W/"682a95f3-80a"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_1_f.txt, save ETag: W/"682a95f3-7c9"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_c_4.txt, save ETag: W/"682a95f3-599"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_d_a.txt, save ETag: W/"682a95f3-46e"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_1_5.txt, save ETag: W/"682a95f3-576"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_0_9.txt, save ETag: W/"682a95f3-70a"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_7_d.txt, save ETag: W/"682a95f3-88c"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_c_1.txt, save ETag: W/"682a95f3-4e4"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_9_c.txt, save ETag: W/"682a95f3-3a0"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_7_f.txt, save ETag: W/"682a95f3-65b"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_0_0.txt, save ETag: W/"682a95f3-788"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_0_c.txt, save ETag: W/"682a95f3-643"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_c_1.txt, save ETag: W/"682a95f3-476"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_b_e.txt, save ETag: W/"682a95f3-7d3"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_8_f.txt, save ETag: W/"682a95f3-416"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_6_7.txt, save ETag: W/"682a95f3-45c"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_c_d.txt, save ETag: W/"682a95f3-5a9"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_f_2.txt, save ETag: W/"682a95f3-518"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_e_2.txt, save ETag: W/"682a95f3-7de"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_1_8.txt, save ETag: W/"682a95f3-5c3"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_a_6.txt, save ETag: W/"682a95f3-31d"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_c_b.txt, save ETag: W/"682a95f3-437"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_4_c.txt, save ETag: W/"682a95f3-681"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_d_a.txt, save ETag: W/"682a95f3-666"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_7_0.txt, save ETag: W/"682a95f3-ed8"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_5_0.txt, save ETag: W/"682a95f3-574"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_0_d.txt, save ETag: W/"682a95f3-398"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_b_6.txt, save ETag: W/"682a95f3-271"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_d_5.txt, save ETag: W/"682a95f3-dbc"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_f_3.txt, save ETag: W/"682a95f3-63a"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_a_8.txt, save ETag: W/"682a95f3-43d"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_c_5.txt, save ETag: W/"682a95f3-3d2"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_3_e.txt, save ETag: W/"682a95f3-2ea"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_4_b.txt, save ETag: W/"682a95f3-684"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_e_c.txt, save ETag: W/"682a95f3-849"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_8_7.txt, save ETag: W/"682a95f3-614"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_f_e.txt, save ETag: W/"682a95f3-4b0"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_d_2.txt, save ETag: W/"682a95f3-815"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_a_3.txt, save ETag: W/"682a95f3-494"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_d_8.txt, save ETag: W/"682a95f3-520"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_4_5.txt, save ETag: W/"682a95f3-734"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_f_b.txt, save ETag: W/"682a95f3-318"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_8_4.txt, save ETag: W/"682a95f3-879"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_7_6.txt, save ETag: W/"682a95f3-540"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_4_3.txt, save ETag: W/"682a95f3-309"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_4_2.txt, save ETag: W/"682a95f3-48a"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_7_9.txt, save ETag: W/"682a95f3-9fe"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_0_a.txt, save ETag: W/"682a95f3-5c0"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_a_c.txt, save ETag: W/"682a95f3-7f8"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_8_e.txt, save ETag: W/"682a95f3-541"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_0_6.txt, save ETag: W/"682a95f3-3d3"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_0_a.txt, save ETag: W/"682a95f3-5cd"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_9_9.txt, save ETag: W/"682a95f3-291"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_9_7.txt, save ETag: W/"682a95f3-448"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_1_8.txt, save ETag: W/"682a95f3-6c7"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_e_3.txt, save ETag: W/"682a95f3-76f"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_d_3.txt, save ETag: W/"682a95f3-502"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_9_4.txt, save ETag: W/"682a95f3-775"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_0_0.txt, save ETag: W/"682a95f3-6a4"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_b_a.txt, save ETag: W/"682a95f3-91f"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_4_2.txt, save ETag: W/"682a95f3-584"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_a_c.txt, save ETag: W/"682a95f3-5b2"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_2_c.txt, save ETag: W/"682a95f3-64e"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_f_e.txt, save ETag: W/"682a95f3-36b"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_3_a.txt, save ETag: W/"682a95f3-4a2"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_0_8.txt, save ETag: W/"682a95f3-286"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_e_7.txt, save ETag: W/"682a95f3-5e8"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_6_a.txt, save ETag: W/"682a95f3-55b"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_b_9.txt, save ETag: W/"682a95f3-9d0"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_d_e.txt, save ETag: W/"682a95f3-51a"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_9_5.txt, save ETag: W/"682a95f3-4bd"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_1_1.txt, save ETag: W/"682a95f3-67a"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_f_8.txt, save ETag: W/"682a95f3-42f"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_7_7.txt, save ETag: W/"682a95f3-b51"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_7_4.txt, save ETag: W/"682a95f3-4db"
+  CDN: trunk Relative path downloaded: CocoaPods-version.yml, save ETag: "682a95f3-38"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_e_f.txt, save ETag: W/"682a95f3-253"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_6_6.txt, save ETag: W/"682a95f3-5f4"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_c_2.txt, save ETag: W/"682a95f3-8fb"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_7_1.txt, save ETag: W/"682a95f3-8b6"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_1_d.txt, save ETag: W/"682a95f3-63a"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_6_5.txt, save ETag: W/"682a95f3-32f"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_e_9.txt, save ETag: W/"682a95f3-392"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_c_3.txt, save ETag: W/"682a95f3-47e"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_0_7.txt, save ETag: W/"682a95f3-e5f"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_d_9.txt, save ETag: W/"682a95f3-622"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_b_3.txt, save ETag: W/"682a95f3-9cc"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_a_2.txt, save ETag: W/"682a95f3-7e1"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_8_b.txt, save ETag: W/"682a95f3-36d"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_0_8.txt, save ETag: W/"682a95f3-619"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_b_f.txt, save ETag: W/"682a95f3-62a"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_5_0.txt, save ETag: W/"682a95f3-2349"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_1_1.txt, save ETag: W/"682a95f3-427"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_b_f.txt, save ETag: W/"682a95f3-b04"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_8_8.txt, save ETag: W/"682a95f3-5e9"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_7_8.txt, save ETag: W/"682a95f3-a06"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_1_e.txt, save ETag: W/"682a95f3-506"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_0_9.txt, save ETag: W/"682a95f3-4de"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_8_1.txt, save ETag: W/"682a95f3-3c6"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_a_7.txt, save ETag: W/"682a95f3-5c6"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_a_3.txt, save ETag: W/"682a95f3-480"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_c_7.txt, save ETag: W/"682a95f3-602"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_b_f.txt, save ETag: W/"682a95f3-547"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_6_f.txt, save ETag: W/"682a95f3-3ef"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_a_f.txt, save ETag: W/"682a95f3-541"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_2_a.txt, save ETag: W/"682a95f3-4fe"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_c_6.txt, save ETag: W/"682a95f3-4a7"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_3_e.txt, save ETag: W/"682a95f3-369"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_8_8.txt, save ETag: W/"682a95f3-399"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_2_4.txt, save ETag: W/"682a95f3-71d"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_1_6.txt, save ETag: W/"682a95f3-ca7"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_9_f.txt, save ETag: W/"682a95f3-41e"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_6_a.txt, save ETag: W/"682a95f3-74d"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_7_9.txt, save ETag: W/"682a95f3-363"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_8_d.txt, save ETag: W/"682a95f3-623"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_1_c.txt, save ETag: W/"682a95f3-5ad"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_2_0.txt, save ETag: W/"682a95f3-895"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_9_4.txt, save ETag: W/"682a95f3-2c7"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_9_f.txt, save ETag: W/"682a95f3-50b"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_2_2.txt, save ETag: W/"682a95f3-5ba"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_b_4.txt, save ETag: W/"682a95f3-acb"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_7_6.txt, save ETag: W/"682a95f3-61b"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_d_a.txt, save ETag: W/"682a95f3-6fc"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_d_7.txt, save ETag: W/"682a95f3-3d5"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_0_d.txt, save ETag: W/"682a95f3-85c"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_a_8.txt, save ETag: W/"682a95f3-65c"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_0_1.txt, save ETag: W/"682a95f3-56b"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_6_2.txt, save ETag: W/"682a95f3-508"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_b_9.txt, save ETag: W/"682a95f3-49a"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_5_5.txt, save ETag: W/"682a95f3-936"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_9_1.txt, save ETag: W/"682a95f3-43c"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_3_a.txt, save ETag: W/"682a95f3-4a5"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_9_1.txt, save ETag: W/"682a95f3-80f"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_7_3.txt, save ETag: W/"682a95f3-9da"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_5_b.txt, save ETag: W/"682a95f3-5cb"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_0_0.txt, save ETag: W/"682a95f3-401"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_c_1.txt, save ETag: W/"682a95f3-84e"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_8_2.txt, save ETag: W/"682a95f3-799"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_c_d.txt, save ETag: W/"682a95f3-efb"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_6_6.txt, save ETag: W/"682a95f3-4b4"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_a_e.txt, save ETag: W/"682a95f3-636"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_a_6.txt, save ETag: W/"682a95f3-59c"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_f_c.txt, save ETag: W/"682a95f3-725"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_0_e.txt, save ETag: W/"682a95f3-754"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_5_8.txt, save ETag: W/"682a95f3-56c"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_4_7.txt, save ETag: W/"682a95f3-1df"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_8_a.txt, save ETag: W/"682a95f3-4b5"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_3_5.txt, save ETag: W/"682a95f3-50f"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_8_6.txt, save ETag: W/"682a95f3-575"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_9_0.txt, save ETag: W/"682a95f3-81a"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_d_e.txt, save ETag: W/"682a95f3-5b8"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_e_b.txt, save ETag: W/"682a95f3-49c"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_9_7.txt, save ETag: W/"682a95f3-6be"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_1_b.txt, save ETag: W/"682a95f3-4c5"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_c_3.txt, save ETag: W/"682a95f3-189b"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_5_b.txt, save ETag: W/"682a95f3-5ce"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_f_9.txt, save ETag: W/"682a95f3-3fb"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_5_d.txt, save ETag: W/"682a95f3-3cf"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_2_4.txt, save ETag: W/"682a95f3-449"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_a_f.txt, save ETag: W/"682a95f3-5fb"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_8_7.txt, save ETag: W/"682a95f3-4ef"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_1_6.txt, save ETag: W/"682a95f3-705"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_2_0.txt, save ETag: W/"682a95f3-2dc"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_d_b.txt, save ETag: W/"682a95f3-772"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_a_a.txt, save ETag: W/"682a95f3-3f4"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_4_3.txt, save ETag: W/"682a95f3-4b8"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_f_a.txt, save ETag: W/"682a95f3-f1a"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_e_9.txt, save ETag: W/"682a95f3-690"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_1_7.txt, save ETag: W/"682a95f3-4c2"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_3_b.txt, save ETag: W/"682a95f3-2b1"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_1_d.txt, save ETag: W/"682a95f3-765"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_8_5.txt, save ETag: W/"682a95f3-3b6"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_d_5.txt, save ETag: W/"682a95f3-408"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_f_0.txt, save ETag: W/"682a95f3-66c"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_1_8.txt, save ETag: W/"682a95f3-429"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_9_f.txt, save ETag: W/"682a95f3-8ee"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_3_2.txt, save ETag: W/"682a95f3-4ed"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_9_0.txt, save ETag: W/"682a95f3-97b"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_2_a.txt, save ETag: W/"682a95f3-ecf"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_3_6.txt, save ETag: W/"682a95f3-a69"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_c_8.txt, save ETag: W/"682a95f3-75b"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_a_4.txt, save ETag: W/"682a95f3-951"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_7_f.txt, save ETag: W/"682a95f3-530"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_b_e.txt, save ETag: W/"682a95f3-3fa"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_0_7.txt, save ETag: W/"682a95f3-8f8"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_4_3.txt, save ETag: W/"682a95f3-8a7"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_f_4.txt, save ETag: W/"682a95f3-468"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_c_0.txt, save ETag: W/"682a95f3-960"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_c_4.txt, save ETag: W/"682a95f3-4b5"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_3_6.txt, save ETag: W/"682a95f3-37c"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_7_d.txt, save ETag: W/"682a95f3-2d9"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_b_5.txt, save ETag: W/"682a95f3-341"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_a_a.txt, save ETag: W/"682a95f3-4ec"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_1_6.txt, save ETag: W/"682a95f3-765"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_0_e.txt, save ETag: W/"682a95f3-33f"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_1_2.txt, save ETag: W/"682a95f3-3d9"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_2_3.txt, save ETag: W/"682a95f3-5e6"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_6_4.txt, save ETag: W/"682a95f3-5f7"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_5_a.txt, save ETag: W/"682a95f3-2b9"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_f_d.txt, save ETag: W/"682a95f3-4b8"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_4_2.txt, save ETag: W/"682a95f3-a3c"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_1_d.txt, save ETag: W/"682a95f3-8df"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_d_8.txt, save ETag: W/"682a95f3-ca2"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_3_2.txt, save ETag: W/"682a95f3-6ec"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_f_c.txt, save ETag: W/"682a95f3-397"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_a_4.txt, save ETag: W/"682a95f3-6de"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_6_4.txt, save ETag: W/"682a95f3-519"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_b_7.txt, save ETag: W/"682a95f3-2cd"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_3_5.txt, save ETag: W/"682a95f3-669"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_0_d.txt, save ETag: W/"682a95f3-273"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_c_a.txt, save ETag: W/"682a95f3-881"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_b_8.txt, save ETag: W/"682a95f3-4fc"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_d_0.txt, save ETag: W/"682a95f3-364"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_8_0.txt, save ETag: W/"682a95f3-4cf"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_2_d.txt, save ETag: W/"682a95f3-a5a"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_8_3.txt, save ETag: W/"682a95f3-850"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_6_6.txt, save ETag: W/"682a95f3-653"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_7_7.txt, save ETag: W/"682a95f3-3d7"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_a_0.txt, save ETag: W/"682a95f3-a28"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_a_b.txt, save ETag: W/"682a95f3-6ce"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_c_8.txt, save ETag: W/"682a95f3-96c"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_c_9.txt, save ETag: W/"682a95f3-70a"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_7_7.txt, save ETag: W/"682a95f3-50b"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_a_6.txt, save ETag: W/"682a95f3-103a"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_8_4.txt, save ETag: W/"682a95f3-44d"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_2_8.txt, save ETag: W/"682a95f3-102d"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_5_4.txt, save ETag: W/"682a95f3-80c"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_a_f.txt, save ETag: W/"682a95f3-64e"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_b_5.txt, save ETag: W/"682a95f3-6e6"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_5_5.txt, save ETag: W/"682a95f3-424"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_0_9.txt, save ETag: W/"682a95f3-766"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_7_7.txt, save ETag: W/"682a95f3-96c"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_e_3.txt, save ETag: W/"682a95f3-676"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_9_d.txt, save ETag: W/"682a95f3-3fa"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_7_c.txt, save ETag: W/"682a95f3-a47"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_e_6.txt, save ETag: W/"682a95f3-2a9"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_0_2.txt, save ETag: W/"682a95f3-673"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_a_e.txt, save ETag: W/"682a95f3-618"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_b_0.txt, save ETag: W/"682a95f3-4c8"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_f_6.txt, save ETag: W/"682a95f3-3a0"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_b_6.txt, save ETag: W/"682a95f3-5fe"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_a_0.txt, save ETag: W/"682a95f3-3df"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_c_2.txt, save ETag: W/"682a95f3-cec"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_1_a.txt, save ETag: W/"682a95f3-2d0"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_e_2.txt, save ETag: W/"682a95f3-9ec"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_8_a.txt, save ETag: W/"682a95f3-2bf"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_3_5.txt, save ETag: W/"682a95f3-c6c"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_5_d.txt, save ETag: W/"682a95f3-3a9"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_5_2.txt, save ETag: W/"682a95f3-973"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_f_a.txt, save ETag: W/"682a95f3-597"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_8_f.txt, save ETag: W/"682a95f3-8f5"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_8_8.txt, save ETag: W/"682a95f3-54b"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_0_0.txt, save ETag: W/"682a95f3-422"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_b_5.txt, save ETag: W/"682a95f3-47f"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_e_f.txt, save ETag: W/"682a95f3-352"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_c_0.txt, save ETag: W/"682a95f3-35c"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_1_b.txt, save ETag: W/"682a95f3-9f4"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_8_b.txt, save ETag: W/"682a95f3-f50"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_a_d.txt, save ETag: W/"682a95f3-55c"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_a_e.txt, save ETag: W/"682a95f3-6cc"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_6_a.txt, save ETag: W/"682a95f3-81e"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_c_8.txt, save ETag: W/"682a95f3-1211"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_d_d.txt, save ETag: W/"682a95f3-744"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_5_0.txt, save ETag: W/"682a95f3-9d0"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_6_2.txt, save ETag: W/"682a95f3-612"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_f_f.txt, save ETag: W/"682a95f3-5b6"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_c_e.txt, save ETag: W/"682a95f3-48a"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_9_9.txt, save ETag: W/"682a95f3-4eb"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_2_d.txt, save ETag: W/"682a95f3-9d3"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_0_5.txt, save ETag: W/"682a95f3-5fa"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_c_c.txt, save ETag: W/"682a95f3-635"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_b_5.txt, save ETag: W/"682a95f3-454"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_1_f.txt, save ETag: W/"682a95f3-4bc"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_c_b.txt, save ETag: W/"682a95f3-4e1"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_0_c.txt, save ETag: W/"682a95f3-2d6"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_a_6.txt, save ETag: W/"682a95f3-80c"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_f_1.txt, save ETag: W/"682a95f3-5a2"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_4_1.txt, save ETag: W/"682a95f3-5b4"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_f_4.txt, save ETag: W/"682a95f3-339"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_2_4.txt, save ETag: W/"682a95f3-e0d"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_9_3.txt, save ETag: W/"682a95f3-a75"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_c_6.txt, save ETag: W/"682a95f3-83b"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_2_4.txt, save ETag: W/"682a95f3-792"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_1_e.txt, save ETag: W/"682a95f3-a51"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_9_b.txt, save ETag: W/"682a95f3-4c9"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_b_b.txt, save ETag: W/"682a95f3-525"
+  CDN: trunk Relative path downloaded: all_pods.txt, save ETag: W/"682a95f3-15f9df"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_8_3.txt, save ETag: W/"682a95f3-834"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_4_e.txt, save ETag: W/"682a95f3-585"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_6_4.txt, save ETag: W/"682a95f3-512"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_7_b.txt, save ETag: W/"682a95f3-50e"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_4_7.txt, save ETag: W/"682a95f3-324"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_3_f.txt, save ETag: W/"682a95f3-131f"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_2_1.txt, save ETag: W/"682a95f3-368"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_0_3.txt, save ETag: W/"682a95f3-463"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_0_2.txt, save ETag: W/"682a95f3-4eb"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_c_6.txt, save ETag: W/"682a95f3-4a3"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_9_3.txt, save ETag: W/"682a95f3-7e4"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_4_6.txt, save ETag: W/"682a95f3-790"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_9_c.txt, save ETag: W/"682a95f3-8c1"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_1_e.txt, save ETag: W/"682a95f3-3bf"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_3_9.txt, save ETag: W/"682a95f3-3c5"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_f_7.txt, save ETag: W/"682a95f3-44a"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_c_2.txt, save ETag: W/"682a95f3-cdb"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_3_b.txt, save ETag: W/"682a95f3-a97"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_4_3.txt, save ETag: W/"682a95f3-35f"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_5_7.txt, save ETag: W/"682a95f3-564"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_1_4.txt, save ETag: W/"682a95f3-473"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_5_9.txt, save ETag: W/"682a95f3-4ab"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_a_7.txt, save ETag: W/"682a95f3-543"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_c_b.txt, save ETag: W/"682a95f3-58b"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_0_0.txt, save ETag: W/"682a95f3-a58"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_3_6.txt, save ETag: W/"682a95f3-8ac"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_5_f.txt, save ETag: W/"682a95f3-870"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_e_3.txt, save ETag: W/"682a95f3-394"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_e_6.txt, save ETag: W/"682a95f3-1fc"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_d_6.txt, save ETag: W/"682a95f3-650"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_0_8.txt, save ETag: W/"682a95f3-9b9"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_d_4.txt, save ETag: W/"682a95f3-67d"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_d_1.txt, save ETag: W/"682a95f3-3fd"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_f_6.txt, save ETag: W/"682a95f3-5f3"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_2_6.txt, save ETag: W/"682a95f3-23d"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_e_d.txt, save ETag: W/"682a95f3-4ea"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_b_a.txt, save ETag: W/"682a95f3-354"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_4_f.txt, save ETag: W/"682a95f3-9e2"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_b_9.txt, save ETag: W/"682a95f3-cbf"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_5_1.txt, save ETag: W/"682a95f3-858"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_3_6.txt, save ETag: W/"682a95f3-381"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_c_5.txt, save ETag: W/"682a95f3-4eb"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_c_c.txt, save ETag: W/"682a95f3-709"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_3_e.txt, save ETag: W/"682a95f3-6c0"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_0_5.txt, save ETag: W/"682a95f3-328"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_1_c.txt, save ETag: W/"682a95f3-40b"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_b_1.txt, save ETag: W/"682a95f3-52b"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_c_d.txt, save ETag: W/"682a95f3-883"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_9_2.txt, save ETag: W/"682a95f3-386"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_1_a.txt, save ETag: W/"682a95f3-5aa"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_3_1.txt, save ETag: W/"682a95f3-663"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_1_2.txt, save ETag: W/"682a95f3-4f5"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_a_8.txt, save ETag: W/"682a95f3-512"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_8_7.txt, save ETag: W/"682a95f3-bcb"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_c_c.txt, save ETag: W/"682a95f3-609"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_3_d.txt, save ETag: W/"682a95f3-735"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_e_6.txt, save ETag: W/"682a95f3-943"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_f_b.txt, save ETag: W/"682a95f3-505"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_3_1.txt, save ETag: W/"682a95f3-8e2"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_5_6.txt, save ETag: W/"682a95f3-79e"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_4_6.txt, save ETag: W/"682a95f3-3e9"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_8_8.txt, save ETag: W/"682a95f3-4b9"
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/2/c/6/GoogleWebRTC/1.1.32000/GoogleWebRTC.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/2/c/6/GoogleWebRTC/1.1.32000/GoogleWebRTC.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/5/2/4/ABCropRotateView/0.1.0/ABCropRotateView.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/5/2/4/ABCropRotateView/0.1.0/ABCropRotateView.podspec.json
+  CDN: trunk Relative path downloaded: all_pods_versions_c_a_7.txt, save ETag: W/"682a95f3-a37"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_d_5.txt, save ETag: W/"682a95f3-57b"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_f_3.txt, save ETag: W/"682a95f3-4fb"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_b_b.txt, save ETag: W/"682a95f3-a98"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_d_b.txt, save ETag: W/"682a95f3-26b"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_5_e.txt, save ETag: W/"682a95f3-607"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_7_c.txt, save ETag: W/"682a95f3-488"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_2_b.txt, save ETag: W/"682a95f3-1016"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_9_a.txt, save ETag: W/"682a95f3-722"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_1_2.txt, save ETag: W/"682a95f3-52b"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_b_7.txt, save ETag: W/"682a95f3-48c"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_c_d.txt, save ETag: W/"682a95f3-ad7"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_1_7.txt, save ETag: W/"682a95f3-6af"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_9_e.txt, save ETag: W/"682a95f3-47f"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_8_6.txt, save ETag: W/"682a95f3-3ac"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_1_9.txt, save ETag: W/"682a95f3-7e8"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_b_a.txt, save ETag: W/"682a95f3-66b"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_d_a.txt, save ETag: W/"682a95f3-7d5"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_1_3.txt, save ETag: W/"682a95f3-314"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_f_f.txt, save ETag: W/"682a95f3-706"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_c_5.txt, save ETag: W/"682a95f3-55b"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_0_1.txt, save ETag: W/"682a95f3-400"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_f_7.txt, save ETag: W/"682a95f3-472"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_5_c.txt, save ETag: W/"682a95f3-8ef"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_0_8.txt, save ETag: W/"682a95f3-ab7"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_7_a.txt, save ETag: W/"682a95f3-a65"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_9_d.txt, save ETag: W/"682a95f3-5bd"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_6_6.txt, save ETag: W/"682a95f3-69c"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_e_3.txt, save ETag: W/"682a95f3-4c7"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_b_d.txt, save ETag: W/"682a95f3-475"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_4_0.txt, save ETag: W/"682a95f3-64f"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_f_1.txt, save ETag: W/"682a95f3-fcb"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_7_d.txt, save ETag: W/"682a95f3-86d"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_4_5.txt, save ETag: W/"682a95f3-6e3"
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/5/2/4/ABCropRotateView/0.1.1/ABCropRotateView.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/5/2/4/ABCropRotateView/0.1.1/ABCropRotateView.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/0.10.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.10.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/0.10.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.10.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/0.5.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.5.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/0.7.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.7.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/0.9.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.9.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/0.9.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.9.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/0.9.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.9.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.0.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.0.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.0RC1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.0RC1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.0RC2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.0RC2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.0RC3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.0RC3/AFNetworking.podspec.json
+  CDN: trunk Relative path downloaded: all_pods_versions_4_3_4.txt, save ETag: W/"682a95f3-4ae"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_3_f.txt, save ETag: W/"682a95f3-4e9"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_1_a.txt, save ETag: W/"682a95f3-33f"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_0_6.txt, save ETag: W/"682a95f3-906"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_b_e.txt, save ETag: W/"682a95f3-919"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_9_d.txt, save ETag: W/"682a95f3-b24"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_c_e.txt, save ETag: W/"682a95f3-23e"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_f_d.txt, save ETag: W/"682a95f3-281"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_b_c.txt, save ETag: W/"682a95f3-570"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_6_c.txt, save ETag: W/"682a95f3-745"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_4_d.txt, save ETag: W/"682a95f3-3ec"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_4_2.txt, save ETag: W/"682a95f3-658"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_f_2.txt, save ETag: W/"682a95f3-2b1"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_f_e.txt, save ETag: W/"682a95f3-bde"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_d_4.txt, save ETag: W/"682a95f3-491"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_2_1.txt, save ETag: W/"682a95f3-5f1"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_c_2.txt, save ETag: W/"682a95f3-682"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_1_6.txt, save ETag: W/"682a95f3-6b4"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_8_d.txt, save ETag: W/"682a95f3-65b"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_a_4.txt, save ETag: W/"682a95f3-70a"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_a_f.txt, save ETag: W/"682a95f3-3c9"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_c_7.txt, save ETag: W/"682a95f3-442"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_e_e.txt, save ETag: W/"682a95f3-74a"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_9_9.txt, save ETag: W/"682a95f3-838"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_7_e.txt, save ETag: W/"682a95f3-4ad"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_d_7.txt, save ETag: W/"682a95f3-39f"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_c_f.txt, save ETag: W/"682a95f3-ba0"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_b_c.txt, save ETag: W/"682a95f3-6bb"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_9_c.txt, save ETag: W/"682a95f3-3cb"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_b_b.txt, save ETag: W/"682a95f3-35f"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_1_f.txt, save ETag: W/"682a95f3-774"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_8_4.txt, save ETag: W/"682a95f3-5db"
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.1.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.1.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.1.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.1.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.2.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.2.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.2.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.2.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.3.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.3.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.3.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.3.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.3.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.3.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.3.3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.3.3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/1.3.4/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.3.4/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.0.0-RC1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.0-RC1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.0.0-RC2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.0-RC2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.0.0-RC3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.0-RC3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.0.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.0.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.0.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.0.3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.1.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.1.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.2.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.2.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.2.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.2.3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.2.4/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.4/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.3.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.3.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.3.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.3.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.4.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.4.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.4.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.4.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.5.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.5.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.5.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.5.3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.5.4/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.4/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.6.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.6.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.6.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.6.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.6.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.6.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.6.3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.6.3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/2.7.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.7.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.0-beta.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.0-beta.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.0-beta.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.0-beta.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.0-beta.3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.0-beta.3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.2/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.2/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.3/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.3/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.0.4/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.4/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.1.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.1.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.2.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.2.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/3.2.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.2.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/4.0.0/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/4.0.0/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/f/9/1/ACECoreDataNetworkTableViewController/0.2.1/ACECoreDataNetworkTableViewController.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/f/9/1/ACECoreDataNetworkTableViewController/0.2.1/ACECoreDataNetworkTableViewController.podspec.json
+  CDN: trunk Relative path downloaded: all_pods_versions_a_b_a.txt, save ETag: W/"682a95f3-383"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_7_3.txt, save ETag: W/"682a95f3-66e"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_b_a.txt, save ETag: W/"682a95f3-787"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_0_4.txt, save ETag: W/"682a95f3-78b"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_1_9.txt, save ETag: W/"682a95f3-5d7"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_5_4.txt, save ETag: W/"682a95f3-5f6"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_4_1.txt, save ETag: W/"682a95f3-579"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_6_0.txt, save ETag: W/"682a95f3-4df"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_3_b.txt, save ETag: W/"682a95f3-62e"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_3_d.txt, save ETag: W/"682a95f3-683"
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.2.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/4.0.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/f/9/1/ACECoreDataNetworkTableViewController/0.2.1/ACECoreDataNetworkTableViewController.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/2/c/6/GoogleWebRTC/1.1.32000/GoogleWebRTC.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.9.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.7.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.2.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.2/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.1.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.4/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.4/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.0RC3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.1.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.1.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.3.3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.0-RC1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.3.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.4.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.2/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.6.3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/1.2.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.0.0-RC2/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.5.3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.0-beta.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.2.4/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/3.0.0-beta.3/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.7.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.9.0/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/2.3.1/AFNetworking.podspec.json Response: Couldn't resolve host name, retries: 4
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.6.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.3.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.3.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.1.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/0.9.2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.6.2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.0RC1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/0.5.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.0.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.0RC2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.2.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.3.2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.3.4/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.0.0-RC3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.2.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.2.2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.4.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.6.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.0-beta.2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.2/AFNetworking.podspec.json
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/5/2/4/ABCropRotateView/0.1.0/ABCropRotateView.podspec.json Response: Timeout was reached, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/5/2/4/ABCropRotateView/0.1.1/ABCropRotateView.podspec.json Response: Timeout was reached, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.10.0/AFNetworking.podspec.json Response: Timeout was reached, retries: 4
+  CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/a/7/5/AFNetworking/0.10.1/AFNetworking.podspec.json Response: Timeout was reached, retries: 4
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.2.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/4.0.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/f/9/1/ACECoreDataNetworkTableViewController/0.2.1/ACECoreDataNetworkTableViewController.podspec.json
+  CDN: trunk Relative path not modified: Specs/2/c/6/GoogleWebRTC/1.1.32000/GoogleWebRTC.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/0.9.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.0.3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.0.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.7.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.2.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.0.2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.1.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.5.4/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.1.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.5.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.0.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.2.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.4/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.0RC3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.1.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.3.3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.0.0-RC1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.2.3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.3.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.4.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.5.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.5.2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.6.3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/1.2.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.0.0-RC2/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.5.3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.0-beta.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.2.4/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/3.0.0-beta.3/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/0.7.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/0.9.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/2.3.1/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/5/2/4/ABCropRotateView/0.1.0/ABCropRotateView.podspec.json
+  CDN: trunk Relative path not modified: Specs/5/2/4/ABCropRotateView/0.1.1/ABCropRotateView.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/0.10.0/AFNetworking.podspec.json
+  CDN: trunk Relative path not modified: Specs/a/7/5/AFNetworking/0.10.1/AFNetworking.podspec.json
+Validating podspec
+ -> MeetingKit  MeetingKit (1.1.0) - Analyzing on iOS 10.0 platform.
+  - Generating Info.plist file at `../../../../../../../../var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/App/App-Info.plist`
+  Preparing
+
+Analyzing dependencies
+
+Inspecting targets to integrate
+  Using `ARCHS` setting to build architectures of target `Pods-App`: (``)
+
+Fetching external sources
+-> Fetching podspec for `MeetingKit` from `/Users/SailorGa/SailorOS/Freewind/RTCMeetingKit/Depend/MeetingKit/MeetingKit.podspec`
+
+Resolving dependencies of 
+  CDN: trunk Relative path: CocoaPods-version.yml exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_a_7_5.txt exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_e_9_0.txt exists! Returning local because checking is only performed in repo update
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/e/9/0/RTCEngineKit/2.2.2/RTCEngineKit.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/e/9/0/RTCEngineKit/2.2.2/RTCEngineKit.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/e/9/0/RTCEngineKit/2.2.3/RTCEngineKit.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/e/9/0/RTCEngineKit/2.2.3/RTCEngineKit.podspec.json
+  CDN: trunk Redirecting from https://cdn.cocoapods.org/Specs/e/9/0/RTCEngineKit/2.2.4/RTCEngineKit.podspec.json to https://cdn.jsdelivr.net/cocoa/Specs/e/9/0/RTCEngineKit/2.2.4/RTCEngineKit.podspec.json
+  CDN: trunk Relative path downloaded: Specs/e/9/0/RTCEngineKit/2.2.2/RTCEngineKit.podspec.json, save ETag: W/"45e-wuB4H7fDQnbkL4WG8pZOAFSuQu4"
+  CDN: trunk Relative path downloaded: Specs/e/9/0/RTCEngineKit/2.2.4/RTCEngineKit.podspec.json, save ETag: W/"45e-cZT49kHHlY1U1V1v+HlhWg2z9+Q"
+  CDN: trunk Relative path downloaded: Specs/e/9/0/RTCEngineKit/2.2.3/RTCEngineKit.podspec.json, save ETag: W/"45e-wUN7lIfRuqndgbz4YRObRNl/PhM"
+  CDN: trunk Relative path: Specs/e/9/0/RTCEngineKit/2.2.4/RTCEngineKit.podspec.json modified during this run! Returning local
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.0/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/7/5/AFNetworking/4.0.1/AFNetworking.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/e/9/0/RTCEngineKit/2.2.4/RTCEngineKit.podspec.json modified during this run! Returning local
+  CDN: trunk Relative path: Specs/e/9/0/RTCEngineKit/2.2.3/RTCEngineKit.podspec.json modified during this run! Returning local
+  CDN: trunk Relative path: Specs/e/9/0/RTCEngineKit/2.2.2/RTCEngineKit.podspec.json modified during this run! Returning local
+  CDN: trunk Relative path: Specs/e/9/0/RTCEngineKit/2.2.1/RTCEngineKit.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/e/9/0/RTCEngineKit/2.2.0/RTCEngineKit.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_1_d_4.txt exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.6.5/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.6.5/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.6.4/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.6.3/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.6.2/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.6.1/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.6.0/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.5.1/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.5.0/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.4.3/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.4.2/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.4.1/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.3.5/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.3.4/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.3.3/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.3.2/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.3.1/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.2.2/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/7.0.3/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/1/d/4/CocoaAsyncSocket/0.0.1/CocoaAsyncSocket.podspec.json exists! Returning local because checking is only performed in repo update
+
+Comparing resolved specification to the sandbox manifest
+  A AFNetworking
+  A CocoaAsyncSocket
+  A MeetingKit
+  A RTCEngineKit
+
+Downloading dependencies
+
+-> Installing AFNetworking (4.0.1)
+  > Copying AFNetworking from `/Users/SailorGa/Library/Caches/CocoaPods/Pods/Release/AFNetworking/4.0.1-3bd23` to `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/AFNetworking`
+
+-> Installing CocoaAsyncSocket (7.6.5)
+  > Copying CocoaAsyncSocket from `/Users/SailorGa/Library/Caches/CocoaPods/Pods/Release/CocoaAsyncSocket/7.6.5-065fd` to `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/CocoaAsyncSocket`
+
+-> Installing MeetingKit (1.1.0)
+ > Git download
+ > Git download
+     $ /usr/bin/git clone https://github.com/seastart/meeting-ios-cocoapods.git /var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/d20250519-47757-17kyr01 --template= --single-branch --depth 1 --branch 1.1.0
+  $ /usr/bin/rsync -a --exclude=.git --delete /var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/d20250519-47757-17kyr01/ /Users/SailorGa/Library/Caches/CocoaPods/Pods/External/MeetingKit/347d615266523cfb3ea64f5e6d242c2d-0c8f6
+  > Copying MeetingKit from `/Users/SailorGa/Library/Caches/CocoaPods/Pods/External/MeetingKit/347d615266523cfb3ea64f5e6d242c2d-0c8f6` to `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/MeetingKit`
+
+-> Installing RTCEngineKit (2.2.4)
+ > Git download
+ > Git download
+     $ /usr/bin/git clone https://github.com/seastart/rtc-ios-cocoapods.git /var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/d20250519-47757-1ibedcz --template= --single-branch --depth 1 --branch 2.2.4
+  $ /usr/bin/rsync -a --exclude=.git --delete /var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/d20250519-47757-1ibedcz/ /Users/SailorGa/Library/Caches/CocoaPods/Pods/Release/RTCEngineKit/2.2.4-7194f
+  > Copying RTCEngineKit from `/Users/SailorGa/Library/Caches/CocoaPods/Pods/Release/RTCEngineKit/2.2.4-7194f` to `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/RTCEngineKit`
+  - Running pre install hooks
+  - Writing Lockfile in `../../../../../../../../var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Podfile.lock`
+  - Writing Manifest in `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/Manifest.lock`
+
+Generating Pods project
+  - Creating Pods project
+  - Installing files into Pods project
+    - Adding source files
+    - Adding frameworks
+    - Adding libraries
+    - Adding resources
+    - Linking headers
+  - Installing Pod Targets
+    - Installing target `AFNetworking` iOS 9.0
+      - Generating dummy source at `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m`
+    - Installing target `CocoaAsyncSocket` iOS 9.0
+      - Generating dummy source at `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-dummy.m`
+    - Installing target `MeetingKit` iOS 10.0
+    - Installing target `RTCEngineKit` iOS 10.0
+  - Installing Aggregate Targets
+    - Installing target `Pods-App` iOS 10.0
+      - Generating dummy source at `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/Target Support Files/Pods-App/Pods-App-dummy.m`
+  - Stabilizing target UUIDs
+  - Running post install hooks
+  - Writing Xcode project file to `../../../../../../../../private/var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/Pods/Pods.xcodeproj`
+  Cleaning up sandbox directory
+
+Integrating client project
+
+[!] Please close any current Xcode sessions and use `App.xcworkspace` for this project from now on.
+
+Integrating target `Pods-App` (`../../../../../../../../var/folders/zf/71jr2cps0nz9jfv8p9m4h5cc0000gn/T/CocoaPods-Lint-20250519-47757-1jpnaza-MeetingKit/App.xcodeproj` project)
+  Adding Build Phase '[CP] Embed Pods Frameworks' to project.
+  Adding Build Phase '[CP] Copy Pods Resources' to project.
+  Adding Build Phase '[CP] Check Pods Manifest.lock' to project.
+  - Running post integrate hooks
+
+-> Pod installation complete! There is 1 dependency from the Podfile and 4 total pods installed.
+  Building with `xcodebuild`.
+  Testing with `xcodebuild`.
+ -> MeetingKit (1.1.0)
+
+opening connection to trunk.cocoapods.org:443...
+opened
+starting SSL for trunk.cocoapods.org:443...
+SSL established, protocol: TLSv1.3, cipher: TLS_AES_128_GCM_SHA256
+<- "POST /api/v1/pods?allow_warnings=true HTTP/1.1\r\nContent-Type: application/json; charset=utf-8\r\nAccept: application/json; charset=utf-8\r\nUser-Agent: CocoaPods/1.16.1\r\nAuthorization: Token 4e819ba199d44324ace96a0f925e7986\r\nAccept-Encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3\r\nHost: trunk.cocoapods.org\r\nContent-Length: 514\r\n\r\n"
+<- "{\"name\":\"MeetingKit\",\"version\":\"1.1.0\",\"summary\":\"\u4F1A\u8BAE\u670D\u52A1\u5F15\u64CE.\",\"description\":\"TODO: Add long description of the pod here.\",\"homepage\":\"https://github.com/seastart/meeting-ios-cocoapods\",\"license\":{\"type\":\"MIT\",\"file\":\"LICENSE\"},\"authors\":{\"SailorGa\":\"ljia789@gmail.com\"},\"source\":{\"git\":\"https://github.com/seastart/meeting-ios-cocoapods.git\",\"tag\":\"1.1.0\"},\"platforms\":{\"ios\":\"10.0\"},\"vendored_frameworks\":\"MeetingKit/*.framework\",\"dependencies\":{\"AFNetworking\":[\">= 4.0.0\"],\"RTCEngineKit\":[\">= 2.2.0\"]}}\n"
+-> "HTTP/1.1 500 Internal Server Error\r\n"
+-> "Server: Cowboy\r\n"
+-> "Date: Mon, 19 May 2025 02:50:16 GMT\r\n"
+-> "Report-To: {\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1747623003&sid=929419e7-33ea-4e2f-85f0-7d8b7cd5cbd6&s=cWlMyh7nhMU%2FCK1KXlr8qLqKMItLZCjlGwcSxBGSiP0%3D\"}]}\r\n"
+-> "Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1747623003&sid=929419e7-33ea-4e2f-85f0-7d8b7cd5cbd6&s=cWlMyh7nhMU%2FCK1KXlr8qLqKMItLZCjlGwcSxBGSiP0%3D\r\n"
+-> "Nel: {\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}\r\n"
+-> "Connection: keep-alive\r\n"
+-> "Strict-Transport-Security: max-age=31536000\r\n"
+-> "Content-Type: application/json\r\n"
+-> "X-Content-Type-Options: nosniff\r\n"
+-> "Content-Length: 141\r\n"
+-> "Via: 1.1 vegur\r\n"
+-> "\r\n"
+reading 141 bytes...
+-> "{\"error\":\"An internal server error occurred. Please check for any known status issues at https://twitter.com/CocoaPods and try again later.\"}"
+read 141 bytes
+Conn keep-alive
+[!] An internal server error occurred. Please check for any known status issues at https://twitter.com/CocoaPods and try again later.
+
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/cocoapods-trunk-1.6.0/lib/pod/command/trunk.rb:70:in `print_error'
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/cocoapods-trunk-1.6.0/lib/pod/command/trunk.rb:30:in `request_url'
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/cocoapods-trunk-1.6.0/lib/pod/command/trunk.rb:36:in `request_path'
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/cocoapods-trunk-1.6.0/lib/pod/command/trunk/push.rb:89:in `push_to_trunk'
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/cocoapods-trunk-1.6.0/lib/pod/command/trunk/push.rb:73:in `run'
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/claide-1.1.0/lib/claide/command.rb:334:in `run'
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/cocoapods-1.16.1/lib/cocoapods/command.rb:52:in `run'
+/Users/SailorGa/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/cocoapods-1.16.1/bin/pod:55:in `<top (required)>'
+/usr/local/bin/pod:23:in `load'
+/usr/local/bin/pod:23:in `<main>'
