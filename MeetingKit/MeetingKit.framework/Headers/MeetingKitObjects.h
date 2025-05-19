@@ -643,6 +643,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *roomNo;
 /// 会议标题
 @property (nonatomic, copy) NSString *title;
+/// 创建者标识
+@property (nonatomic, copy) NSString *creatorId;
 /// 创建者昵称
 @property (nonatomic, copy) NSString *creatorName;
 /// 预约时间
