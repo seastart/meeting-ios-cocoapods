@@ -277,6 +277,17 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+/// 创建房间响应对象
+@interface SEAMeetingCreateModel : NSObject
+
+/// 会议标识
+@property (nonatomic, copy) NSString *meetingId;
+/// 房间号码
+@property (nonatomic, copy) NSString *roomNo;
+
+@end
+
+
 /// 数据分页对象
 @interface SEASectionModel : NSObject
 
