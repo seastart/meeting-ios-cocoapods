@@ -348,6 +348,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *title;
 /// 会议说明
 @property (nonatomic, copy, nullable) NSString *content;
+/// 会议密码
+@property (nonatomic, copy, nullable) NSString *password;
 /// 受邀成员标识列表
 @property (nonatomic, copy, nullable) NSArray <NSString *> *conferee;
 /// 创建者标识
