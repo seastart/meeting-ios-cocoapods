@@ -120,6 +120,14 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - onFailed: 失败回调
 - (void)getMeetingDetailsWithMeetingId:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
+#pragma mark 获取会议详情
+/// 获取会议详情
+/// - Parameters:
+///   - roomNo: 房间号码
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMeetingDetailsWithRoomNo:(NSString *)roomNo onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 #pragma mark 获取参会人员列表
 /// 获取参会人员列表
 /// - Parameters:
@@ -587,6 +595,148 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - onSuccess: 成功回调
 ///   - onFailed: 失败回调
 - (void)stopCloudRecord:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+
+#pragma mark - ------------ 等候室相关接口 ------------
+#pragma mark 请求离开等候室
+/// 请求离开等候室
+/// - Parameters:
+///   - roomNo: 会议号码
+///   - onSuccess: 成功回调
+- (void)exitWaitingRoom:(NSString *)roomNo onSuccess:(nullable SEASuccessBlock)onSuccess;
+
+#pragma mark 主持人更新等候室禁用状态
+/// 主持人更新等候室禁用状态
+/// - Parameters:
+///   - waitingRoomDisabled: 禁用状态，YES-禁用 NO-不禁用
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminUpdateWaitingRoomDisabled:(BOOL)waitingRoomDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人获取等候室用户列表
+/// 主持人获取等候室用户列表
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminGetWaitingRoomUserList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人将会议室成员移动到等候室
+/// 主持人将会议室成员移动到等候室
+/// - Parameters:
+///   - userId: 用户标识
+///   - nickname: 用户昵称
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminMoveInWaitingRoom:(NSString *)userId nickname:(NSString *)nickname onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人将等候室人员移动到会议室
+/// 主持人将等候室人员移动到会议室
+/// - Parameters:
+///   - userId: 用户标识，空表示全部成员
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminMoveOutWaitingRoom:(nullable NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+
+#pragma mark - ------------ 分组讨论相关接口 ------------
+#pragma mark 小组成员请求管理员帮助
+/// 小组成员请求管理员帮助
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)subMeetingHelp:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人更新禁止在主持人前入会状态
+/// 主持人更新禁止在主持人前入会状态
+/// - Parameters:
+///   - enterBeforeHostDisabled: 禁止状态，YES-禁止 NO-不禁止
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminUpdateEnterBeforeHostDisabled:(BOOL)enterBeforeHostDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人创建小组会议
+/// 主持人创建小组会议
+/// - Parameters:
+///   - titleList: 标题列表
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminCreateSubMeeting:(NSArray <NSString *> *)titleList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人修改小组会议标题
+/// 主持人修改小组会议标题
+/// - Parameters:
+///   - title: 小组标题
+///   - targetId: 小组标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminUpdateSubMeetingTitle:(NSString *)title targetId:(NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人修改小组会议成员(全量更新)
+/// 主持人修改小组会议成员(全量更新)
+/// - Parameters:
+///   - confereeList: 小组参会列表
+///   - targetId: 小组标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminUpdateSubMeetingConferee:(NSArray <SEAConfereeModel *> *)confereeList targetId:(NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人删除小组会议
+/// 主持人删除小组会议
+/// - Parameters:
+///   - targetList: 小组标识列表
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminDeleteSubMeeting:(NSArray <NSString *> *)targetList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人请求小组会议列表
+/// 主持人请求小组会议列表
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminGetSubMeetingList:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人开始小组会议
+/// 主持人开始小组会议
+/// - Parameters:
+///   - targetList: 小组标识列表
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminStartSubMeeting:(NSArray <NSString *> *)targetList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人结束小组会议
+/// 主持人结束小组会议
+/// - Parameters:
+///   - targetList: 小组标识列表
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminStopSubMeeting:(NSArray <NSString *> *)targetList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人小组会议之间移动用户
+/// 主持人小组会议之间移动用户
+/// - Parameters:
+///   - targetId: 目标成员标识
+///   - fromGroupId: 原小组标识
+///   - toGroupId: 目标小组标识，为空时表示主会议
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)adminMoveSubMeetingUser:(NSString *)targetId fromGroupId:(NSString *)fromGroupId toGroupId:(nullable NSString *)toGroupId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取在线成员列表
+/// 获取在线成员列表
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getOnlineMemberList:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 获取更多在线成员列表
+/// 获取更多在线成员列表
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)getMoreOnlineMemberList:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
 #pragma mark - ------------ 数据管理相关接口 ------------

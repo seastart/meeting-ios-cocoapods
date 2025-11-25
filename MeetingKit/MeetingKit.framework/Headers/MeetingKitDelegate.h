@@ -66,6 +66,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter userId: 请求者标识
 - (void)onRequestOpenMic:(NSString *)userId;
 
+#pragma mark 被管理员移进等候室回调
+/// 被管理员移进等候室回调
+/// 主持人调用 adminMoveInWaitingRoom: 接口执行将您从会议室移动到等候室后，此时您会收到该事件通知。
+/// - Parameter userId: 操作者标识
+- (void)onRoomMoveInWaitingRoom:(NSString *)userId;
+
+#pragma mark 被管理员移进小组会议或主会场回调
+/// 被管理员移进小组会议或主会场回调
+/// 主持人调用 adminMoveSubMeetingUser: 接口执行小组会议之间移动用户后，此时您会收到该事件通知。
+/// - Parameters:
+///   - fromMeetingId: 原小组会议标识
+///   - fromMeetingTitle: 原小组会议标题
+///   - toMeetingId: 目标小组会议标识
+///   - toMeetingTitle: 目标小组会议标题
+- (void)onRoomMoveSubMeeting:(NSString *)fromMeetingId fromMeetingTitle:(NSString *)fromMeetingTitle toMeetingId:(NSString *)toMeetingId toMeetingTitle:(NSString *)toMeetingTitle;
+
 
 #pragma mark - ------------ 房间事件回调 ------------
 #pragma mark 房间摄像头禁用状态变更回调
@@ -112,6 +128,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter userId: 操作者标识
 - (void)onRoomWatermarkDisabledChanged:(BOOL)watermarkDisabled userId:(NSString *)userId;
 
+#pragma mark 房间等候室禁用状态变更回调
+/// 房间等候室禁用状态变更回调
+/// 主持人调用 adminUpdateWaitingRoomDisabled: 接口执行更新房间等候室禁用状态后，当前房间所有成员都会收到该事件通知。
+/// - Parameter waitingRoomDisabled: 禁用状态，YES-禁用 NO-不禁用
+/// - Parameter userId: 操作者标识
+- (void)onRoomWaitingRoomDisabledChanged:(BOOL)waitingRoomDisabled userId:(NSString *)userId;
+
 #pragma mark 房间锁定状态变化回调
 /// 房间锁定状态变化回调
 /// 主持人调用 adminUpdateRoomLocked: 接口执行更新房间锁定状态后，当前房间所有成员都会收到该事件通知。
@@ -156,6 +179,26 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter enable: 举手状态，YES-申请举手 NO-取消举手
 /// - Parameter handupType: 举手申请类型
 - (void)onRoomHandUpChanged:(NSString *)userId enable:(BOOL)enable handupType:(SEAHandupType)handupType;
+
+#pragma mark 房间讨论组开始回调
+/// 房间讨论组开始回调
+/// 主持人调用 adminStartSubMeeting: 接口执行开始小组会议后，当前房间所有成员都会收到该事件通知。
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - title: 小组名称
+///   - conferee: 参会成员
+- (void)onRoomSubMeetingStart:(NSString *)meetingId title:(NSString *)title conferee:(nullable NSArray <NSString *> *)conferee;
+
+#pragma mark 房间讨论组结束回调
+/// 房间讨论组结束回调
+/// 主持人调用 adminStopSubMeeting: 接口执行结束小组会议后，当前房间所有成员都会收到该事件通知。
+/// - Parameter parentMid: 上级会议标识
+- (void)onRoomSubMeetingStop:(NSString *)parentMid;
+
+#pragma mark 房间会议标题变化回调
+/// 房间会议标题变化回调
+/// - Parameter title: 会议标题
+- (void)onRoomMeetingTitleChanged:(NSString *)title;
 
 
 #pragma mark - ------------ 用户事件回调 ------------
@@ -219,6 +262,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter approve: 处理结果
 /// - Parameter userId: 处理人标识
 - (void)onHandupConfirm:(SEAHandupType)handupType approve:(BOOL)approve userId:(NSString *)userId;
+
+#pragma mark 远端用户加入等候室回调
+/// 远端用户加入等候室回调
+/// 成员调用 enterRoom: 接口执行加入房间并且该房间开启了等候室功能，当前房间管理员用户将会收到该事件通知。
+/// - Parameters:
+///   - userId: 成员标识
+///   - nickname: 成员昵称
+- (void)onRoomUserEnterWaitingRoom:(NSString *)userId nickname:(NSString *)nickname;
+
+#pragma mark 远端用户离开等候室回调
+/// 远端用户离开等候室回调
+/// 成员调用 exitWaitingRoom: 接口执行离开等候室后，当前房间管理员用户将会收到该事件通知。
+/// - Parameters:
+///   - userId: 成员标识
+///   - nickname: 成员昵称
+- (void)onRoomUserExitWaitingRoom:(NSString *)userId nickname:(NSString *)nickname;
 
 
 #pragma mark - ------------ 消息事件回调 ------------

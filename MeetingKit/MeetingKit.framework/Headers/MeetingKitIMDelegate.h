@@ -61,6 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param remindModel 会议提醒
 - (void)onMeetingRemind:(SEAMeetingRemindModel *)remindModel;
 
+
 #pragma mark - ------------ 通话相关回调 ------------
 #pragma mark 通话请求的回调
 /// 通话请求的回调
@@ -70,6 +71,27 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param roomNo 房间号码
 /// @param title 会议标题
 - (void)onCallReceived:(NSString *)callerId nickname:(nullable NSString *)nickname roomNo:(NSString *)roomNo title:(NSString *)title;
+
+
+#pragma mark - ------------ 等候室相关回调 ------------
+#pragma mark 被管理员从等候室移入会议室回调
+/// 被管理员从等候室移入会议室回调
+/// 主持人调用 adminMoveOutWaitingRoom: 接口执行将您从等候室移动到会议室后，此时您会收到该事件通知。
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - title: 会议标题
+- (void)onWaitingRoomMoveInRoom:(NSString *)meetingId title:(nullable NSString *)title;
+
+
+#pragma mark - ------------ 分组讨论相关回调 ------------
+#pragma mark 小组会议请求帮助回调
+/// 小组会议请求帮助回调
+/// 小组会议成员调用 subMeetingHelp:onFailed: 接口执行请求管理员帮助后，此时管理员会收到该事件通知。
+/// - Parameters:
+///   - parentMid: 上级会议标识
+///   - meetingId: 小组会议标识
+///   - title: 小组会议标题
+- (void)onSubMettingAskingHelp:(NSString *)parentMid meetingId:(NSString *)meetingId title:(nullable NSString *)title;
 
 @end
 

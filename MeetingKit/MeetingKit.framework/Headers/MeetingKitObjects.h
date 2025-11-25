@@ -104,6 +104,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL selfUnmuteCameraDisabled;
 /// 房间共享禁用状态，YES-禁用 NO-不禁用
 @property (nonatomic, assign) BOOL shareDisabled;
+/// 等候室禁用状态，YES-禁用 NO-不禁用
+@property (nonatomic, assign) BOOL waitingRoomDisabled;
+/// 上级会议标识
+@property (nonatomic, copy, nullable) NSString *parentMid;
+/// 是否禁止在主持人之前入会，YES-禁止 NO-不禁止
+@property (nonatomic, assign) BOOL enterBeforeHostDisabled;
 /// 锁定状态，YES-开启 NO-关闭
 @property (nonatomic, assign) BOOL locked;
 
@@ -252,6 +258,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL screenshotDisabled;
 /// 聊天是否禁止，默认 NO
 @property (nonatomic, assign) BOOL chatDisabled;
+/// 等候室是否禁用，默认 YES
+@property (nonatomic, assign) BOOL waitingRoomDisabled;
+/// 禁止在主持人之前入会，默认 NO
+@property (nonatomic, assign) BOOL enterBeforeHostDisabled;
 /// 是否开启录制，默认 YES
 @property (nonatomic, assign) BOOL autoRecord;
 /// 扩展信息
@@ -261,10 +271,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 加入会议参数
+/// 入会时，可以选择会议号码或会议标识进行加会操作
 @interface SEAMeetingEnterParam : NSObject
 
 /// 会议号码
-@property (nonatomic, copy) NSString *roomNo;
+@property (nonatomic, copy, nullable) NSString *roomNo;
+/// 会议标识
+@property (nonatomic, copy, nullable) NSString *meetingId;
 /// 会议密码
 @property (nonatomic, copy, nullable) NSString *password;
 /// 参会昵称
@@ -394,6 +407,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL selfUnmuteCameraDisabled;
 /// 房间共享禁用状态，YES-禁用 NO-不禁用
 @property (nonatomic, assign) BOOL shareDisabled;
+/// 等候室禁用状态，YES-禁用 NO-不禁用
+@property (nonatomic, assign) BOOL waitingRoomDisabled;
+/// 禁止在主持人之前入会，YES-禁用 NO-不禁用
+@property (nonatomic, assign) BOOL enterBeforeHostDisabled;
 /// 锁定状态，YES-开启 NO-关闭
 @property (nonatomic, assign) BOOL locked;
 /// 是否开启录制，YES-开启 NO-关闭
@@ -506,6 +523,23 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - contact: 设备标识
 ///   - type: 设备类型
 - (instancetype)initWithContact:(NSString *)contact type:(SEAAgentType)type;
+
+@end
+
+
+/// 小组会议参会成员对象
+@interface SEAConfereeModel : NSObject
+
+/// 用户标识
+@property (nonatomic, copy) NSString *userId;
+/// 用户昵称
+@property (nonatomic, copy) NSString *nickname;
+
+/// 创建参会成员数据对象
+/// - Parameters:
+///   - userId: 用户标识
+///   - nickname: 用户昵称
+- (instancetype)initWithUserId:(NSString *)userId nickname:(NSString *)nickname;
 
 @end
 
@@ -664,6 +698,83 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger planTime;
 /// 预约时长，单位：分钟
 @property (nonatomic, assign) NSInteger planDuration;
+
+@end
+
+
+/// 等候室成员对象
+@interface SEAWaitingRoomMemberModel : NSObject
+
+/// 用户标识
+@property (nonatomic, copy) NSString *userId;
+/// 用户昵称
+@property (nonatomic, copy) NSString *nickname;
+/// 加入时间
+@property (nonatomic, assign) NSInteger enterAt;
+
+@end
+
+
+/// 等候室成员列表对象
+@interface SEAWaitingRoomMemberListModel : NSObject
+
+/// 等候室成员对象列表
+@property (nonatomic, strong, nullable) NSMutableArray <SEAWaitingRoomMemberModel *> *listData;
+
+@end
+
+
+/// 小组会议对象
+@interface SEARoomSubMeetingModel : NSObject
+
+/// 小组标识
+@property (nonatomic, copy) NSString *groupId;
+/// 小组会议标识
+@property (nonatomic, copy) NSString *meetingId;
+/// 主会议标识
+@property (nonatomic, copy) NSString *parentMid;
+/// 小组会议名称
+@property (nonatomic, copy) NSString *title;
+/// 小组会议状态
+@property (nonatomic, assign) SEAMeetingStatus meetingStatus;
+
+/// 小组会议参会成员
+@property (nonatomic, copy, nullable) NSArray <SEAConfereeModel *> *conferee;
+
+@end
+
+
+/// 小组会议列表对象
+@interface SEARoomSubMeetingListModel : NSObject
+
+/// 小组会议对象列表
+@property (nonatomic, strong, nullable) NSMutableArray <SEARoomSubMeetingModel *> *listData;
+
+@end
+
+
+/// 在线成员对象
+@interface SEAOnlineMemberModel : NSObject
+
+/// 用户标识
+@property (nonatomic, copy) NSString *userId;
+/// 用户昵称
+@property (nonatomic, copy) NSString *nickname;
+/// 设备类型
+@property (nonatomic, assign) SEADeviceType deviceType;
+/// 加入时间
+@property (nonatomic, assign) NSInteger joinAt;
+
+@end
+
+
+/// 在线成员列表对象
+@interface SEAOnlineMemberListModel : NSObject
+
+/// 数据分页对象
+@property (nonatomic, strong) SEASectionModel *meta;
+/// 在线成员数据列表
+@property (nonatomic, strong, nullable) NSMutableArray <SEAOnlineMemberModel *> *listData;
 
 @end
 

@@ -137,6 +137,8 @@ typedef enum : NSInteger {
     SEAErrorMeetingApiPasswordFailed = 2115,
     /// 会议仅限受邀人加入,请联系主持人
     SEAErrorMeetingApiByInviteOnly = 2116,
+    /// 会议开启等候室，需要管理员确认后入会
+    SEAErrorMeetingApiWaitingRoomEnable = 2118,
     
     /// 未归类的通用错误
     SEAErrorApiFailed = 10000,
@@ -335,10 +337,16 @@ typedef enum : NSInteger {
 /// 会议模式
 typedef enum : NSInteger {
     
-    /// 非合成会议模式(常规模式)
+    /// 常规会议模式
     SEAMeetingModeNormal = 1,
     /// 合成会议模式
-    SEAMeetingModeMixture = 2
+    SEAMeetingModeMixture = 2,
+    /// 语音会议模式
+    SEAMeetingModeVoice = 3,
+    /// 培训会议模式
+    SEAMeetingModeTraining = 4,
+    /// 小组会议模式
+    SEAMeetingModeGroups = 5
 } SEAMeetingMode;
 
 
