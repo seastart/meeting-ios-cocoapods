@@ -139,6 +139,8 @@ typedef enum : NSInteger {
     SEAErrorMeetingApiByInviteOnly = 2116,
     /// 会议开启等候室，需要管理员确认后入会
     SEAErrorMeetingApiWaitingRoomEnable = 2118,
+    /// 会议禁止在主持人之前加入
+    SEAErrorMeetingApiEnterBeforeHostDisabled = 2120,
     
     /// 未归类的通用错误
     SEAErrorApiFailed = 10000,
