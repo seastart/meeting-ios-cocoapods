@@ -495,6 +495,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *contact;
 /// 设备备注
 @property (nonatomic, copy) NSString *remark;
+/// 连接参数
+@property (nonatomic, copy) NSDictionary *connectParams;
 
 @end
 
