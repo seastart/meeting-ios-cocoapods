@@ -445,7 +445,7 @@ typedef enum : NSInteger {
     /// 共享
     SEAHandupTypeShare = 4,
     /// 涂鸦
-    SEAHandupTypeDraw = 4,
+    SEAHandupTypeDraw = 5,
 } SEAHandupType;
 
 
