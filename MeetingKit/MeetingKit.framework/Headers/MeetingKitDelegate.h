@@ -66,6 +66,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter userId: 请求者标识
 - (void)onRequestOpenMic:(NSString *)userId;
 
+#pragma mark 请求开启共享回调
+/// 请求开启共享回调
+/// 主持人调用 adminRequestUserOpenShare: 接口执行请求打开成员共享后，对应成员会收到该事件通知。
+/// - Parameter userId: 请求者标识
+- (void)onRequestOpenShare:(NSString *)userId;
+
 #pragma mark 被管理员移进等候室回调
 /// 被管理员移进等候室回调
 /// 主持人调用 adminMoveInWaitingRoom: 接口执行将您从会议室移动到等候室后，此时您会收到该事件通知。
@@ -247,6 +253,13 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - micState: 音频状态
 ///   - reason: 发生变化原因
 - (void)onUserMicStateChanged:(NSString *)targetUserId micState:(SEADeviceState)micState reason:(SEAChangeReason)reason;
+
+#pragma mark 用户涂鸦能力禁用状态变化回调
+/// 用户涂鸦能力禁用状态变化回调
+/// 主持人调用 adminUpdateUserDrawDisabled: 接口对成员执行涂鸦禁用操作后，对应成员会收到该事件通知。
+/// - Parameter drawDisabled: 禁用状态，YES-禁用 NO-不禁用
+/// - Parameter userId: 操作者标识
+- (void)onUserDrawDisabledChanged:(BOOL)drawDisabled userId:(NSString *)userId;
 
 #pragma mark 用户聊天能力禁用状态变化回调
 /// 用户聊天能力禁用状态变化回调

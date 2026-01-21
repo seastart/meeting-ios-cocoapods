@@ -500,6 +500,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param onFailed 失败回调
 - (void)adminUpdateUserChatDisabled:(NSString *)userId chatDisabled:(BOOL)chatDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
+#pragma mark 主持人更新用户白板涂鸦状态
+/// 主持人更新用户白板涂鸦状态
+/// @param userId 用户标识
+/// @param drawDisabled 禁用状态，YES-禁用 NO-不禁用
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)adminUpdateUserDrawDisabled:(NSString *)userId drawDisabled:(BOOL)drawDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 主持人请求用户开启共享
+/// 主持人请求用户开启共享
+/// @param userId 用户标识
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)adminRequestUserOpenShare:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 #pragma mark 主持人请求打开成员摄像头
 /// 主持人请求打开成员摄像头
 /// @param userId 用户标识

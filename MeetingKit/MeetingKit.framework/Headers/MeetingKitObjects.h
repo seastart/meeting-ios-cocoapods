@@ -60,6 +60,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isKickout;
 /// 聊天能力禁用状态，YES-禁用 NO-不禁用
 @property (nonatomic, assign) BOOL chatDisabled;
+/// 涂鸦能力禁用状态，YES-禁用 NO-不禁用
+@property (nonatomic, assign) BOOL drawDisabled;
 
 /// 扩展信息
 @property (nonatomic, copy, nullable) NSString *extendInfo;
