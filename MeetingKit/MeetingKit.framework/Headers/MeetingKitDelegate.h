@@ -319,6 +319,16 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - errMsg: 错误描述
 - (void)onCloudRecordStatusChange:(SEARecordType)recordType status:(SEARecordStatus)status errMsg:(nullable NSString *)errMsg;
 
+#pragma mark 云录制告警回调
+/// 云录制告警回调
+/// - Parameters:
+///   - status: 录制状态
+///   - taskId: 任务标识
+///   - gateway: 所在网关
+///   - alarmAt: 告警时间
+///   - alarmBrief: 告警摘要
+- (void)onCloudRecordAlarm:(SEARecordStatus)status taskId:(NSString *)taskId gateway:(NSString *)gateway alarmAt:(NSInteger)alarmAt alarmBrief:(nullable NSString *)alarmBrief;
+
 
 #pragma mark - ------------ 屏幕采集事件回调 ------------
 #pragma mark 屏幕共享状态回调
