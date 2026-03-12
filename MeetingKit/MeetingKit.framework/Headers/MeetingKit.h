@@ -396,6 +396,25 @@ NS_ASSUME_NONNULL_BEGIN
 /// RPSampleBufferTypeAudioMic 不支持，可以在宿主 App 处理麦克风采集数据。
 - (void)sendSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType;
 
+#pragma mark 发布视图录制的屏幕共享流
+/// 发布视图录制的屏幕共享流
+/// 共用共享发布连接(publishScreenPeerConnection)，数据来源一般为UIView内容采集
+/// 与 sendSampleBuffer 互斥使用，由外部业务决定采用哪种方式送流
+/// - Parameters:
+///   - pixelBuffer: UIView采集的像素数据(CVPixelBufferRef)
+///   - displayAngle: 显示角度(0/90/180/270)
+- (void)publishScreenViewCaptureWithPixelBuffer:(CVPixelBufferRef)pixelBuffer displayAngle:(int)displayAngle;
+
+#pragma mark 设置视图采集共享
+/// 设置视图采集共享
+/// 视图采集为云录制的“保底画面源”，屏幕共享为“高优先级画面源”
+/// 两者共用屏幕共享通道，按优先级自动切换：
+/// - 开启时：若屏幕录制未进行，建立共享通道；若屏幕录制已在进行，通道已存在无需重复建立
+/// - 屏幕录制停止时：若视图采集已开启，通道不关闭，自动恢复推送视图采集数据
+/// - 关闭时：若屏幕录制未进行，拆除共享通道；若屏幕录制已在进行，通道保留给屏幕录制
+/// - Parameter enabled: 启用状态 YES-开启 NO-关闭
+- (RTCEngineError)enabledViewCaptureShare:(BOOL)enabled;
+
 
 #pragma mark - ------------ 主持人操作接口 ------------
 #pragma mark 主持人解散房间

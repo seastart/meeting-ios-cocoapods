@@ -597,7 +597,9 @@ typedef enum : NSInteger {
 /// 注：除 SEARecordStatusIng 状态以外，都可视为录制未开始状态
 typedef enum : NSInteger {
     
-    /// 未开始
+    /// 无任务
+    SEARecordStatuUnknown = -1,
+    /// 待开始
     SEARecordStatusWaitStart = 0,
     /// 进行中
     SEARecordStatusIng = 1,
