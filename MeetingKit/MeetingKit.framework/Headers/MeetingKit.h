@@ -773,6 +773,62 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getMoreOnlineMemberList:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
+#pragma mark - ------------ 签到相关接口 ------------
+#pragma mark 签到-创建活动
+/// 签到-创建活动
+/// - Parameters:
+///   - dur: 签到时长，单位：分钟，0为不限时
+///   - desc: 签到描述
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)signInCreate:(NSInteger)dur desc:(nullable NSString *)desc onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 签到-活动列表
+/// 签到-活动列表
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)signInList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 签到-统计人数
+/// 签到-统计人数
+/// - Parameters:
+///   - epoch: 签到轮次，从0开始
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)signInCount:(NSInteger)epoch onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 签到-结束活动
+/// 签到-结束活动
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)signInFinish:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 签到-活动详情
+/// 签到-活动详情
+/// - Parameters:
+///   - epoch: 签到轮次
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)signInDetail:(NSInteger)epoch onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 签到-用户签到
+/// 签到-用户签到
+/// - Parameters:
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)signInSign:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 签到-导出签到数据
+/// 签到-导出签到数据
+/// - Parameters:
+///   - epoch: 签到轮次，-1表示全部
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)signInExportDetail:(NSInteger)epoch onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+
 #pragma mark - ------------ 数据管理相关接口 ------------
 #pragma mark 获取当前账户信息
 /// 获取当前账户信息

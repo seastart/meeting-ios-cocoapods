@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class SEALayoutDataModel;
 @class SEAUserExtend;
 @class SEARoomExtend;
+@class SEASignInActivityModel;
 
 /// 用户数据
 @interface SEAUserModel : RTCEngineUserModel
@@ -124,9 +125,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// 主持人标识
 @property (nonatomic, copy) NSString *hostUid;
 /// 联席主持标识列表
-@property (nonatomic, copy, nullable) NSMutableArray <NSString *> *unionHosts;
+@property (nonatomic, copy, nullable) NSArray <NSString *> *unionHosts;
 /// 云录制状态
 @property (nonatomic, assign) SEARecordStatus recordStatus;
+
+/// 房间是否存在进行中的签到活动
+@property (nonatomic, assign) BOOL hasSignInActivity;
+/// 房间签到活动列表
+@property (nonatomic, copy, nullable) NSArray <SEASignInActivityModel *> *signInActivityLists;
 
 /// 扩展信息
 @property (nonatomic, copy, nullable) NSString *extendInfo;
@@ -783,6 +789,79 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SEASectionModel *meta;
 /// 在线成员数据列表
 @property (nonatomic, strong, nullable) NSMutableArray <SEAOnlineMemberModel *> *listData;
+
+@end
+
+
+/// 签到活动项对象
+@interface SEASignInActivityModel : NSObject
+
+/// 用户标识(创建者)
+@property (nonatomic, copy) NSString *userId;
+/// 发起人昵称
+@property (nonatomic, copy, nullable) NSString *hostName;
+/// 签到轮次
+@property (nonatomic, assign) NSInteger epoch;
+/// 开始时间
+@property (nonatomic, assign) NSInteger beginAt;
+/// 签到时长，单位：分钟，0为不限时
+@property (nonatomic, assign) NSInteger dur;
+/// 结束时间
+@property (nonatomic, assign) NSInteger endAt;
+/// 活动状态
+@property (nonatomic, assign) SEASignInActivityState status;
+/// 签到描述
+@property (nonatomic, copy, nullable) NSString *desc;
+/// 签到人数
+@property (nonatomic, assign) NSInteger nums;
+
+@end
+
+
+/// 签到活动列表对象
+@interface SEASignInListModel : NSObject
+
+/// 签到活动列表
+@property (nonatomic, strong, nullable) NSMutableArray <SEASignInActivityModel *> *listData;
+/// 当前服务器时间
+@property (nonatomic, assign) NSInteger now;
+
+@end
+
+
+/// 签到统计人数对象
+@interface SEASignInCountModel : NSObject
+
+/// 签到人数
+@property (nonatomic, assign) NSInteger nums;
+
+@end
+
+
+/// 签到详情项对象
+@interface SEASignInDetailModel : NSObject
+
+/// 记录标识
+@property (nonatomic, copy) NSString *detailId;
+/// 用户标识
+@property (nonatomic, copy) NSString *userId;
+/// 用户昵称
+@property (nonatomic, copy) NSString *nickname;
+/// 用户角色
+@property (nonatomic, assign) SEAUserRole role;
+/// 签到轮次
+@property (nonatomic, assign) NSInteger epoch;
+/// 签到时间
+@property (nonatomic, assign) NSInteger createdAt;
+
+@end
+
+
+/// 签到活动详情列表对象
+@interface SEASignInDetailListModel : NSObject
+
+/// 签到详情列表
+@property (nonatomic, strong, nullable) NSMutableArray <SEASignInDetailModel *> *listData;
 
 @end
 

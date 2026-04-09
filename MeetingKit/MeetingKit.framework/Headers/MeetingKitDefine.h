@@ -640,6 +640,17 @@ typedef enum : NSInteger {
 } SEACallStatus;
 
 
+#pragma mark - 签到活动状态
+/// 签到活动状态
+typedef enum : NSInteger {
+    
+    /// 进行中
+    SEASignInActivityStateStarted = 1,
+    /// 已结束
+    SEASignInActivityStateFinished = 2
+} SEASignInActivityState;
+
+
 #pragma mark - 操作相关回调
 /// 成功回调
 typedef void (^SEASuccessBlock)(id _Nullable data);
