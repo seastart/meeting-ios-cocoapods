@@ -408,21 +408,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// 签到活动回调
 /// 主持人创建签到活动后，当前房间所有成员都会收到该事件通知。
 /// - Parameters:
-///   - hostName: 发起人昵称
+///   - userId: 发起人标识
 ///   - epoch: 签到轮次
 ///   - beginAt: 开始时间
 ///   - dur: 签到时长，单位：分钟，0为不限时
 ///   - endAt: 结束时间
 ///   - desc: 签到描述
-- (void)onSignInActivity:(NSString *)hostName epoch:(NSInteger)epoch beginAt:(NSInteger)beginAt dur:(NSInteger)dur endAt:(NSInteger)endAt desc:(nullable NSString *)desc;
+- (void)onSignInActivity:(NSString *)userId epoch:(NSInteger)epoch beginAt:(NSInteger)beginAt dur:(NSInteger)dur endAt:(NSInteger)endAt desc:(nullable NSString *)desc;
 
 #pragma mark 签到结束回调
 /// 签到结束回调
 /// 主持人结束签到活动后，当前房间所有成员都会收到该事件通知。
 /// - Parameters:
-///   - hostName: 发起人昵称
+///   - userId: 发起人标识
 ///   - epoch: 签到轮次
-- (void)onSignInFinish:(NSString *)hostName epoch:(NSInteger)epoch;
+- (void)onSignInFinish:(NSString *)userId epoch:(NSInteger)epoch;
 
 @end
 
