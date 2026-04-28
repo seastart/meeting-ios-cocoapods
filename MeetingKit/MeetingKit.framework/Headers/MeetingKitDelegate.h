@@ -402,6 +402,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param cpuUsage CUP使用率
 - (void)onApplicationPerformance:(CGFloat)memory cpuUsage:(CGFloat)cpuUsage;
 
+#pragma mark 扩展事件回调
+/// 扩展事件回调
+/// @param event 事件类型
+/// @param content 数据内容
+- (void)onExtendedEvents:(NSString *)event content:(NSString *)content;
+
 
 #pragma mark - ------------ 签到事件回调 ------------
 #pragma mark 签到活动回调
