@@ -382,6 +382,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param receiveArray 流媒体接收状态数据列表
 - (void)onReceiveStreamModel:(NSArray <SEAStreamReceiveModel *> *)receiveArray;
 
+#pragma mark 流媒体上行质量数据回调
+/// 流媒体上行质量数据回调
+/// @param qualityModel 流媒体质量数据
+- (void)onSendQualityModel:(SEAStreamQualityModel *)qualityModel;
+
+#pragma mark 流媒体下行质量数据回调
+/// 流媒体下行质量数据回调
+/// @param qualityModel 流媒体质量数据
+- (void)onReceiveQualityModel:(SEAStreamQualityModel *)qualityModel;
+
 #pragma mark 流媒体接收视频流状态变更回调
 /// 流媒体接收视频流状态变更回调
 /// @param targetUserId 目标成员标识

@@ -492,6 +492,12 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+/// 流媒体质量监测数据
+@interface SEAStreamQualityModel : RTCStreamQualitySampleModel
+
+@end
+
+
 /// 邀请设备对象
 @interface SEAAgentModel : NSObject
 
