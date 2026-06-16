@@ -404,6 +404,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param status 接收状态，YES-超时 NO-恢复
 - (void)onReceiveMixtureStreamStatusChange:(BOOL)status;
 
+#pragma mark 流媒体接收转推流状态变更回调
+/// 流媒体接收转推流状态变更回调
+/// @param streamName 转推流名
+/// @param status 接收状态，YES-超时 NO-恢复
+- (void)onReceiveRetweetStreamStatusChange:(NSString *)streamName status:(BOOL)status;;
+
 
 #pragma mark - ------------ 其它事件回调 ------------
 #pragma mark 应用性能使用情况回调

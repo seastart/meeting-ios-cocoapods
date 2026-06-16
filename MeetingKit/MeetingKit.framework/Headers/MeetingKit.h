@@ -373,6 +373,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// 停止订阅远端合成画面视频流，并释放渲染控件
 - (void)stopRemoteMixture;
 
+#pragma mark 订阅远端转推音视频流，并绑定视频渲染控件
+/// 订阅远端转推音视频流，并绑定视频渲染控件
+/// @param streamName 需要订阅的远端流名(由外部传入)
+/// @param view 承载视频画面的渲染控件
+- (void)startRemoteRetweet:(NSString *)streamName view:(VIEW_CLASS *)view;
+
+#pragma mark 停止订阅远端转推音视频流，并释放渲染控件
+/// 停止订阅远端转推音视频流，并释放渲染控件
+/// @param streamName 需要停止订阅的远端流名(由外部传入)
+- (void)stopRemoteRetweet:(NSString *)streamName;
+
 
 #pragma mark - ------------ 屏幕共享相关接口函数 ------------
 #pragma mark 关闭屏幕录制
