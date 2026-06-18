@@ -78,7 +78,7 @@ echo "#################### Push完成 ####################"
 
 # 发布组件版本
 echo "#################### 正在发布 ####################"
-pod trunk push ${PODSPEC_PATH} --skip-import-validation --allow-warnings --use-libraries --verbose | tee ${ISSUE_LOG_FILE}
+pod trunk push ${PODSPEC_PATH} --skip-import-validation --allow-warnings --use-libraries --repo-update --verbose | tee ${ISSUE_LOG_FILE}
 
 COUNT=0
 TOTAL_COUNT=2
