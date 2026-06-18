@@ -324,6 +324,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// 切换摄像头
 - (void)switchCamera;
 
+#pragma mark 设置本地预览镜像
+/// 设置本地预览镜像
+/// 仅作用于本地预览画面，按 mirror 取值设置镜像；是否区分前后置等策略由业务层决定
+/// - Parameter mirror: YES-开启镜像 NO-关闭镜像
+- (void)setLocalPreviewMirror:(BOOL)mirror;
+
+#pragma mark 获取当前摄像头方向
+/// 获取当前摄像头方向
+/// - Returns: 摄像头方向，SEACameraDirectionFront-前置 SEACameraDirectionBack-后置
+- (SEACameraDirection)currentCameraDirection;
+
 #pragma mark 设置扬声器状态
 /// 设置扬声器状态
 /// - Parameter enabled: YES-开启 NO-关闭

@@ -402,6 +402,17 @@ typedef enum : NSInteger {
 } SEADeviceState;
 
 
+#pragma mark - 摄像头方向
+/// 摄像头方向
+typedef enum : NSInteger {
+    
+    /// 前置摄像头
+    SEACameraDirectionFront = 1,
+    /// 后置摄像头
+    SEACameraDirectionBack = 2
+} SEACameraDirection;
+
+
 #pragma mark - 共享类型
 /// 共享类型
 typedef enum : NSInteger {
