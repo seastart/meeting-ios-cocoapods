@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   # 指定支持平台
   s.ios.deployment_target = '10.0'
-
+  
   # 依赖本地库
   s.vendored_frameworks = 'MeetingKit/*.framework'
   # 依赖远程库
