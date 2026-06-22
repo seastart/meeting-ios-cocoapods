@@ -51,14 +51,20 @@ if [[ "${CLOUDS_VERSION_ARRAY[@]}" =~ "${OID_VERSION}" ]]; then
 fi
 
 # 获取上传日志
-echo "请输入上传日志内容："
-# 读取用户输入上传日志
-read log
-while [[ -z "$log" ]]; do
-	echo "出错了！上传日志内容不能为空。"
+# 优先使用环境变量 RELEASE_LOG（供一键发布脚本传入），否则交互式输入
+if [[ -n "${RELEASE_LOG:-}" ]]; then
+	log="${RELEASE_LOG}"
+	echo "使用传入的上传日志内容：${log}"
+else
 	echo "请输入上传日志内容："
+	# 读取用户输入上传日志
 	read log
-done
+	while [[ -z "$log" ]]; do
+		echo "出错了！上传日志内容不能为空。"
+		echo "请输入上传日志内容："
+		read log
+	done
+fi
 COMMIT_LOG="发布SDK${OID_VERSION}-${log}"
 echo "输入的提交日志是：${COMMIT_LOG}"
 
