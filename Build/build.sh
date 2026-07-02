@@ -33,7 +33,7 @@ OID_VERSION=""
 # 逐行匹配获取文件中的版本号
 while read line
 do
-    if [[ $line == s.version* ]]; then
+    if [[ $line =~ s\.version[[:space:]]*= ]]; then
     	# 匹配单引号或者双引号
 		RE="\'([^\']*)\'"
 		RE_DOUBLE="\"([^\"]*)\""
@@ -43,6 +43,12 @@ do
     	break
     fi
 done < $PODSPEC_PATH
+
+# 校验版本号解析成功(为空则中止，避免空版本号污染 commit 与 tag)
+if [[ -z "${OID_VERSION}" ]]; then
+	echo "未能从 ${PODSPEC_NAME} 解析出版本号，发布中止"
+	exit 1
+fi
 
 # 检测要发布的版本号是否已经存在
 if [[ "${CLOUDS_VERSION_ARRAY[@]}" =~ "${OID_VERSION}" ]]; then
@@ -88,17 +94,9 @@ echo "#################### 正在发布 ####################"
 # 注：只更新 trunk，避免克隆庞大的 cocoapods master 索引仓库
 echo "#################### 更新 Spec 索引 ####################"
 pod repo update trunk
-pod trunk push ${PODSPEC_PATH} --skip-import-validation --allow-warnings --use-libraries --synchronous --sources='https://cdn.cocoapods.org/' --verbose | tee ${ISSUE_LOG_FILE}
-
-COUNT=0
-TOTAL_COUNT=2
-
-while read LOG_LINE
-do
-	if [[ ${LOG_LINE} =~ "Push for \`${LIBRARY_NAME} ${OID_VERSION}' has been pushed" ]]; then
-		COUNT=`expr ${COUNT} + 1`
-	fi
-done < $ISSUE_LOG_FILE
+pod trunk push ${PODSPEC_PATH} --skip-import-validation --allow-warnings --use-libraries --synchronous --verbose | tee ${ISSUE_LOG_FILE}
+# 以 pod trunk push 的退出码判定成功(注意取管道首段退出码)
+PUSH_RESULT=${PIPESTATUS[0]}
 
 # 记录结束发布时间
 END_DATE=$(date "+%s")
@@ -113,13 +111,16 @@ SECOND_TIME=$(( $DURATION_SECOND_TIME-${HOUR_TIME}*3600-${MINUTE_TIME}*60 ))
 # 发布持续时间(时:分:秒)
 DURATION_TIME="${HOUR_TIME}小时 ${MINUTE_TIME}分钟 ${SECOND_TIME}秒"
 
-# 判断发布是否成功
-if [[ ${COUNT} == ${TOTAL_COUNT} ]]; then
+# 判断发布是否成功(依据 pod trunk push 退出码)
+if [[ ${PUSH_RESULT} -eq 0 ]]; then
 	echo "#################### 发布成功 ####################"
     # 移除日志文件
-    rm $ISSUE_LOG_FILE
+    rm -f $ISSUE_LOG_FILE
 else
 	echo "#################### 发布失败 ####################"
+	echo "#################### 发布用时：${DURATION_TIME} ####################"
+	# 以非零退出，让上层发布脚本感知失败并中止(不再误报成功)
+	exit 1
 fi
 
 echo "#################### 发布用时：${DURATION_TIME} ####################"
