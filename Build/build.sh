@@ -3,8 +3,8 @@
 # 导出数据目录(当前目录)
 DERIVED_DATA_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# 获取工程文件目录
-PROJECT_PATH="$( cd "$( dirname "$PWD" )" && pwd )"
+# 获取工程文件目录(基于脚本自身位置推算，不依赖调用时的 PWD)
+PROJECT_PATH="$( cd "$( dirname "$DERIVED_DATA_PATH" )" && pwd )"
 
 # 项目名字
 LIBRARY_NAME="MeetingKit"
