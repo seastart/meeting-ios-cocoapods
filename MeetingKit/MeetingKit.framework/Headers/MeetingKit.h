@@ -55,6 +55,16 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - onFailed: 失败回调
 - (void)loginWithToken:(NSString *)token appGroup:(NSString *)appGroup onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
+#pragma mark 自定义日志配置登录接口
+/// 登录接口，您需要先初始化用户信息后才能进入房间，并进行一系列的操作
+/// - Parameters:
+///   - token: 会议令牌
+///   - appGroup: 组标识符
+///   - logConfig: 日志配置
+///   - onSuccess: 成功回调
+///   - onFailed: 失败回调
+- (void)loginWithToken:(NSString *)token appGroup:(NSString *)appGroup logConfig:(SEALogConfig *)logConfig onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 #pragma mark 退出登录接口
 /// 退出登录接口，会有主动离开房间操作、销毁资源
 - (void)logout;

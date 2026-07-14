@@ -26,6 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
 @class SEARoomExtend;
 @class SEASignInActivityModel;
 
+/// 日志配置
+@interface SEALogConfig : NSObject
+
+/// 是否启用全进程本地日志采集，默认 YES
+@property (nonatomic, assign) BOOL enableLocalLog;
+
+@end
+
+
 /// 用户数据
 @interface SEAUserModel : RTCEngineUserModel
 
