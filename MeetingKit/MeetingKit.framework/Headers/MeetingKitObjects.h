@@ -308,7 +308,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 流媒体提供商
 @property (nonatomic, copy, nullable) NSString *streamVendor;
 /// 是否以观众身份入会，默认 NO
-@property (nonatomic, assign) NSInteger isAudience;
+@property (nonatomic, assign) BOOL isAudience;
 
 @end
 
