@@ -334,10 +334,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 切换摄像头
 - (void)switchCamera;
 
-#pragma mark 设置本地预览镜像
-/// 设置本地预览镜像
-/// 仅作用于本地预览画面，按 mirror 取值设置镜像；是否区分前后置等策略由业务层决定
-/// - Parameter mirror: YES-开启镜像 NO-关闭镜像
+#pragma mark 设置前置摄像头本地预览镜像偏好
+/// 设置前置摄像头本地预览镜像偏好
+/// 仅作用于本地预览画面，不影响推流数据；后置摄像头恒不镜像，切换摄像头后自动应用
+/// - Parameter mirror: YES-前置摄像头镜像 NO-前置摄像头不镜像
 - (void)setLocalPreviewMirror:(BOOL)mirror;
 
 #pragma mark 获取当前摄像头方向
@@ -345,18 +345,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Returns: 摄像头方向，SEACameraDirectionFront-前置 SEACameraDirectionBack-后置
 - (SEACameraDirection)currentCameraDirection;
 
-#pragma mark 设置扬声器状态
-/// 设置扬声器状态
-/// - Parameter enabled: YES-开启 NO-关闭
+#pragma mark 设置声音播放状态
+/// 设置声音播放状态，不切换扬声器、听筒或外设路由
+/// - Parameter enabled: YES-开启远端音频播放 NO-关闭远端音频播放
 - (void)switchSpeaker:(BOOL)enabled;
 
 #pragma mark 切换音频路由
 /// 切换音频路由
+/// 同步请求成功不代表系统实际路由已经完成切换，最终结果以currentAudioRoute和onAudioRouteChange回调为准
 /// - Parameter route: 音频路由
 - (void)switchAudioRoute:(SEAAudioRoute)route;
 
-#pragma mark 获取当前音频路由
-/// 获取当前音频路由
+#pragma mark 获取系统当前实际音频路由
+/// 获取系统当前实际音频路由
 - (SEAAudioRoute)currentAudioRoute;
 
 #pragma mark 是否存在有线耳机设备
