@@ -83,9 +83,21 @@ echo "#################### 正在提交 ####################"
 git commit -a -m "${COMMIT_LOG}"
 echo "#################### 正在Push ####################"
 git tag -a ${OID_VERSION} -m "${OID_VERSION}"
-git push --tags
-git pull origin "$BRANCH_NAME"
-git push origin "$BRANCH_NAME"
+# 先同步远端，避免分支非快进被拒
+if ! git pull --no-edit origin "$BRANCH_NAME"; then
+	echo "#################### 同步远端分支 ${BRANCH_NAME} 失败，发布中止 ####################"
+	exit 1
+fi
+# 先推分支再推 tag，且逐个校验退出码：
+# 避免出现"tag 已推送但分支版本号未更新"的不一致(历史上曾因静默失败导致 master 停留在旧版本)
+if ! git push origin "$BRANCH_NAME"; then
+	echo "#################### 分支 ${BRANCH_NAME} 推送失败，发布中止 ####################"
+	exit 1
+fi
+if ! git push origin "$OID_VERSION"; then
+	echo "#################### tag ${OID_VERSION} 推送失败，发布中止 ####################"
+	exit 1
+fi
 echo "#################### Push完成 ####################"
 
 # 发布组件版本
@@ -97,6 +109,18 @@ pod repo update trunk
 pod trunk push ${PODSPEC_PATH} --skip-import-validation --allow-warnings --use-libraries --synchronous --verbose | tee ${ISSUE_LOG_FILE}
 # 以 pod trunk push 的退出码判定成功(注意取管道首段退出码)
 PUSH_RESULT=${PIPESTATUS[0]}
+
+# trunk 服务端偶发返回 500(或网络抖动)但实际已发布成功的已知问题：
+# push 失败时二次校验 trunk 是否已存在该版本，存在即视为发布成功，避免误报失败
+if [[ ${PUSH_RESULT} -ne 0 ]]; then
+	echo "#################### push 返回失败，二次校验 trunk 是否已发布 ${LIBRARY_NAME} ${OID_VERSION} ####################"
+	# 版本号中的点转义后按行首"- 版本号 ("精确匹配 pod trunk info 输出
+	VERSION_RE="${OID_VERSION//./\\.}"
+	if pod trunk info "${LIBRARY_NAME}" 2>/dev/null | grep -qE "^[[:space:]]*-[[:space:]]*${VERSION_RE}[[:space:]]*\("; then
+		echo "#################### trunk 已存在 ${LIBRARY_NAME} ${OID_VERSION}，判定为发布成功 ####################"
+		PUSH_RESULT=0
+	fi
+fi
 
 # 记录结束发布时间
 END_DATE=$(date "+%s")
