@@ -350,6 +350,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter enabled: YES-开启远端音频播放 NO-关闭远端音频播放
 - (void)switchSpeaker:(BOOL)enabled;
 
+#pragma mark 设置本端音频单元启停
+/// 设置本端音频单元启停
+/// @discussion 录像直播等本端不采集、不接收 RTC 音频的纯本地播放场景，关闭音频单元可释放底层语音处理单元，避免本地播放器音量被压低；返回该场景后需恢复
+/// - Parameter enabled: YES-由底层自动管理音频单元 NO-停止音频单元
+- (void)enabledAudioModule:(BOOL)enabled;
+
 #pragma mark 切换音频路由
 /// 切换音频路由
 /// 同步请求成功不代表系统实际路由已经完成切换，最终结果以currentAudioRoute和onAudioRouteChange回调为准
