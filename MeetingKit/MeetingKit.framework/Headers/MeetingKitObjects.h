@@ -641,7 +641,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 格子序号，排序规则按HTML中标签的顺序，默认 0
 @property (nonatomic, assign) NSInteger index;
-/// 是否优先绑定频道内的共享流，默认 NO
+/// 是否优先绑定会议内的共享流，默认 NO
 @property (nonatomic, assign) BOOL bindShare;
 /// 单元格标签
 @property (nonatomic, strong, nullable) SEALayoutLabelModel *label;
