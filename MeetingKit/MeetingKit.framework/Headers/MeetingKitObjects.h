@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class SEAUserExtend;
 @class SEARoomExtend;
 @class SEASignInActivityModel;
+@class MeetingKitRoom;
 
 /// 日志配置
 @interface SEALogConfig : NSObject
@@ -38,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 用户数据
 @interface SEAUserModel : RTCEngineUserModel
 
+/// 成员所属会议房间，用于解析房间内的共享状态
+@property (nonatomic, strong, nullable) MeetingKitRoom *meetingRoom;
 /// 麦克风状态
 @property (nonatomic, assign) SEADeviceState micState;
 /// 摄像头状态
@@ -813,6 +816,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 签到活动项对象
 @interface SEASignInActivityModel : NSObject
 
+/// 活动所属会议房间，用于解析房间内成员扩展数据
+@property (nonatomic, weak, nullable) MeetingKitRoom *meetingRoom;
 /// 用户标识(创建者)
 @property (nonatomic, copy) NSString *userId;
 /// 发起人昵称

@@ -10,12 +10,14 @@
 #import <Foundation/Foundation.h>
 
 #if __has_include(<MeetingKit/MeetingKit.h>)
+#import <MeetingKit/MeetingKitRoom.h>
 #import <MeetingKit/MeetingKitDefine.h>
 #import <MeetingKit/MeetingKitObjects.h>
 #import <MeetingKit/MeetingKitDelegate.h>
 #import <MeetingKit/MeetingKitIMDelegate.h>
 #import <MeetingKit/MeetingKitScreenDelegate.h>
 #else
+#import "MeetingKitRoom.h"
 #import "MeetingKitDefine.h"
 #import "MeetingKitObjects.h"
 #import "MeetingKitDelegate.h"
@@ -25,7 +27,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MeetingKitRoom;
+@protocol MeetingKitRoomDelegate;
+
 #pragma mark - MeetingKit
+/// 会议组件全局入口
+/// 该单例只承载账号级与设备级能力：登录、即时通讯、本地采集与预览、音频路由、屏幕采集进程侧接入，以及会议的查询与预约。
+/// 会中的一切操作与事件都属于房间维度，通过 -createRoomWithDelegate: 创建 MeetingKitRoom 实例进行；
+/// 同一账号可以同时创建并加入多个房间，各房间的媒体与业务状态相互独立。
 @interface MeetingKit : NSObject
 
 + (instancetype)new __attribute__((unavailable("use sharedInstance instead.")));
@@ -42,9 +51,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)version;
 
 #pragma mark 设置事件回调
-/// 设置事件回调，您可以通过 MeetingKitDelegate 获得各类事件通知（例如：错误码，远端用户进房间，音视频状态参数等）
+/// 设置事件回调，您可以通过 MeetingKitDelegate 获得全局事件通知（音频路由变更、应用性能数据）
+/// 房间内的事件请实现 MeetingKitRoomDelegate 并在创建房间时传入
 /// @param delegate 委托实例
 - (void)addDelegate:(id <MeetingKitDelegate>)delegate;
+
+#pragma mark 创建会议房间
+/// 创建独立会议房间实例
+/// 每次调用都会返回一个新的房间实例，实例之间互不影响；调用房间的 exitRoom: 后该实例即失效，需要重新创建
+/// @param delegate 房间事件代理
+- (nullable MeetingKitRoom *)createRoomWithDelegate:(nullable id<MeetingKitRoomDelegate>)delegate;
+
+#pragma mark 获取活跃会议房间
+/// 获取当前已经加入的会议房间列表
+- (NSArray<MeetingKitRoom *> *)getRooms;
 
 #pragma mark 登录接口
 /// 登录接口，您需要先初始化用户信息后才能进入房间，并进行一系列的操作
@@ -66,7 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loginWithToken:(NSString *)token appGroup:(NSString *)appGroup logConfig:(SEALogConfig *)logConfig onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 #pragma mark 退出登录接口
-/// 退出登录接口，会有主动离开房间操作、销毁资源
+/// 退出登录接口，会离开并销毁全部房间实例、销毁资源
 - (void)logout;
 
 
@@ -81,16 +101,6 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 停用即时通讯
 /// 停用即时通讯
 - (void)disableIm;
-
-
-#pragma mark - ------------ 通话操作接口 ------------
-#pragma mark 发起通话
-/// 发起通话
-/// - Parameters:
-///   - userIdLists: 成员标识列表
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)callUser:(NSArray <NSString *> *)userIdLists onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
 #pragma mark - ------------ 会议操作接口 ------------
@@ -162,6 +172,21 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - onFailed: 失败回调
 - (void)requestCancelMeetingWithMeetingId:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
+#pragma mark 创建房间
+/// 创建房间
+/// 该接口只在服务端创建会议，不会加入房间；加入房间请使用 MeetingKitRoom 的 enterRoom: 接口
+/// @param params 创建参数
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)createRoom:(SEAMeetingParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 修改房间
+/// 修改房间
+/// @param params 房间参数
+/// @param onSuccess 成功回调
+/// @param onFailed 失败回调
+- (void)updateRoom:(SEAMeetingParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
 
 #pragma mark - ------------ 用户操作接口 ------------
 #pragma mark 获取设备列表
@@ -184,149 +209,11 @@ NS_ASSUME_NONNULL_BEGIN
 ///   注：上述设备类型列表为需要获取的目标设备类型构成的数组参数，设备类型可参看 SEAAgentType 声明定义。
 - (void)getMoreAgentList:(NSArray <NSNumber *> *)typesList keyword:(nullable NSString *)keyword onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
-#pragma mark 创建房间
-/// 创建房间
-/// @param params 创建参数
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)createRoom:(SEAMeetingParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
-#pragma mark 修改房间
-/// 修改房间
-/// @param params 房间参数
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)updateRoom:(SEAMeetingParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 加入房间
-/// 加入房间
-/// @param params 加入会议参数
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)enterRoom:(SEAMeetingEnterParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 离开房间
-/// 离开房间
-/// @param onSuccess 成功回调
-- (void)exitRoom:(nullable SEASuccessBlock)onSuccess;
-
-#pragma mark 用户更新昵称
-/// 用户更新昵称
-/// @param username 新昵称
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)updateName:(NSString *)username onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户请求打开摄像头
-/// 用户请求打开摄像头
-/// @param frontCamera 摄像头方向，YES-前置摄像头 NO-后置摄像头
-/// @param view 承载视频画面的控件
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)requestOpenCamera:(BOOL)frontCamera view:(VIEW_CLASS *)view onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户请求打开麦克风
-/// 用户请求打开麦克风
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)requestOpenMic:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户关闭摄像头
-/// 用户关闭摄像头
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)closeCamera:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户关闭麦克风
-/// 用户关闭麦克风
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)closeMic:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户请求开启共享
-/// 用户请求开启共享
-/// @param shareType 共享类型
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)requestShare:(SEAShareType)shareType onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户关闭共享
-/// 用户关闭共享
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)stopShare:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户发送聊天消息
-/// 用户发送聊天消息
-/// @param message 聊天消息
-/// @param messageType 消息类型
-/// @param targetId 目标标识，为空时表示全房间接收
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)sendRoomChatMessage:(NSString *)message messageType:(SEAMessageType)messageType targetId:(nullable NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户发送自定义消息
-/// 用户发送自定义消息
-/// @param message 消息内容
-/// @param targetId 目标标识，为空时表示全房间接收
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)sendRoomCustomMessage:(NSString *)message targetId:(nullable NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 获取聊天列表
-/// 获取聊天列表
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)getChatList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 获取更多聊天列表
-/// 获取更多聊天列表
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)getMoreChatList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户请求举手
-/// 用户请求举手
-/// @param handupType 申请类型
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)requestHandup:(SEAHandupType)handupType onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 用户取消举手
-/// 用户取消举手
-/// @param handupType 申请类型
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)cancelHandup:(SEAHandupType)handupType onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 回复同意打开摄像头请求
-/// 回复同意打开摄像头请求
-/// @param targetId 目标标识，请求或同意您开启摄像头请求的管理者标识
-/// @param frontCamera 摄像头方向，YES-前置摄像头 NO-后置摄像头
-/// @param view 承载视频画面的控件
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)confirmAdminOpenCamera:(NSString *)targetId frontCamera:(BOOL)frontCamera view:(VIEW_CLASS *)view onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 回复同意打开麦克风请求
-/// 回复同意打开麦克风请求
-/// @param targetId 目标标识，请求或同意您开启麦克风请求的管理者标识
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)confirmAdminOpenMic:(NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 回复同意打开房间共享请求
-/// 回复同意打开房间共享请求
-/// @param targetId 目标标识，请求或同意您开启房间共享请求的管理者标识
-/// @param shareType 共享类型
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)confirmAdminRoomShare:(NSString *)targetId shareType:(SEAShareType)shareType onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
+#pragma mark - ------------ 本地采集相关接口 ------------
 #pragma mark 更新本地摄像头的预览画面
 /// 更新本地摄像头的预览画面
+/// 摄像头在 iOS 上本就是单路硬件，采集与预览属全局能力，多个房间共用同一路采集
 /// @param view 承载视频画面的控件
 - (void)updateLocalView:(VIEW_CLASS *)view;
 
@@ -345,19 +232,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Returns: 摄像头方向，SEACameraDirectionFront-前置 SEACameraDirectionBack-后置
 - (SEACameraDirection)currentCameraDirection;
 
-#pragma mark 设置声音播放状态
-/// 设置声音播放状态，不切换扬声器、听筒或外设路由
-/// - Parameter enabled: YES-开启远端音频播放 NO-关闭远端音频播放
-- (void)switchSpeaker:(BOOL)enabled;
 
-#pragma mark 设置本端音频单元启停
-/// 设置本端音频单元启停
-/// @discussion 录像直播等本端不采集、不接收 RTC 音频的纯本地播放场景，关闭音频单元可释放底层语音处理单元，避免本地播放器音量被压低；返回该场景后需恢复
-/// - Parameter enabled: YES-由底层自动管理音频单元 NO-停止音频单元
-- (void)enabledAudioModule:(BOOL)enabled;
-
+#pragma mark - ------------ 音频路由相关接口 ------------
 #pragma mark 切换音频路由
 /// 切换音频路由
+/// 音频路由对应进程内唯一的 AVAudioSession，属设备级能力，切换会同时作用于全部房间
 /// 同步请求成功不代表系统实际路由已经完成切换，最终结果以currentAudioRoute和onAudioRouteChange回调为准
 /// - Parameter route: 音频路由
 - (void)switchAudioRoute:(SEAAudioRoute)route;
@@ -374,52 +253,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否存在蓝牙耳机设备
 - (BOOL)bluetoothDeviceAvailable;
 
-#pragma mark 订阅远端用户的视频流，并绑定视频渲染控件
-/// 订阅远端用户的视频流，并绑定视频渲染控件
-/// @param userId 指定远端用户标识
-/// @param streamType 视频流类型
-/// @param view 承载视频画面的渲染控件
-- (void)startRemoteView:(NSString *)userId streamType:(SEAVideoStreamType)streamType view:(VIEW_CLASS *)view;
-
-#pragma mark 停止订阅远端用户的视频流，并释放渲染控件
-/// 停止订阅远端用户的视频流，并释放渲染控件
-/// @param userId 指定远端用户标识
-/// @param streamType 视频流类型
-- (void)stopRemoteView:(NSString *)userId streamType:(SEAVideoStreamType)streamType;
-
-#pragma mark 停止订阅指定远端用户的所有视频流，并释放全部渲染资源
-/// 停止订阅指定远端用户的所有视频流，并释放全部渲染资源
-/// @param userId 指定远端用户标识
-- (void)stopAllRemoteViewWithUserId:(NSString *)userId;
-
-#pragma mark 订阅远端合成画面视频流，并绑定视频渲染控件
-/// 订阅远端合成画面视频流，并绑定视频渲染控件
-/// @param view 承载视频画面的渲染控件
-- (void)startRemoteMixture:(VIEW_CLASS *)view;
-
-#pragma mark 停止订阅远端合成画面视频流，并释放渲染控件
-/// 停止订阅远端合成画面视频流，并释放渲染控件
-- (void)stopRemoteMixture;
-
-#pragma mark 订阅远端转推音视频流，并绑定视频渲染控件
-/// 订阅远端转推音视频流，并绑定视频渲染控件
-/// @param streamName 需要订阅的远端流名(由外部传入)
-/// @param view 承载视频画面的渲染控件
-- (void)startRemoteRetweet:(NSString *)streamName view:(VIEW_CLASS *)view;
-
-#pragma mark 停止订阅远端转推音视频流，并释放渲染控件
-/// 停止订阅远端转推音视频流，并释放渲染控件
-/// @param streamName 需要停止订阅的远端流名(由外部传入)
-- (void)stopRemoteRetweet:(NSString *)streamName;
-
 
 #pragma mark - ------------ 屏幕共享相关接口函数 ------------
-#pragma mark 关闭屏幕录制
-/// 关闭屏幕录制
-- (void)stopScreenRecord;
-
 #pragma mark 录屏启动方法
 /// 录屏启动方法
+/// ReplayKit 采集运行在独立的 Broadcast Upload Extension 进程，属进程级接入点
 /// 需要在 RPBroadcastSampleHandler 的实现类中的 broadcastStartedWithSetupInfo 方法中调用
 /// - Parameters:
 ///   - appGroup: Application Group Identifier
@@ -434,480 +272,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 注释：sampleBufferType 当前支持 RPSampleBufferTypeVideo 和 RPSampleBufferTypeAudioApp 类型的数据帧处理；
 /// RPSampleBufferTypeAudioMic 不支持，可以在宿主 App 处理麦克风采集数据。
 - (void)sendSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType;
-
-#pragma mark 发布视图录制的屏幕共享流
-/// 发布视图录制的屏幕共享流
-/// 共用共享发布连接(publishScreenPeerConnection)，数据来源一般为UIView内容采集
-/// 与 sendSampleBuffer 互斥使用，由外部业务决定采用哪种方式送流
-/// - Parameters:
-///   - pixelBuffer: UIView采集的像素数据(CVPixelBufferRef)
-///   - displayAngle: 显示角度(0/90/180/270)
-- (void)publishScreenViewCaptureWithPixelBuffer:(CVPixelBufferRef)pixelBuffer displayAngle:(int)displayAngle;
-
-#pragma mark 设置视图采集共享
-/// 设置视图采集共享
-/// 视图采集为云录制的“保底画面源”，屏幕共享为“高优先级画面源”
-/// 两者共用屏幕共享通道，按优先级自动切换：
-/// - 开启时：若屏幕录制未进行，建立共享通道；若屏幕录制已在进行，通道已存在无需重复建立
-/// - 屏幕录制停止时：若视图采集已开启，通道不关闭，自动恢复推送视图采集数据
-/// - 关闭时：若屏幕录制未进行，拆除共享通道；若屏幕录制已在进行，通道保留给屏幕录制
-/// - Parameter enabled: 启用状态 YES-开启 NO-关闭
-- (RTCEngineError)enabledViewCaptureShare:(BOOL)enabled;
-
-
-#pragma mark - ------------ 主持人操作接口 ------------
-#pragma mark 主持人解散房间
-/// 主持人解散房间
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminDestroyRoom:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间全体禁视频
-/// 主持人更新房间全体禁视频
-/// @param cameraDisabled 房间视频禁用状态，YES-禁用 NO-不禁用
-/// @param selfUnmuteCameraDisabled 是否禁止自我解除视频状态，YES-禁止 NO-不禁止
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomCameraState:(BOOL)cameraDisabled selfUnmuteCameraDisabled:(BOOL)selfUnmuteCameraDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间全体禁音频
-/// 主持人更新房间全体禁音频
-/// @param micDisabled 房间音频禁用状态，YES-禁用 NO-不禁用
-/// @param selfUnmuteMicDisabled 是否禁止自我解除音频状态，YES-禁止 NO-不禁止
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomMicState:(BOOL)micDisabled selfUnmuteMicDisabled:(BOOL)selfUnmuteMicDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间是否禁止自我解除视频状态
-/// 主持人更新房间是否禁止自我解除视频状态
-/// @param selfUnmuteCameraDisabled 是否禁止自我解除视频状态，YES-禁止 NO-不禁止
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomSelfUnmuteCameraDisabled:(BOOL)selfUnmuteCameraDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间是否禁止自我解除音频状态
-/// 主持人更新房间是否禁止自我解除音频状态
-/// @param selfUnmuteMicDisabled 是否禁止自我解除音频状态，YES-禁止 NO-不禁止
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomSelfUnmuteMicDisabled:(BOOL)selfUnmuteMicDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间聊天禁用状态
-/// 主持人更新房间聊天禁用状态
-/// @param chatDisabled 禁用状态，YES-禁用 NO-不禁用
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomChatDisabled:(BOOL)chatDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间共享禁用状态
-/// 主持人更新房间共享禁用状态
-/// @param shareDisabled 禁用状态，YES-禁用 NO-不禁用
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomShareDisabled:(BOOL)shareDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间截屏开关状态
-/// 主持人更新房间截屏开关状态
-/// @param screenshotDisabled 禁用状态，YES-禁用 NO-不禁用
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomScreenshotDisabled:(BOOL)screenshotDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间水印开关状态
-/// 主持人更新房间水印开关状态
-/// @param watermarkDisabled 水印状态，YES-开启 NO-关闭
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomWatermarkDisabled:(BOOL)watermarkDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新房间锁定状态
-/// 主持人更新房间锁定状态
-/// @param locked 锁定状态，YES-开启 NO-关闭
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateRoomLocked:(BOOL)locked onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新用户昵称
-/// 主持人更新用户昵称
-/// @param userId 用户标识
-/// @param nickname 用户昵称
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateNickname:(NSString *)userId nickname:(NSString *)nickname onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新用户角色
-/// 主持人更新用户角色
-/// @param userId 用户标识
-/// @param userRole 用户角色
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateUserRole:(NSString *)userId userRole:(SEAUserRole)userRole onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人转移
-/// 主持人转移
-/// @param userId 用户标识
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminMoveHost:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新用户聊天状态
-/// 主持人更新用户聊天状态
-/// @param userId 用户标识
-/// @param chatDisabled 禁用状态，YES-禁用 NO-不禁用
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateUserChatDisabled:(NSString *)userId chatDisabled:(BOOL)chatDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新用户白板涂鸦状态
-/// 主持人更新用户白板涂鸦状态
-/// @param userId 用户标识
-/// @param drawDisabled 禁用状态，YES-禁用 NO-不禁用
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateUserDrawDisabled:(NSString *)userId drawDisabled:(BOOL)drawDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人请求用户开启共享
-/// 主持人请求用户开启共享
-/// @param userId 用户标识
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminRequestUserOpenShare:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人请求打开成员摄像头
-/// 主持人请求打开成员摄像头
-/// @param userId 用户标识
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminRequestUserOpenCamera:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人关闭远端用户摄像头
-/// 主持人关闭远端用户摄像头
-/// @param userId 用户标识
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminCloseUserCamera:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人请求打开成员麦克风
-/// 主持人请求打开成员麦克风
-/// @param userId 用户标识
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminRequestUserOpenMic:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人关闭远端用户麦克风
-/// 主持人关闭远端用户麦克风
-/// @param userId 用户标识
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminCloseUserMic:(NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人踢出成员
-/// 主持人踢出成员
-/// @param userId 用户标识
-/// @param joinDisabled 是否禁止再次加入房间，YES-禁止 NO-不禁止
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminKickUserOut:(NSString *)userId joinDisabled:(BOOL)joinDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人关闭共享
-/// 主持人关闭共享
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminStopRoomShare:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人处理举手
-/// 主持人处理举手
-/// @param userId 用户标识
-/// @param handupType 举手申请类型
-/// @param approve 处理举手申请，YES-同意 NO-拒绝
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminConfirmHandup:(NSString *)userId handupType:(SEAHandupType)handupType approve:(BOOL)approve onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新受邀成员
-/// 主持人更新受邀成员
-/// @param conferee 成员标识列表
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminUpdateConferee:(NSArray <NSString *> *)conferee onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人邀请设备入会
-/// 主持人邀请设备入会
-/// @param invitesList 邀请列表
-/// @param onSuccess 成功回调
-/// @param onFailed 失败回调
-- (void)adminInviteAgent:(NSArray <SEAInviteModel *> *)invitesList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-
-#pragma mark - ------------ 云录制相关接口 ------------
-#pragma mark 获取云录制详情
-/// 获取云录制详情
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)getCloudRecordDetail:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 获取云录制配置
-/// 获取云录制配置
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)getCloudRecordConfig:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 开启云录制
-/// 开启云录制
-/// - Parameters:
-///   - params: 云录制参数
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)startCloudRecord:(SEACloudRecordParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 停止云录制
-/// 停止云录制
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)stopCloudRecord:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-
-#pragma mark - ------------ 等候室相关接口 ------------
-#pragma mark 请求离开等候室
-/// 请求离开等候室
-/// - Parameters:
-///   - roomNo: 会议号码
-///   - onSuccess: 成功回调
-- (void)exitWaitingRoom:(NSString *)roomNo onSuccess:(nullable SEASuccessBlock)onSuccess;
-
-#pragma mark 主持人更新等候室禁用状态
-/// 主持人更新等候室禁用状态
-/// - Parameters:
-///   - waitingRoomDisabled: 禁用状态，YES-禁用 NO-不禁用
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminUpdateWaitingRoomDisabled:(BOOL)waitingRoomDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人获取等候室用户列表
-/// 主持人获取等候室用户列表
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminGetWaitingRoomUserList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人将会议室成员移动到等候室
-/// 主持人将会议室成员移动到等候室
-/// - Parameters:
-///   - userId: 用户标识
-///   - nickname: 用户昵称
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminMoveInWaitingRoom:(NSString *)userId nickname:(NSString *)nickname onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人将等候室人员移动到会议室
-/// 主持人将等候室人员移动到会议室
-/// - Parameters:
-///   - userId: 用户标识，空表示全部成员
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminMoveOutWaitingRoom:(nullable NSString *)userId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-
-#pragma mark - ------------ 分组讨论相关接口 ------------
-#pragma mark 小组成员请求管理员帮助
-/// 小组成员请求管理员帮助
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)subMeetingHelp:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人更新禁止在主持人前入会状态
-/// 主持人更新禁止在主持人前入会状态
-/// - Parameters:
-///   - enterBeforeHostDisabled: 禁止状态，YES-禁止 NO-不禁止
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminUpdateEnterBeforeHostDisabled:(BOOL)enterBeforeHostDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人创建小组会议
-/// 主持人创建小组会议
-/// - Parameters:
-///   - titleList: 标题列表
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminCreateSubMeeting:(NSArray <NSString *> *)titleList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人修改小组会议标题
-/// 主持人修改小组会议标题
-/// - Parameters:
-///   - title: 小组标题
-///   - targetId: 小组标识
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminUpdateSubMeetingTitle:(NSString *)title targetId:(NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人修改小组会议成员(全量更新)
-/// 主持人修改小组会议成员(全量更新)
-/// - Parameters:
-///   - confereeList: 小组参会列表
-///   - targetId: 小组标识
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminUpdateSubMeetingConferee:(NSArray <SEAConfereeModel *> *)confereeList targetId:(NSString *)targetId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人删除小组会议
-/// 主持人删除小组会议
-/// - Parameters:
-///   - targetList: 小组标识列表
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminDeleteSubMeeting:(NSArray <NSString *> *)targetList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人请求小组会议列表
-/// 主持人请求小组会议列表
-/// - Parameters:
-///   - meetingId: 会议标识
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminGetSubMeetingList:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人开始小组会议
-/// 主持人开始小组会议
-/// - Parameters:
-///   - targetList: 小组标识列表
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminStartSubMeeting:(NSArray <NSString *> *)targetList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人结束小组会议
-/// 主持人结束小组会议
-/// - Parameters:
-///   - targetList: 小组标识列表
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminStopSubMeeting:(NSArray <NSString *> *)targetList onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 主持人小组会议之间移动用户
-/// 主持人小组会议之间移动用户
-/// - Parameters:
-///   - targetId: 目标成员标识
-///   - fromGroupId: 原小组标识
-///   - toGroupId: 目标小组标识，为空时表示主会议
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)adminMoveSubMeetingUser:(NSString *)targetId fromGroupId:(NSString *)fromGroupId toGroupId:(nullable NSString *)toGroupId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 获取在线成员列表
-/// 获取在线成员列表
-/// - Parameters:
-///   - meetingId: 会议标识
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)getOnlineMemberList:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 获取更多在线成员列表
-/// 获取更多在线成员列表
-/// - Parameters:
-///   - meetingId: 会议标识
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)getMoreOnlineMemberList:(NSString *)meetingId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-
-#pragma mark - ------------ 签到相关接口 ------------
-#pragma mark 签到-创建活动
-/// 签到-创建活动
-/// - Parameters:
-///   - dur: 签到时长，单位：分钟，0为不限时
-///   - desc: 签到描述
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)signInCreate:(NSInteger)dur desc:(nullable NSString *)desc onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 签到-活动列表
-/// 签到-活动列表
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)signInList:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 签到-统计人数
-/// 签到-统计人数
-/// - Parameters:
-///   - epoch: 签到轮次，从0开始
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)signInCount:(NSInteger)epoch onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 签到-结束活动
-/// 签到-结束活动
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)signInFinish:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 签到-活动详情
-/// 签到-活动详情
-/// - Parameters:
-///   - epoch: 签到轮次
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)signInDetail:(NSInteger)epoch onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 签到-用户签到
-/// 签到-用户签到
-/// - Parameters:
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)signInSign:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-#pragma mark 签到-导出签到数据
-/// 签到-导出签到数据
-/// - Parameters:
-///   - epoch: 签到轮次，-1表示全部
-///   - onSuccess: 成功回调
-///   - onFailed: 失败回调
-- (void)signInExportDetail:(NSInteger)epoch onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
-
-
-#pragma mark - ------------ 数据管理相关接口 ------------
-#pragma mark 获取当前账户信息
-/// 获取当前账户信息
-- (SEAUserModel *)getMySelf;
-
-#pragma mark 获取成员信息
-/// 获取成员信息
-/// @param userId 用户编号
-- (SEAUserModel *)findMemberWithUserId:(NSString *)userId;
-
-#pragma mark 获取成员列表
-/// 获取成员列表
-- (NSArray<SEAUserModel *> *)getRemoteUsers;
-
-#pragma mark 获取房间详情数据
-/// 获取房间详情数据
-- (SEARoomModel *)getRoomDetails;
-
-#pragma mark 获取画板地址
-/// 获取画板地址
-- (NSString *)getDrawingHost;
-
-
-#pragma mark - ------------ 媒体配置相关接口 ------------
-#pragma mark 设置媒体配置参数
-/// 设置媒体配置参数
-/// @param config 媒体配置参数
-- (void)setStreamMediaConfig:(SEAMediaConfig *)config;
-
-#pragma mark 设置网络质量控制参数
-/// 设置网络质量控制参数
-/// @param param 质量控制参数
-- (void)setNetworkQosParam:(SEANetworkQosParam *)param;
-
-
-#pragma mark - ------------ 调试相关接口 ------------
-#pragma mark 设置调试参数
-/// 设置调试参数
-/// - Parameter param: 调试参数
-- (void)setDebugParam:(SEADebugParam *)param;
 
 @end
 

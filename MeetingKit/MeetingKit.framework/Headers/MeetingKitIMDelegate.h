@@ -91,7 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - parentMid: 上级会议标识
 ///   - meetingId: 小组会议标识
 ///   - title: 小组会议标题
-- (void)onSubMettingAskingHelp:(NSString *)parentMid meetingId:(NSString *)meetingId title:(nullable NSString *)title;
+- (void)onSubMeetingAskingHelp:(NSString *)parentMid meetingId:(NSString *)meetingId title:(nullable NSString *)title;
 
 @end
 
