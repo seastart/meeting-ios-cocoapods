@@ -35,5 +35,5 @@ TODO: Add long description of the pod here.
   s.vendored_frameworks = 'MeetingKit/*.framework'
   # 依赖远程库
   s.dependency 'AFNetworking', '>= 4.0.0'
-  s.dependency 'RTCEngineKit', '>= 2.5.0'
+  s.dependency 'RTCEngineKit', '>= 3.0.0'
 end
