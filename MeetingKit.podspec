@@ -29,11 +29,12 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   # 指定支持平台
-  s.ios.deployment_target = '10.0'
+  # 注：跟随 RTCEngineKit 3.1.0(内置虚拟背景)的下限，低于 16.0 时依赖无法参与解析
+  s.ios.deployment_target = '16.0'
   
   # 依赖本地库
   s.vendored_frameworks = 'MeetingKit/*.framework'
   # 依赖远程库
   s.dependency 'AFNetworking', '>= 4.0.0'
-  s.dependency 'RTCEngineKit', '>= 3.0.0'
+  s.dependency 'RTCEngineKit', '>= 3.1.0'
 end
