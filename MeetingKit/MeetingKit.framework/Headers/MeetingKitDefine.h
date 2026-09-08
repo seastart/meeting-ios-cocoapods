@@ -230,7 +230,9 @@ typedef enum : NSUInteger {
     /// WebRTC
     SEADeviceTypeWebRTC = 6,
     /// 微信小程序
-    SEADeviceTypeWeChat = 7
+    SEADeviceTypeWeChat = 7,
+    /// HarmonyOS
+    SEADeviceTypeHarmonyOS = 8
 } SEADeviceType;
 
 

@@ -254,6 +254,56 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)bluetoothDeviceAvailable;
 
 
+#pragma mark - ------------ 虚拟背景相关接口 ------------
+/// 虚拟背景作用于进程内唯一的共享摄像头采集链路，属设备级能力，设置会同时作用于全部房间。
+/// 会中切换摄像头、断线重连后会议层会自动把当前配置重新应用，调用方不必自己补。
+
+#pragma mark 装载虚拟背景组件
+/// 装载虚拟背景组件
+/// 建议在进入房间、打开摄像头之前调用；装载后需要再调 enabledVirtualBackground: 才会生效
+/// - Parameter modelPath: 人像分割模型(selfie_segmenter_fixed.onnx)文件路径，
+///   传 nil 使用 SDK 内置的那一份
+- (SEAError)installVirtualBackground:(nullable NSString *)modelPath;
+
+#pragma mark 卸载虚拟背景组件
+/// 卸载虚拟背景组件
+- (void)uninstallVirtualBackground;
+
+#pragma mark 虚拟背景功能开关
+/// 虚拟背景功能开关
+/// - Parameter enabled: YES-开启 NO-关闭(关闭即零开销直通，不跑推理)
+- (SEAError)enabledVirtualBackground:(BOOL)enabled;
+
+#pragma mark 设置背景虚化
+/// 设置背景虚化
+/// 与 setVirtualBackgroundImage: 互斥，后调用的生效
+/// - Parameter level: 虚化等级，取值范围 1-10，默认 5
+- (void)setVirtualBackgroundBlur:(NSInteger)level;
+
+#pragma mark 设置背景替换
+/// 设置背景替换
+/// 与 setVirtualBackgroundBlur: 互斥，后调用的生效
+/// - Parameter image: 背景图片，按 cover 裁剪不拉伸
+- (void)setVirtualBackgroundImage:(nullable UIImage *)image;
+
+#pragma mark 设置分割推理间隔
+/// 设置分割推理间隔
+/// 给调用方按机型下发的性能档，不建议暴露给终端用户
+/// - Parameter interval: 分割每 N 帧跑一次(合成仍每帧跑)，默认 1，低端机可调大保帧率
+- (void)setVirtualBackgroundInferenceInterval:(NSInteger)interval;
+
+#pragma mark 设置蒙版对齐
+/// 设置蒙版对齐
+/// 消挥手时的错位拖影，代价是画面更新率降到蒙版率；
+/// interval == 1 时开与不开没有任何区别，它只在调大推理间隔后才起作用
+/// - Parameter enabled: YES-开启 NO-关闭，默认 NO
+- (void)setVirtualBackgroundMaskSync:(BOOL)enabled;
+
+#pragma mark 获取虚拟背景开启状态
+/// 获取虚拟背景开启状态
+- (BOOL)isVirtualBackgroundEnabled;
+
+
 #pragma mark - ------------ 屏幕共享相关接口函数 ------------
 #pragma mark 录屏启动方法
 /// 录屏启动方法
