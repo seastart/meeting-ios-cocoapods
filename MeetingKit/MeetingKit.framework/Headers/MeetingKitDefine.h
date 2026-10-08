@@ -11,7 +11,24 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 错误码
-/// 错误码
+/// 错误码（失败回调 SEAFailedBlock 的 code）
+///
+/// 取值分三类（规则见 SDK 统一错误码表，发版后以 stmlink-docs 错误码总表页为准）：
+/// 1. 后端业务码（1000–99999）：原样透传，message 为服务端 msg，语言随请求头 Accept-Language（见 MeetingKit.language）；
+/// 2. 会议层客户端码（203xxx）：iOS SMeeting 前缀 203 + 统一码表低 3 位，与 meeting-swift 同号同义，message 为英文；
+/// 3. RTC 层透传码（103xxx）：与 RTCEngineKit 的 RTCEngineError 同值，由 rtc-iOS 定义，
+///    会议层不重新包装，message 为英文描述并带上 RTC 码。
+///
+/// 旧 → 新（会议层自身产生的错误，本版起改发新码）：
+/// - 网络请求失败 100009 → 203007；请求超时 100009 → 203353；请求取消 100009 → 203354；
+///   响应体为空 100009 → 203355；响应不是 JSON / 缺 code 字段 100009 → 203356；
+/// - 后端业务失败 100009 → 后端原始码（如 2101 / 2115）；
+/// - 会议令牌解不开 10042 → 203005；重复加入房间 10003 → 203006；房间实例已销毁 10003 → 203011；
+/// - 仅主持人 / 联席主持人可调用 103005 → 203004；
+/// - 签到导出下载失败 100011 → 按原因 203007 / 203353 / 203354 / 203009，后端拒绝时为后端码。
+/// RTC 层透传码随 RTCEngineKit 重排（值与 RTCEngineError 一致）：100001–100012、103001–103005 → 103xxx，
+/// 如 NetError 100009 → 103006、UserCancelled 100012 → 103026、SwitchAudioRouteFail 103005 → 103044，
+/// 权限被拒 103001 → 103231（摄像头）/ 103251（麦克风），详见各常量注释。
 typedef enum : NSInteger {
     
     /// 无错误
@@ -20,7 +37,7 @@ typedef enum : NSInteger {
     
     /////////////////////////////////////////////////////////////////////////////////
     ///
-    ///       API错误码
+    ///       API错误码（后端业务码，原样透传；文案为服务端 msg，语言随 Accept-Language）
     ///
     /////////////////////////////////////////////////////////////////////////////////
     /// 请求头中缺少APPID
@@ -168,44 +185,99 @@ typedef enum : NSInteger {
     
     /////////////////////////////////////////////////////////////////////////////////
     ///
-    ///       RTC错误码
+    ///       RTC错误码（RTC 层透传，103 + 统一码表低 3 位，与 RTCEngineKit 的 RTCEngineError 同值；
+    ///       括号内为旧值。会议层自身的网络失败改用 203007 等，100009 已不再出现）
     ///
     /////////////////////////////////////////////////////////////////////////////////
-    /// 系统内部错误
-    SEAErrorSystemError = 100001,
-    /// 未初始化
-    SEAErrorNotInitialized = 100002,
-    /// 媒体模块尚未初始化
-    SEAErrorMediaNotInitialized = 100003,
-    /// 协议解析错误
-    SEAErrorProtocolParsingError = 100004,
+    /// 未加入频道（旧 103002）
+    SEAErrorNotJoinedChannel = 103001,
+    /// 码流不存在（旧 103004）
+    SEAErrorStreamNotFound = 103003,
+    /// 令牌不合法（旧 100008）
+    SEAErrorSdkTokenInvalid = 103004,
+    /// 重复操作冲突（旧 100007）
+    SEAErrorConflict = 103005,
+    /// RTC 层网络错误（含 HTTP 非 200，旧 100009）
+    SEAErrorNetError = 103006,
+    /// 超时（旧 100005）
+    SEAErrorTimeout = 103007,
+    /// 协议解析错误（旧 100004）
+    SEAErrorProtocolParsingError = 103011,
+    /// 媒体网络错误（旧 100010）
+    SEAErrorMediaNetError = 103012,
+    /// 未初始化 / 当前状态不允许（旧 100002）
+    SEAErrorNotInitialized = 103024,
+    /// 已废弃：与 SEAErrorNotInitialized 同值（旧 100003），switch 中不要同时写两者
+    SEAErrorMediaNotInitialized __attribute__((deprecated("Use SEAErrorNotInitialized (same value 103024)"))) = 103024,
+    /// 系统内部错误（旧 100001）
+    SEAErrorSystemError = 103025,
+    /// 用户取消了（旧 100012）
+    SEAErrorUserCancelled = 103026,
+    /// 虚拟背景已装载（新增，旧版以 100007 返回）
+    SEAErrorVirtualBackgroundAlreadyInstalled = 103027,
+    /// 虚拟背景未装载（新增，旧版以 100007 返回）
+    SEAErrorVirtualBackgroundNotInstalled = 103028,
+    /// 虚拟背景模型不存在或无效（新增，旧版以 100011 返回）
+    SEAErrorVirtualBackgroundModelNotFound = 103029,
+    /// 虚拟背景推理会话创建失败（新增，旧版以 100001 返回）
+    SEAErrorVirtualBackgroundSessionFailed = 103030,
+    /// 参数错误（旧 100006）
+    SEAErrorInvalidArgs = 103031,
+    /// 设备访问无权限，无法区分摄像头 / 麦克风时（旧 103001；RTC 层当前改报 103231 / 103251）
+    SEAErrorDeviceNoAuthorized = 103042,
+    /// 操作不被允许（旧 103003）
+    SEAErrorForbidden = 103043,
+    /// 音频路由切换失败（旧 103005）
+    SEAErrorSwitchAudioRouteFail = 103044,
+    /// 频道内没有该用户（旧 100011）
+    SEAErrorNotFound = 103204,
+    /// 无摄像头权限（新增，旧版以 103001 返回）
+    SEAErrorCameraNoAuthorized = 103231,
+    /// 无麦克风权限（新增，旧版以 103001 返回）
+    SEAErrorMicNoAuthorized = 103251,
     
-    /// 超时
-    SEAErrorTimeout = 100005,
-    /// 参数错误
-    SEAErrorInvalidArgs = 100006,
-    /// 重复操作冲突
-    SEAErrorConflict = 100007,
-    /// 令牌失效
-    SEAErrorSdkTokenInvalid = 100008,
     
-    /// 网络错误
-    SEAErrorNetError = 100009,
-    /// 媒体网络错误
-    SEAErrorMediaNetError = 100010,
-    /// 目标不存在
-    SEAErrorNotFound = 100011,
-    
-    /// 设备访问无权限
-    SEAErrorDeviceNoAuthorized = 103001,
-    /// 未加入频道
-    SEAErrorNotJoinedChannel = 103002,
-    /// 操作不被允许
-    SEAErrorForbidden = 103003,
-    /// 码流不存在
-    SEAErrorStreamNotFound = 103004,
-    /// 没有权限执行操作
-    SEAErrorNotAuthorized = 103005
+    /////////////////////////////////////////////////////////////////////////////////
+    ///
+    ///       会议层客户端错误码（203 + 统一码表低 3 位，与 meeting-swift 同号同义）
+    ///
+    /////////////////////////////////////////////////////////////////////////////////
+    /// 未登录会议 SDK（本端暂未产生，保留与各端对齐）
+    SEAErrorMeetingNotLoggedIn = 203001,
+    /// Token 已过期（本端暂未产生，保留与各端对齐）
+    SEAErrorMeetingTokenExpired = 203002,
+    /// 不在会议中（本端暂未产生，保留与各端对齐）
+    SEAErrorMeetingNotInMeeting = 203003,
+    /// 无权限（如该接口仅主持人或联席主持人可调用）
+    SEAErrorMeetingUnauthorized = 203004,
+    /// 已废弃：旧值 103005（与 RTC 层撞号），现为 SEAErrorMeetingUnauthorized 的同值别名，switch 中不要同时写两者
+    SEAErrorNotAuthorized __attribute__((deprecated("Use SEAErrorMeetingUnauthorized (same value 203004)"))) = 203004,
+    /// Token 格式无效（会议令牌解不开）
+    SEAErrorMeetingTokenInvalid = 203005,
+    /// 已在会议中，请先退出（房间实例正在加入或已加入）
+    SEAErrorMeetingAlreadyInMeeting = 203006,
+    /// 网络错误（连不上、HTTP 非 200 等，HTTP 状态见 message）
+    SEAErrorMeetingNetworkError = 203007,
+    /// 设备错误（保留；采集 / 权限失败透传 RTC 层码）
+    SEAErrorMeetingDeviceError = 203008,
+    /// SDK 内部错误（如下载文件落盘失败）
+    SEAErrorMeetingInternalError = 203009,
+    /// 会议中没有该成员（本端暂未产生，保留与各端对齐）
+    SEAErrorMeetingUserNotFound = 203010,
+    /// 当前状态不允许该操作（如房间实例已销毁）
+    SEAErrorMeetingInvalidState = 203011,
+    /// 参数非法（本端暂未产生，保留与各端对齐）
+    SEAErrorMeetingInvalidArgument = 203012,
+    /// 远端轨道不可用：成员在会议中，但没有要订阅的这路视频（旧版以 RTC 层 103003 返回）
+    SEAErrorMeetingRemoteTrackUnavailable = 203209,
+    /// 请求超时
+    SEAErrorMeetingRequestTimeout = 203353,
+    /// 请求被取消
+    SEAErrorMeetingRequestCancelled = 203354,
+    /// 响应体为空
+    SEAErrorMeetingEmptyResponseBody = 203355,
+    /// 响应解析失败（不是 JSON 对象 / 缺 code 字段 / 结构不符）
+    SEAErrorMeetingResponseParseFailed = 203356
 } SEAError;
 
 
@@ -670,6 +742,9 @@ typedef enum : NSInteger {
 /// 成功回调
 typedef void (^SEASuccessBlock)(id _Nullable data);
 /// 失败回调
+/// - code: 错误码，取值见 SEAError（后端码原样透传 / 203xxx 会议层码 / RTC 层透传码）
+/// - message: 英文错误描述，给开发者 / 日志看（后端码时为服务端 msg，语言随 Accept-Language）；
+///   终端用户提示请按 code 自行映射，不要直接展示 message
 typedef void (^SEAFailedBlock)(SEAError code, NSString * _Nonnull message);
 
 NS_ASSUME_NONNULL_END

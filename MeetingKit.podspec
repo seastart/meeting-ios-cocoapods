@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MeetingKit'
-  s.version          = '2.1.0'
+  s.version          = '2.2.0'
   s.summary          = '会议服务引擎.'
 
 # This description is used to generate tags and improve search results.
@@ -36,5 +36,6 @@ TODO: Add long description of the pod here.
   s.vendored_frameworks = 'MeetingKit/*.framework'
   # 依赖远程库
   s.dependency 'AFNetworking', '>= 4.0.0'
-  s.dependency 'RTCEngineKit', '>= 3.1.0'
+  # 2.2.0 起按统一错误码第 2 版编译，RTC 层透传码依赖 RTCEngineKit 3.2.0 的新取值，旧版 RTC 会让码与文案对不上
+  s.dependency 'RTCEngineKit', '>= 3.2.0'
 end

@@ -50,6 +50,16 @@ NS_ASSUME_NONNULL_BEGIN
 ///  会议引擎版本
 - (NSString *)version;
 
+#pragma mark SDK 语言
+/// SDK 语言（BCP 47 语言标签，如 @"zh-CN"、@"en"），nil 或空串 = 跟随系统语言（[NSLocale preferredLanguages].firstObject）
+/// 只影响请求会议后端时的 Accept-Language 请求头：后端据此返回对应语言的业务错误文案（1000–99999 后端码的 message）；
+/// SDK 自身产生的报错 message 一律英文，不随语言变化。进程级生效，不随登录 / 登出重置，建议在登录前设置。
+/// 注：RTC 层（RTCEngineKit）自身的请求暂不带语言。
+@property (nonatomic, copy, nullable) NSString *language;
+
+/// 当前实际生效的语言：language 已设置则为它，否则为系统语言（取不到时为 @"zh"）
+@property (nonatomic, copy, readonly) NSString *currentLanguage;
+
 #pragma mark 设置事件回调
 /// 设置事件回调，您可以通过 MeetingKitDelegate 获得全局事件通知（音频路由变更、应用性能数据）
 /// 房间内的事件请实现 MeetingKitRoomDelegate 并在创建房间时传入

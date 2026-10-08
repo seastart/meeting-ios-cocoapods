@@ -220,12 +220,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param userId 指定远端用户标识
 /// @param streamType 视频流类型
 /// @param view 承载视频画面的渲染控件
+/// @return 该成员没有这路视频时返回 SEAErrorMeetingRemoteTrackUnavailable(203209)
 - (RTCEngineError)startRemoteView:(NSString *)userId streamType:(SEAVideoStreamType)streamType view:(VIEW_CLASS *)view;
 
 #pragma mark 停止订阅远端用户的视频流，并释放渲染控件
 /// 停止订阅远端用户的视频流，并释放渲染控件
 /// @param userId 指定远端用户标识
 /// @param streamType 视频流类型
+/// @return 该成员没有这路视频时返回 SEAErrorMeetingRemoteTrackUnavailable(203209)
 - (RTCEngineError)stopRemoteView:(NSString *)userId streamType:(SEAVideoStreamType)streamType;
 
 #pragma mark 停止订阅指定远端用户的所有视频流，并释放全部渲染资源
@@ -341,7 +343,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark 主持人更新房间水印开关状态
 /// 主持人更新房间水印开关状态
-/// @param watermarkDisabled 水印状态，YES-开启 NO-关闭
+/// @param watermarkDisabled 水印禁用状态，YES-禁用 NO-不禁用
 /// @param onSuccess 成功回调
 /// @param onFailed 失败回调
 - (void)adminUpdateRoomWatermarkDisabled:(BOOL)watermarkDisabled onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
