@@ -52,9 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark SDK 语言
 /// SDK 语言（BCP 47 语言标签，如 @"zh-CN"、@"en"），nil 或空串 = 跟随系统语言（[NSLocale preferredLanguages].firstObject）
-/// 只影响请求会议后端时的 Accept-Language 请求头：后端据此返回对应语言的业务错误文案（1000–99999 后端码的 message）；
+/// 只影响请求后端时的 Accept-Language 请求头：后端据此返回对应语言的业务错误文案（1000–99999 后端码的 message）；
 /// SDK 自身产生的报错 message 一律英文，不随语言变化。进程级生效，不随登录 / 登出重置，建议在登录前设置。
-/// 注：RTC 层（RTCEngineKit）自身的请求暂不带语言。
+/// 设置时会同时设置底层 RTCEngineKit.language，会议层与 RTC 层用同一语言（需搭配支持 language 的 RTCEngineKit，3.2.0 及以前不支持、RTC 层请求不带语言）。
 @property (nonatomic, copy, nullable) NSString *language;
 
 /// 当前实际生效的语言：language 已设置则为它，否则为系统语言（取不到时为 @"zh"）

@@ -268,7 +268,7 @@ typedef enum : NSInteger {
     SEAErrorMeetingInvalidState = 203011,
     /// 参数非法（本端暂未产生，保留与各端对齐）
     SEAErrorMeetingInvalidArgument = 203012,
-    /// 远端轨道不可用：成员在会议中，但没有要订阅的这路视频（旧版以 RTC 层 103003 返回）
+    /// 远端轨道不可用：成员在会议中，但没有要订阅的这路视频（2.1.0 及以前以 RTC 层 RTCEngineErrorStreamNotFound 103004 返回）
     SEAErrorMeetingRemoteTrackUnavailable = 203209,
     /// 请求超时
     SEAErrorMeetingRequestTimeout = 203353,
