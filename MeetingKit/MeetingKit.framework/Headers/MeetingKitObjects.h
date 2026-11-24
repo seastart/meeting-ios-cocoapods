@@ -888,4 +888,145 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+#pragma mark - ------------ 会前网络检测 ------------
+/// 会前网络检测的参数与结果对象（MeetingKit networkCheck:onItem:completion: 使用）
+/// 检测逻辑由 RTC 层实现，会议层同名透传并在 server 项里多一个 meeting_api 子检查；
+/// 检测项、状态、原因码的字符串取值与各端 SDK 完全一致，便于 App 与日志跨端对照
+
+/// 检测项标识，固定 5 项
+typedef NSString *SEANetworkCheckItemId NS_TYPED_ENUM;
+/// 网络权限（iOS：蜂窝数据权限，Wi-Fi 下不影响）
+FOUNDATION_EXPORT SEANetworkCheckItemId const SEANetworkCheckItemIdPermission;
+/// 网络连接情况（系统网络状态）
+FOUNDATION_EXPORT SEANetworkCheckItemId const SEANetworkCheckItemIdConnectivity;
+/// 最大传输单元检测（向媒体服务器发不分片的 UDP 探测包）
+FOUNDATION_EXPORT SEANetworkCheckItemId const SEANetworkCheckItemIdMtu;
+/// 域名解析检测（接口、信令、媒体服务器的域名）
+FOUNDATION_EXPORT SEANetworkCheckItemId const SEANetworkCheckItemIdDns;
+/// 服务器连接情况（子检查：会议接口 meeting_api、RTC 接口 api、信令 signal、媒体 media）
+FOUNDATION_EXPORT SEANetworkCheckItemId const SEANetworkCheckItemIdServer;
+
+/// 检测状态（单项与汇总共用一套字符串，汇总只会出现 ok / warning / fail）
+typedef NSString *SEANetworkCheckStatus NS_TYPED_ENUM;
+/// 汇总：全部正常
+FOUNDATION_EXPORT SEANetworkCheckStatus const SEANetworkCheckStatusOk;
+/// 单项：通过
+FOUNDATION_EXPORT SEANetworkCheckStatus const SEANetworkCheckStatusPass;
+/// 单项 / 汇总：有隐患但可用
+FOUNDATION_EXPORT SEANetworkCheckStatus const SEANetworkCheckStatusWarning;
+/// 单项 / 汇总：异常
+FOUNDATION_EXPORT SEANetworkCheckStatus const SEANetworkCheckStatusFail;
+/// 单项：无需检测（App 显示「无需检测」）
+FOUNDATION_EXPORT SEANetworkCheckStatus const SEANetworkCheckStatusSkipped;
+/// 单项：本平台不支持（App 显示「不支持」；iOS 五项都支持，保留取值与其它端对齐）
+FOUNDATION_EXPORT SEANetworkCheckStatus const SEANetworkCheckStatusUnsupported;
+
+/// 机器可读的原因码，通过时为空串
+typedef NSString *SEANetworkCheckReason NS_TYPED_ENUM;
+/// 未授予网络权限（iOS 不会出现，保留与其它端对齐）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonNoPermission;
+/// 蜂窝数据被系统设置限制，且当前不在 Wi-Fi / 有线网络下
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonCellularRestricted;
+/// 当前没有网络连接
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonOffline;
+/// 1200 字节的探测包都回不来，但 STUN 通（网络对大包有限制）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonMtuTooSmall;
+/// UDP 不通（媒体服务器 STUN 无应答 / 探测包全部无回显）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonUdpBlocked;
+/// 有域名解析失败
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonDnsFailed;
+/// 会议接口不可达（server.meeting_api 没有收到任何 HTTP 响应）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonMeetingApiUnreachable;
+/// RTC 检测信息接口 netcheck/info 调用失败（服务器不可达或老服务端没有该接口）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonApiUnreachable;
+/// 信令服务器连不上（TCP/TLS 与 WebSocket 都不通）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonSignalUnreachable;
+/// 流媒体供应商不是 seastart，不做媒体 UDP / MTU 检测（skipped 时使用）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonVendorNotSupported;
+/// seastart 但服务端没有可用的媒体节点（server 记 fail，mtu 记 skipped）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonMediaUnavailable;
+/// 拿不到服务端检测信息，依赖它的 mtu、server.signal、server.media 记 skipped
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonServerInfoUnavailable;
+/// 系统设不了不分片，mtu 记 unsupported（iOS 不会出现，保留与其它端对齐）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonDfNotSupported;
+/// 系统接口查不到，该项记 unsupported（iOS 不会出现，保留与其它端对齐）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonQueryFailed;
+/// 检测被取消（本端取消时完成回调直接返回 SEAErrorUserCancelled、不出单项结果，保留与其它端对齐）
+FOUNDATION_EXPORT SEANetworkCheckReason const SEANetworkCheckReasonCancelled;
+
+
+/// 网络检测参数
+/// 已登录时可以不传（传 nil 即可），会议 SDK 从登录信息里取应用标识与服务器地址；
+/// 未登录时须显式传 appId + serverUrl，或传 token（任意一个本应用的 RTC 令牌），二选一；两者都传时以 appId + serverUrl 为准
+@interface SEANetworkCheckParams : NSObject
+
+/// 应用标识(app_id)
+@property (nonatomic, copy, nullable) NSString *appId;
+/// RTC 的 SDK 接口前缀（即 RTC 令牌中的 client_api，如 @"https://host/client/"）
+@property (nonatomic, copy, nullable) NSString *serverUrl;
+/// RTC 加密令牌（频道令牌 / 即时通讯令牌均可，不要求未过期），appId / serverUrl 未传时从中解出
+@property (nonatomic, copy, nullable) NSString *token;
+/// 单项超时(毫秒)，默认 3000，小于等于 0 时按默认值
+@property (nonatomic, assign) NSInteger timeoutMs;
+
+@end
+
+
+/// 网络检测单项结果
+@interface SEANetworkCheckItem : NSObject
+
+/// 检测项标识
+@property (nonatomic, copy) SEANetworkCheckItemId itemId;
+/// 检测状态：pass / warning / fail / skipped / unsupported
+@property (nonatomic, copy) SEANetworkCheckStatus status;
+/// 原因码，pass 时为空串
+@property (nonatomic, copy) SEANetworkCheckReason reason;
+/// 给人看的中文说明，App 可直接显示
+@property (nonatomic, copy) NSString *message;
+/// 本项耗时(毫秒)
+@property (nonatomic, assign) NSInteger costMs;
+/// 本项测量值，键名与各端一致：
+/// connectivity：{netType: "wifi"|"cellular"|"ethernet"|"unknown"}
+/// mtu：{maxSize: 1472}（全部不通时为 0）
+/// dns：{hosts: [{host, ips, costMs}]}
+/// server：{meeting_api:{ok,status,reason,rttMs}, api:{ok,status,reason,rttMs[,httpStatus,code]},
+///          signal:{ok,status,reason,rttMs,via:"tcp"|"ws"}, media:{ok,status,reason,rttMs}}
+///         meeting_api 为会议层子检查（收到任何 HTTP 响应即算可达；未登录时 status 为 skipped、reason 为 server_info_unavailable），
+///         其余三个子检查原样来自 RTC 层
+/// permission：{}
+@property (nonatomic, copy) NSDictionary<NSString *, id> *data;
+
+/// 转为字典（键名与其它端一致：id / status / reason / message / costMs / data），便于日志与跨端对照
+- (NSDictionary<NSString *, id> *)toDictionary;
+
+@end
+
+
+/// 网络检测汇总结果
+@interface SEANetworkCheckResult : NSObject
+
+/// 汇总状态：有 fail 即 fail；无 fail 但有 warning 即 warning；否则 ok（skipped / unsupported 不影响汇总）
+@property (nonatomic, copy) SEANetworkCheckStatus status;
+/// 各项结果，固定 5 项、固定顺序：permission、connectivity、mtu、dns、server
+@property (nonatomic, copy) NSArray<SEANetworkCheckItem *> *items;
+/// 总耗时(毫秒)
+@property (nonatomic, assign) NSInteger costMs;
+
+/// 按单项结果计算汇总状态
+/// @param items 单项结果
++ (SEANetworkCheckStatus)statusForItems:(NSArray<SEANetworkCheckItem *> *)items;
+
+/// 转为字典（键名与其它端一致：status / items / costMs）
+- (NSDictionary<NSString *, id> *)toDictionary;
+
+@end
+
+
+/// 网络检测单项完成回调（主线程），按固定顺序 permission → connectivity → mtu → dns → server 回调，每项一次
+typedef void (^SEANetworkCheckItemBlock)(SEANetworkCheckItem *item);
+/// 网络检测完成回调（主线程）
+/// 正常结束：result 非空、errorCode 为 SEAErrorOK；被取消：result 为 nil、errorCode 为 SEAErrorUserCancelled(103026，透传 RTC 层码)
+typedef void (^SEANetworkCheckCompletionBlock)(SEANetworkCheckResult * _Nullable result, SEAError errorCode);
+
+
 NS_ASSUME_NONNULL_END

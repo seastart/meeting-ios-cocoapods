@@ -198,6 +198,26 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateRoom:(SEAMeetingParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
+#pragma mark - ------------ 会前网络检测相关接口 ------------
+#pragma mark 开始会前网络检测
+/// 开始会前网络检测
+/// 入会前调用，不需要进入房间、不需要连接 RTC；逐项检测网络权限、网络连接情况、最大传输单元、域名解析、服务器连接情况，
+/// 全部正常时约 5 秒内完成，最长约 10 秒。检测逻辑与 RTC 层一致，会议层在 server 项里多一个会议接口子检查 meeting_api，
+/// 会议接口不通时 server 记 fail、reason 为 meeting_api_unreachable（server 已因 RTC 子检查失败时保留 RTC 的原因）；
+/// 未登录时拿不到会议接口地址，meeting_api 记 skipped、reason 为 server_info_unavailable
+/// @param params 检测参数；已登录时可传 nil（从登录信息里取应用标识与服务器地址），未登录时须传 appId + serverUrl 或 token
+/// @param onItem 单项完成回调（主线程），每完成一项回调一次
+/// @param completion 检测完成回调（主线程）：正常结束 result 非空、errorCode 为 SEAErrorOK；
+///        被 cancelNetworkCheck（或退出登录）取消时 result 为 nil、errorCode 为 SEAErrorUserCancelled(103026)
+/// @return SEAErrorOK 表示已开始；未登录且未传参返回 SEAErrorMeetingNotLoggedIn(203001)；
+///         其余错误透传 RTC 层码：已有检测在进行中 SEAErrorConflict(103005)，参数非法或令牌解不开 SEAErrorInvalidArgs(103031)
+- (SEAError)networkCheck:(nullable SEANetworkCheckParams *)params onItem:(nullable SEANetworkCheckItemBlock)onItem completion:(nullable SEANetworkCheckCompletionBlock)completion;
+
+#pragma mark 取消会前网络检测
+/// 取消会前网络检测：不再回调 onItem，完成回调以 SEAErrorUserCancelled(103026) 结束；可立即发起新的检测
+- (void)cancelNetworkCheck;
+
+
 #pragma mark - ------------ 用户操作接口 ------------
 #pragma mark 获取设备列表
 /// 获取设备列表
