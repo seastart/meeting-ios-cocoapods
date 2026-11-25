@@ -376,6 +376,21 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+/// 预签名上传结果对象
+/// 拿到后由调用方自己 HTTP PUT 文件二进制到 url（请求头 Content-Type: application/octet-stream，不是 multipart），
+/// 上传成功后业务里保存 / 发送的是 key 而不是 url（url 带签名、有效期约 2 小时）
+@interface SEAPresignedPutObjectModel : NSObject
+
+/// 预签名上传地址（PUT）
+@property (nonatomic, copy) NSString *url;
+/// 资源标识，下载时传给 presignedGetObject 的 resKey 换取下载地址
+@property (nonatomic, copy) NSString *key;
+/// 文件扩展名（不带点，后端回显）
+@property (nonatomic, copy) NSString *ext;
+
+@end
+
+
 /// 会议信息对象
 @interface SEAMeetingModel : NSObject
 

@@ -198,6 +198,33 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateRoom:(SEAMeetingParam *)params onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
 
 
+#pragma mark - ------------ 资源相关接口 ------------
+#pragma mark 预签名上传
+/// 预签名上传：向会议层申请一个直传存储的上传地址
+/// 成功回调的 data 为 SEAPresignedPutObjectModel（url / key / ext）；调用方随后自己用 HTTP PUT 把文件二进制传到 url，
+/// 请求头 Content-Type 为 application/octet-stream（不是 multipart）。业务里保存 / 发送的应当是 key，
+/// 需要下载时再用 presignedGetObjectWithResKey:resId: 现换下载地址（url 带签名，约 2 小时过期，不要缓存）。
+/// 部署关闭了文件功能时失败回调 SEAErrorMeetingApiFileDisabled(2125)。
+/// 聊天文件消息约定：上传后以 SEAMessageTypeFile 发送 JSON 字符串 {"key":"<key>","name":"原始文件名","size":"1.20MB"}
+/// - Parameters:
+///   - type: 资源类型，聊天文件传 SEAResourceTypeChat
+///   - meetingId: 会议标识
+///   - ext: 文件扩展名，必填、不带点（如 @"pdf"），没有扩展名时传 @"bin"
+///   - onSuccess: 成功回调，data 为 SEAPresignedPutObjectModel
+///   - onFailed: 失败回调
+- (void)presignedPutObject:(SEAResourceType)type meetingId:(NSString *)meetingId ext:(NSString *)ext onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+#pragma mark 预签名下载
+/// 预签名下载：用资源标识换取一个临时下载地址
+/// 每次下载前现换，不要缓存返回的地址（带签名，约 2 小时过期）
+/// - Parameters:
+///   - resKey: 资源标识（预签名上传返回的 key，聊天文件消息里的 key），必填；为空时直接失败回调 SEAErrorMeetingInvalidArgument(203012)
+///   - resId: 资源记录 ID，预留参数：resId 目前后端不支持，请传 resKey（传了也会和 resKey 一起带给后端，但后端只认 res_key）
+///   - onSuccess: 成功回调，data 为下载地址 NSString
+///   - onFailed: 失败回调
+- (void)presignedGetObjectWithResKey:(nullable NSString *)resKey resId:(nullable NSString *)resId onSuccess:(nullable SEASuccessBlock)onSuccess onFailed:(nullable SEAFailedBlock)onFailed;
+
+
 #pragma mark - ------------ 会前网络检测相关接口 ------------
 #pragma mark 开始会前网络检测
 /// 开始会前网络检测

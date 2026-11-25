@@ -158,6 +158,8 @@ typedef enum : NSInteger {
     SEAErrorMeetingApiWaitingRoomEnable = 2118,
     /// 会议禁止在主持人之前加入
     SEAErrorMeetingApiEnterBeforeHostDisabled = 2120,
+    /// 文件功能已关闭（部署级开关 app.file_disabled 打开时，预签名上传返回该码）
+    SEAErrorMeetingApiFileDisabled = 2125,
     
     /// 未归类的通用错误
     SEAErrorApiFailed = 10000,
@@ -266,7 +268,7 @@ typedef enum : NSInteger {
     SEAErrorMeetingUserNotFound = 203010,
     /// 当前状态不允许该操作（如房间实例已销毁）
     SEAErrorMeetingInvalidState = 203011,
-    /// 参数非法（本端暂未产生，保留与各端对齐）
+    /// 参数非法（如预签名下载未传 resKey）
     SEAErrorMeetingInvalidArgument = 203012,
     /// 远端轨道不可用：成员在会议中，但没有要订阅的这路视频（2.1.0 及以前以 RTC 层 RTCEngineErrorStreamNotFound 103004 返回）
     SEAErrorMeetingRemoteTrackUnavailable = 203209,
@@ -515,6 +517,22 @@ typedef enum : NSInteger {
     /// 自定义消息
     SEAMessageTypeCustom = 5
 } SEAMessageType;
+
+
+#pragma mark - 资源类型
+/// 资源类型（预签名上传 presignedPutObject 的 type，决定文件落在存储里的哪个目录）
+/// 请求后端时转成字符串：attach / background / user / chat
+typedef enum : NSInteger {
+    
+    /// 会议资料（附件）
+    SEAResourceTypeAttach = 1,
+    /// 会议背景图
+    SEAResourceTypeBackground = 2,
+    /// 用户资源（如头像）
+    SEAResourceTypeUser = 3,
+    /// 聊天文件
+    SEAResourceTypeChat = 4
+} SEAResourceType;
 
 
 #pragma mark - 举手申请类型
