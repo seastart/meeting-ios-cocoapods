@@ -70,7 +70,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param nickname 主叫昵称
 /// @param roomNo 房间号码
 /// @param title 会议标题
+/// @note 实现了带 meetingId / forceJoin 的 onCallReceived:nickname:roomNo:title:meetingId:forceJoin: 后，不再回调本方法。
 - (void)onCallReceived:(NSString *)callerId nickname:(nullable NSString *)nickname roomNo:(NSString *)roomNo title:(NSString *)title;
+
+#pragma mark 通话请求的回调（含会议标识与强制入会标记）
+/// 通话请求的回调（含会议标识与强制入会标记）
+/// 收到一个新的通话请求回调，被叫会收到。实现本方法后不再回调 onCallReceived:nickname:roomNo:title:。
+/// forceJoin 为 YES 表示管理员通过服务端接口 meet-admin/call-users 传了 force_join=true，要求被叫直接入会：
+/// 建议不弹接听界面，直接进入目标会议；若正在其它会议中，先离开当前会议再进入。
+/// @param callerId 主叫标识
+/// @param nickname 主叫昵称
+/// @param roomNo 房间号码
+/// @param title 会议标题
+/// @param meetingId 会议标识
+/// @param forceJoin 是否强制入会，缺省为 NO
+- (void)onCallReceived:(NSString *)callerId nickname:(nullable NSString *)nickname roomNo:(NSString *)roomNo title:(NSString *)title meetingId:(nullable NSString *)meetingId forceJoin:(BOOL)forceJoin;
 
 
 #pragma mark - ------------ 等候室相关回调 ------------
