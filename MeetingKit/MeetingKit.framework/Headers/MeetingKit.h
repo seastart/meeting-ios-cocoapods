@@ -268,6 +268,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - ------------ 本地采集相关接口 ------------
+#pragma mark 开启本地摄像头的预览画面
+/// 开启本地摄像头的预览画面（同名透传 RTCEngineKit startLocalPreview:view:）
+/// 可在入会前（会外，如等候室 / 等待主持人页）调用，只做本地采集与预览，不发布到会议；
+/// 入会前须先调用 stopLocalPreview 停掉，入会后由房间 requestOpenCamera 重新开启并发布
+/// @param frontCamera YES-前置摄像头 NO-后置摄像头
+/// @param view 承载视频画面的控件
+/// @return 无摄像头权限时返回 RTCEngineErrorCameraNoAuthorized(103231)
+- (RTCEngineError)startLocalPreview:(BOOL)frontCamera view:(VIEW_CLASS *)view;
+
+#pragma mark 停止本地摄像头的预览画面
+/// 停止本地摄像头的预览画面（同名透传 RTCEngineKit stopLocalPreview）
+/// 与 startLocalPreview:view: 配对使用：离开会外预览页面或入会前调用
+/// @return 无摄像头权限时返回 RTCEngineErrorCameraNoAuthorized(103231)
+- (RTCEngineError)stopLocalPreview;
+
 #pragma mark 更新本地摄像头的预览画面
 /// 更新本地摄像头的预览画面
 /// 摄像头在 iOS 上本就是单路硬件，采集与预览属全局能力，多个房间共用同一路采集

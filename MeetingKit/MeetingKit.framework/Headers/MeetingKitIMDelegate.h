@@ -96,6 +96,26 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - title: 会议标题
 - (void)onWaitingRoomMoveInRoom:(NSString *)meetingId title:(nullable NSString *)title;
 
+#pragma mark 主持人已入会回调
+/// 主持人已入会回调
+/// 会议开启了「主持人入会前禁止加入」，您调用 enterRoom 被拦下（错误码 SEAErrorMeetingApiEnterBeforeHostDisabled = 2120）后，
+/// 主持人 / 联席主持人 / 创建者任一进入会议时，您会收到该事件通知。
+/// 建议收到后带原密码重新入会；若该会议同时开启了等候室，重新入会会返回 SEAErrorMeetingApiWaitingRoomEnable（2118），转入等候室等待放行。
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - roomNo: 房间号码
+///   - title: 会议标题
+- (void)onHostEntered:(NSString *)meetingId roomNo:(NSString *)roomNo title:(nullable NSString *)title;
+
+#pragma mark 等待中的会议已结束回调
+/// 等待中的会议已结束回调
+/// 您在等候室或正在等待主持人入会时，会议被结束或取消，您会收到该事件通知。建议提示「会议已结束」并离开等待页。
+/// - Parameters:
+///   - meetingId: 会议标识
+///   - roomNo: 房间号码
+///   - title: 会议标题
+- (void)onWaitingMeetingEnd:(NSString *)meetingId roomNo:(NSString *)roomNo title:(nullable NSString *)title;
+
 
 #pragma mark - ------------ 分组讨论相关回调 ------------
 #pragma mark 小组会议请求帮助回调
